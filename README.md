@@ -1,10 +1,8 @@
-# {Name of the Project} - Your project should have a catchy and functional name
-
-The descriptions and information in all readme files in the starter repo (including this one) must be edited. All section descriptions must be deleted. Any failure to remove the description information (like the statement that you are currently reading) will be heavily penalized!
+# Mario Kart Bike V2
 
 ## Executive Summary
 
-Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
+This capstone project improves upon the previous iteration of the Mario Kart Bike, adding a more dynamic resistance system, as well as a new mode: Ride Replay Simulation. This mode allows users to record a bike ride, and then replay it later on indoors. Using data gathered from various sensors and an internal physics engine, the replay will calculate whether to speed up or slow down video playback based on the speed the user is pedalling at, as well as what resistance to apply. The resistance system will utilize 85 states, creating a smooth and realistic replay. This resistance system also works in the original Mario Kart Mode, using Nintendo Switch rumble states to determine what resistance to apply.
 
 
 ## Capabilities
@@ -32,11 +30,11 @@ Give a brief bio for each team member and their broad contribution to the projec
 
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
+The faculty advisor for this project was Jesse Roberts.
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
+The main customer for this project was Jesse Roberts, however a commercialized version of this product would likely garner attention from gamers as well as people who enjoy fitness/cycling.
 
 
 
