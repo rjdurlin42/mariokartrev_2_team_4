@@ -34,7 +34,7 @@ The faculty advisor for this project was Jesse Roberts.
 
 ### Stakeholders
 
-The main customer for this project was Jesse Roberts, however a commercialized version of this product would likely garner attention from gamers as well as people who enjoy fitness/cycling.
+The main customer for this project was Jesse Roberts, however a commercialized version of this product would likely garner attention from people who enjoy playing Mario Kart, fitness, and/or cycling.
 
 
 
