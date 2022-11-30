@@ -45,12 +45,12 @@ Give the layout of the repo and what can be found where. Make it easy on those w
 
 ### Reports
 
-Completed reports can be found in the Reports folder, or by clicking HERE
+Completed reports can be found in the Reports folder, or by clicking [HERE](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Reports)
 
 ### Documentation
 
-Project documentation can be found in the Reports folder, or by clicking HERE
+Project documentation can be found in the Reports folder, or by clicking [HERE](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Documentation)
 
 ### Software
 
-Written software can be found in the Reports folder, or by clicking HERE
+Written software can be found in the Reports folder, or by clicking [HERE](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Software)
