@@ -27,10 +27,10 @@ Below the video link show some well-taken, appropriately sized images of the pro
 ### Team
 
 ##### Sage Mooneyham
--Computer Engineering Major
--Software/Coding
--Bluetooth Communication
--Resistance System
+- Computer Engineering Major
+- Software/Coding
+- Bluetooth Communication
+- Resistance System
 
 ### Faculty Supervisor
 
