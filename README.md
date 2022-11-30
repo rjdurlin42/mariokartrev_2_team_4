@@ -7,7 +7,7 @@ This capstone project improves upon the previous iteration of the Mario Kart Bik
 
 ## Capabilities
 
-Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
+As of right now, we have not began physical construction of any planned subsystems. However, we have submitted signoffs for the Resistance System, HDMI Switching System, Power System, Bluetooth System, 
 
 
 ## Salient Outcomes
