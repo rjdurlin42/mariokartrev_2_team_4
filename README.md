@@ -26,7 +26,11 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 ### Team
 
-Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specifc).
+#### Sage Mooneyham
+Computer Engineering Major
+Software/Coding
+Bluetooth Communication
+Resistance System
 
 ### Faculty Supervisor
 
@@ -43,14 +47,14 @@ The main customer for this project was Jesse Roberts, however a commercialized v
 Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
 
 
-### Reports
+### [Reports](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Reports)
 
-Completed reports can be found in the Reports folder, or by clicking [HERE](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Reports)
+Completed reports can be found in the Reports folder, or by clicking the link above.
 
-### Documentation
+### [Documentation](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Documentation)
 
-Project documentation can be found in the Reports folder, or by clicking [HERE](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Documentation)
+Project documentation can be found in the Reports folder, or by clicking the link above.
 
-### Software
+### [Software](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Software)
 
-Written software can be found in the Reports folder, or by clicking [HERE](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Software)
+Written software can be found in the Reports folder, or by clicking the link above.
