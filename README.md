@@ -45,12 +45,12 @@ Give the layout of the repo and what can be found where. Make it easy on those w
 
 ### Reports
 
-In the reports section of this repository information about the individual expectations for the reports and how they should be housed is provided.
+Completed reports can be found in the Reports folder, or by clicking HERE
 
 ### Documentation
 
-In the documentaion section information regarding the documentation that is required and how it should be organized is given.
+Project documentation can be found in the Reports folder, or by clicking HERE
 
 ### Software
 
-In the software directory of the repo information regarding how each team is expected to document software can be found.
+Written software can be found in the Reports folder, or by clicking HERE
