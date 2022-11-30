@@ -44,8 +44,6 @@ The main customer for this project was Jesse Roberts, however a commercialized v
 
 ## Repo Organization
 
-Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
-
 
 ### [Reports](https://github.com/rjdurlin42/mariokartrev_2_team_4/tree/main/Reports)
 
