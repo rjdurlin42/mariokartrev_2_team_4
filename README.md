@@ -34,11 +34,11 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 ### Faculty Supervisor
 
-The faculty advisor for this project was Jesse Roberts.
+The faculty advisor for this project is Jesse Roberts.
 
 ### Stakeholders
 
-The main customer for this project was Jesse Roberts, however a commercialized version of this product would likely garner attention from people who enjoy playing Mario Kart, fitness, and/or cycling.
+The main customer for this project is Jesse Roberts, however a commercialized version of this product would likely garner attention from people who enjoy playing Mario Kart, fitness, and/or cycling.
 
 
 
