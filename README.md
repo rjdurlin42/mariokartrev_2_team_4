@@ -7,7 +7,7 @@ This capstone project improves upon the previous iteration of the Mario Kart Bik
 
 ## Capabilities
 
-As of right now, we have not begun physical construction of any planned subsystems. However, we have submitted signoffs for the Resistance System, HDMI Switching System, Bluetooth System, Power Distribution System, Ride Replay Simulation Acquisition (RRSA) System
+As of right now, we have not begun physical construction of any planned subsystems. However, we have submitted signoffs for the Resistance System, HDMI Switching System, Bluetooth System, Power Distribution System, Ride Replay Simulation Acquisition (RRSA) System, and the Sensor System
 
 
 ## Salient Outcomes
