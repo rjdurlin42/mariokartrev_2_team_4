@@ -1,1 +1,1 @@
-There should be a directory containing pdf versions of the approved signoffs. Make sure that the pdf is readable and professional before pushing to the repo.
+This folder contains all approved signoffs in pdf form. We currently have no approved signoffs, but this folder will be updated each time one is completed.
