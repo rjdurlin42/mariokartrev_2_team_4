@@ -26,6 +26,8 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 ### Team
 
+Team 4 is a 5-person Capstone Design Project Team at Tennessee Technological University, who began Revision 2 of the Mario Kart Simulation Project during the Fall 2022 semester. Team 4’s project is to further enhance the riding experience offered by the existing design by adding a variable of resistance for two modes of operation: the Mario Kart game simulation and a pre-recorded trail ride simulation using data from an actual trail in Cookeville, TN. Team members are Blake Pickett, Tyler Chittum, Benjamin Reed, Ray Durlin, and Sage Mooneyham. Team 4 collaborated to add a variable of magnetic resistance to the design for both modes of operation. Additionally, each member made individual contributions to the design. Blake Pickett is an Electrical Engineer; he designed modifications to the sensor system to enable the conversion to wireless technology and designed modifications to the steering system to convert it from 3-D printed plastic to more durable metal. Tyler Chittum is an Electrical Engineer; he designed the ride replay simulation acquisition system. Benjamin Reed is a Computer Engineer; he designed the HDMI switching system. Ray Durlin is an Electrical Engineer; he designed the power distribution system. Sage Mooneyham is a Computer Engineer; he designed the Bluetooth system. Team 4 will conclude the project during the Spring 2023 semester. Jesse Roberts is the supervising faculty member, customer, and professor for the project. The intended userbase is very broad.
+
 ##### Sage Mooneyham
 - Computer Engineering Major
 - Software/Coding
