@@ -2,6 +2,15 @@
 
 ## Executive Summary
 
+During the Fall 2022 semester at Tennessee Technological University, the Capstone Design Project Team 4 collaborated to further enhance the riding experience offered by the existing Mario Kart Bike design. Team 4’s design adds a variable of resistance for two modes of operation: the Mario Kart Game Simulation and a Ride Replay Simulation (RRS). The RRS is a pre-recorded trail ride simulation using data from an actual trail in Cookeville, TN. 
+
+Improvements to the previous iteration of the Mario Kart Bike offer new dimensions of realism by adding a more dynamic resistance system, while the RRS will enable users to record an actual bike ride and then replay it later indoors. Using data gathered from various sensors and an internal physics engine, the RRS processing subsystem will calculate whether to speed up or slow down video playback based on the speed the user is pedaling, and it will determine the appropriate resistance to apply. 
+
+The streamlined resistance system design will replace the cumbersome motor with a linear motor attached to an array of N52 neodymium magnets, located perpendicular to a conductive flywheel to generate eddy currents. Opposing magnetic fields will generate braking torque in the flywheel, which will be transferred to the real bike wheel. This braking torque will function as the resistance felt by the user. The magnetic resistance system will utilize 85 states, creating a smooth and realistic replay. The new resistance system will also work in the original Mario Kart Bike Mode, using Nintendo Switch rumble states to determine the appropriate resistance to apply. 
+
+Team 4 hopes the Mario Kart Bike has a significant impact on the general health of society when the commercialized version is used by Mario Kart enthusiasts and other gamers to participate in physical activity. 
+
+
 This capstone project improves upon the previous iteration of the Mario Kart Bike, adding a more dynamic resistance system, as well as a new mode: Ride Replay Simulation. This mode allows users to record a bike ride, and then replay it later on indoors. Using data gathered from various sensors and an internal physics engine, the replay will calculate whether to speed up or slow down video playback based on the speed the user is pedalling at, as well as what resistance to apply. The resistance system will utilize 85 states, creating a smooth and realistic replay. This resistance system also works in the original Mario Kart Mode, using Nintendo Switch rumble states to determine what resistance to apply.
 
 
