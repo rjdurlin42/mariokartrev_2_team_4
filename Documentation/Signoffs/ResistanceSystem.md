@@ -13,9 +13,9 @@ The function of the resistance system is to control and vary the resistance felt
 
 _Flywheel Speed:_
 
-•	The minimum flywheel speed required for the resistance system to operate as designed is 9 mph (or 2501.6 flywheel RPM). At flywheel speeds less than 2501.6 RPM, the resistance system will be unable to reach the maximum torque specification, but it will be controlled to provide resistance in as much as possible given the decreasing braking torque with decreasing angular velocity. The value of 9 mph is based on a study the American Council on Exercise's recommendation regarding the minimum speed for moderate exercising [2].
+•	The minimum flywheel speed required for the resistance system to operate as designed is 9 mph (or 2501.6 flywheel RPM). At flywheel speeds less than 2501.6 RPM, the resistance system will be unable to reach the maximum torque specification, but it will be controlled to provide resistance in as much as possible given the decreasing braking torque with decreasing angular velocity. The value of 9 mph is based on the American Council on Exercise's recommendation regarding the minimum speed for moderate exercising [2].
 
-•	The maximum speed at which the resistance system will operate is pedal 118 rpm (or 6190.3 Flywheel RPM). The maximum speed is determined based on a cyclist traveling elite level [3]. When the user is traveling faster than 6190.3 RPM, the resistance system will not apply any braking torque to the flywheel to avoid any injury to the rider.
+•	The maximum speed at which the resistance system will operate is pedal 118 rpm (or 6190.3 Flywheel RPM). The maximum speed is determined based on a cyclist traveling at an elite level [3]. When the user is traveling faster than 6190.3 RPM, the resistance system will not apply any braking torque to the flywheel to avoid any injury to the rider.
 
 _Flywheel Weight:_
 
