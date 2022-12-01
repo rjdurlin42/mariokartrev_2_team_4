@@ -26,7 +26,7 @@ Below the video link show some well-taken, appropriately sized images of the pro
 
 ### Team
 
-Team 4 is a 5-person Capstone Design Project Team at Tennessee Technological University, who began Revision 2 of the Mario Kart Simulation Project during the Fall 2022 semester. Team members are Blake Pickett, Tyler Chittum, Benjamin Reed, Ray Durlin, and Sage Mooneyham. 
+Team 4 is a 5-person Capstone Design Project Team at Tennessee Technological University, who began Revision 2 of the Mario Kart Simulation Project during the Fall 2022 semester. Team members are Blake Pickett, Tyler Chittum, Benjamin Reed, Ray Durlin, and Sage Mooneyham. All members worked on the Resistance System.
 
 ##### Sage Mooneyham
 - Computer Engineering Major
