@@ -70,6 +70,9 @@ The faculty advisor for this project is Jesse Roberts.
 
 The main customer for this project is Jesse Roberts, however a commercialized version of this product would likely garner attention from people who enjoy playing Mario Kart, fitness, and/or cycling.
 
+### Recognition
+
+We would like to recognize the work of Reed Hester, Chase Griffin, and Leah Faulkner, the engineers who designed the first iteration of the Mario Kart Bike.
 
 
 ## Repo Organization
