@@ -12,11 +12,13 @@ As of right now, we have not begun physical construction of any planned subsyste
 
 ## Salient Outcomes
 
+Outcomes of the project will be posted here when production is completed.
 Projects often have some outcomes that are more interesting than others. Here, highlight those things that you found interesting!
 
 
 ## Project Demonstration & Images
 
+We plan on posting a link to a video showcasing the Mario Kart Bike, as well as images of the project when production is completed.
 Give a link to a video of the project being demonstrated. The video should be hosted on the capstone youtube.
 
 Below the video link show some well-taken, appropriately sized images of the project.
