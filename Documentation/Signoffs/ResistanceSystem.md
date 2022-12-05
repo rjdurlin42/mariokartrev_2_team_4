@@ -5,7 +5,7 @@ Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage 
 ## Detail Design: Resistance System ##
 
 
-**_Function of the Subsystem:_** 
+#### **_Function of the Subsystem:_** 
 
 The function of the resistance system is to control and vary the resistance felt by the user of the Mario Kart Bike, hereafter referred to as the bike. 
 
