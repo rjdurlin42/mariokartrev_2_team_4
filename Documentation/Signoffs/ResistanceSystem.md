@@ -66,7 +66,7 @@ Note: The minimum and maximum speeds referenced within this section have been co
 
 
 
-### Buildable schematic:
+### Buildable Schematic:
 
 ![image](https://user-images.githubusercontent.com/114370750/205554450-37b7aedf-20ad-4403-ab97-4d81d6decbce.png)
 
