@@ -23,7 +23,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 
 
-**_Constraints:_**
+### **_Constraints:_**
 
 *Minimum Flywheel Speed:*
 
@@ -121,7 +121,7 @@ Figure 3. Close Up of Linear Actuator, Flywheel, Magnet Holder with Different Vi
 
 
 
-**_Analysis:_**
+### **_Analysis:_**
 
 *Method of Data Analysis for Calculating Torque:*
 
@@ -298,7 +298,7 @@ An analysis of selected control circuit components and the resultant relevant de
 
 •	BJT: bipolar junction transistor
 
-*BOM:*
+### *BOM:*
 
 | Team 4 - Mario Kart & RRS |                 | Bill of Materials   (BOM)                         |               |                  |     |        |           |         |
 |:-------------------------:|:---------------:|---------------------------------------------------|---------------|------------------|-----|--------|-----------|---------|
@@ -347,7 +347,7 @@ An analysis of selected control circuit components and the resultant relevant de
 
 
 
-*REFERENCES*
+### *REFERENCES*
 
 [1]	A. H. C. Gosline and V. Hayward, "Eddy Current Brakes for Haptic Interfaces: Design, 	Identification, and Control," in IEEE/ASME Transactions on Mechatronics, vol. 13, no. 	6, pp. 669-677, Dec. 2008, doi: 10.1109/TMECH.2008.2004623.
 
