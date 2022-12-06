@@ -25,7 +25,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Magnet Distance Range: 
 
-- A distance range of 2-20mm from magnet to flywheel was selected, as these distances matched up well with the torque values that we want the resistance system to apply. 
+- A distance range of 2-25mm from magnet to flywheel was selected, as these distances matched up well with the torque values that we want the resistance system to apply. 
 
  
 
