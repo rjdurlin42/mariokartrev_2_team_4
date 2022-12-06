@@ -33,7 +33,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Minimum Flywheel Speed: 
 
-- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum speed required for moderate exercise on a bike [2]. At speeds less than 116.35 rpm, the performance of the system will not adhere to any non-safety constraints.  
+- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum speed required for moderate exercise on a bike [2]. At speeds less than 116.35 rpm, the magnet distance will be set to max, essentially providing the least possible resistance.
 
  
 
@@ -147,22 +147,22 @@ R = dist from flywheel center to magnet (m) </br>
 
 This equation was used to determine the torque produced in the flywheel at varying magnet distances and angular speeds. This torque can then be used to find the torque felt in the bike tire, as well as pedals, by applying the flywheel to tire gear ratio (43:2) or tire to pedal gear ratio (43:18), respectively. The following values were determined from the onset. 
 
-The bicycle’s wheel radius is a known constant of 0.33 m.  
+- The bicycle’s wheel radius is a known constant of 0.33 m.  
 
-The flywheel’s radius is a known constant of 0.1016 m. 
+- The flywheel’s radius is a known constant of 0.1016 m. 
 
-The flywheel’s thickness is a known constant of 0.0127 m. 
+- The flywheel’s thickness is a known constant of 0.0127 m. 
 
-The magnet’s diameter is a known constant of 0.0508 m. 
+- The magnet’s diameter is a known constant of 0.0508 m. 
 
-The material for the flywheel is aluminum because aluminum has the highest conductivity for the cost, allowing the resistance system to reach the necessary torque values. Therefore, this value is 3.77*107 (Ωm)-1. 
+- The material for the flywheel is aluminum because aluminum has the highest conductivity for the cost, allowing the resistance system to reach the necessary torque values. Therefore, this value is 3.77*107 (Ωm)-1. 
 
-The axis-to-pole value was set to be approximately 0.305 m. This distance was determined by the flywheel’s radius minus the maximum radius of the magnet options available. Torque is maximized when the magnets are at the edge of the flywheel. 
+- The axis-to-pole value was set to be approximately 0.305 m. This distance was determined by the flywheel’s radius minus the maximum radius of the magnet options available. Torque is maximized when the magnets are at the edge of the flywheel. 
 
 
-*Method of Data Analysis for Calculating Distance between Magnet and Flywheel (Air Gap):*
+#### Method of Data Analysis for Calculating Distance between Magnet and Flywheel (Air Gap):
 
-The magnetic field and angular speed can be considered the varying components in torque calculation. The angular speed will always change as rpm speed changes. The rpm speed will determine the field strength needed to produce certain torque states. The resistance system will vary the distance between 2 mm and 25 mm. 
+The magnetic field and angular speed can be considered the varying components in torque calculation.  The angular speed will determine the magnet distance (field strength at the flywheel) needed to produce certain torque states. The resistance system will vary the distance between 2 mm and 25 mm. 
 
 
 The linear motor will increase or decrease the distance from the aluminum flywheel to the magnet (air gap), resulting in an increase or decrease in the magnetic field the flywheel experiences. The distance to magnetic field relationship can be modeled using Equation 2 below, which was found within the magnet suppliers’ website [5].
@@ -201,11 +201,11 @@ The disk magnets utilized in the analysis are 2 inches in diameter and 0.125 inc
 
 Note: The calculated distance between the magnets and the flywheel required to control the resistance felt by the user will be calculated by the Ride Simulation System (RSS) processing subsystem and is an external input to the resistance subsystem.
 
-*Minimum Speed Analysis:*
+#### Minimum Speed Analysis: 
 
-Objective: To prove that the resistance system can provide and vary torque while the rider is traveling at a minimum speed of 116.35 rpm. 
+Objective: To prove that the resistance system can provide and vary torque while the rider is traveling at a minimum speed of 116.35 rpm.  
 
-The plots in Figures 4 and 5 are a representation of provided torque, based on the magnetic field between the magnet and flywheel using Equation 1.
+The plots in Figures 6 and 7 are a representation of provided torque, based on the magnetic field between the magnet and flywheel using Equation 1. 
 
 ![image](https://user-images.githubusercontent.com/114370750/205557898-94cd16c9-e4c5-4ce1-b1ab-4bc68f78ec05.png)
 
@@ -215,14 +215,12 @@ Figure 4. Torque on Rider at Minimum Speed.
 
 Figure 5. Torque Generated at Flywheel at Minimum Speed.
 
-The analysis validates that the resistance system can provide and vary torque braking torque while operating at the minimum speed of 116.35 rpm.
-
-For the minimum speed analysis, the flywheel speed was calculated at 2501.6. To calculate the flywheel speed, the bike tire rpm was multiplied by 21.5. The value of the 21.5 is the size ratio between the bike tire and the flywheel. The change in magnetic field when the distance (or air gap) between the magnets and flywheel varies is from 2 mm to 25 mm.
+The analysis validates that the resistance system can provide and vary torque braking torque while operating at the minimum speed of 116.35 rpm, with a distance range of 2-25mm between magnet and flywheel. For the minimum speed analysis, the flywheel speed was calculated at 2501.6. To calculate the flywheel speed, the bike tire rpm was multiplied by 21.5. The value of 21.5 is the gear ratio between the bike tire and the flywheel.  
 
 
-*Maximum Speed/Maximum Torque Analysis:*
+#### Maximum Speed/Maximum Torque Analysis:
 
-Objective: To prove that the torque produced at the stated maximum speed of the resistance system is less than 4748.94 N*m. 
+Objective: To prove that the resistance system can provide and vary torque while the rider is traveling at a maximum speed of 288 rpm.
 
 
 ![image](https://user-images.githubusercontent.com/114370750/205558420-97cdf8b7-f5d1-453d-b502-f23db541e869.png)
@@ -236,9 +234,9 @@ Figure 7. Torque Generated at Flywheel at Maximum Speed.
 
 
 
-As stated previously, the value of 4748.94 N*m represents an unsafe level of torque to the rider. Figures 6 and 7 show the torque generated by the resistance system while the rider is at the maximum speed of 288 rpm. The maximum torque that the resistance system can generate will occur at the maximum speed of the bike. This will result in the maximum torque of the resistance system, which is always equal to or less than 121.845 N*m. The increased torque generated is the result of an increase in eddy currents, which is represented in Equation 1 in the form of angular velocity (Rad/s). Analysis validates that the maximum torque that the resistance will provide to the rider is less than of 4748.94 N*m.
+Figures 8 and 9 show the torque generated by the resistance system while the rider is at the maximum speed of 288 rpm. The maximum torque that the resistance system can generate will occur at the maximum speed of the bike, with the closest distance between magnet and flywheel. We can see in Figure 8 that the maximum achieved torque is equal to 121.845 Nm. The increased torque generated is the result of an increase in eddy currents, which is represented in Equation 1 in the form of angular velocity (Rad/s). Analysis validates that the maximum torque that the resistance will provide to the rider is 121.845 Nm 
 
-*Resistance Resolution Analysis:*
+#### Resistance Resolution Analysis:
 
 •	The torque values were calculated by determining incline angle, denoted α, increases that resulted in 10 % increases – give or take 3-4 % – in resistance, given by sin(α), for a range of 0° to 40°. This was done in accordance with the previous specifications proposed for this project.
 
