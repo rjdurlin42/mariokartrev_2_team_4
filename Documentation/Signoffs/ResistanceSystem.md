@@ -7,61 +7,70 @@ Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage 
 
 ### Function of the Subsystem:
 
-The function of the resistance system is to control and vary the resistance felt by the user of the Mario Kart Bike, hereafter referred to as the bike. 
+The function of the resistance system is to control and vary the resistance felt by the user of the Mario Kart Bike, hereafter referred to as the bike.  
 
-•	The H-Bridge microcontroller receives a wireless input from the RRS processing subsystem in the form of a numbered value ranging from 0 to 85, which represents the resistance level to be experienced by the user.
+- The H-Bridge microcontroller receives a wireless input from the RRS processing subsystem in the form of a numbered value ranging from 0 to 85 (this value being calculated using current wheel speed as well as required torque) which represents the distance the magnets are set to. Each magnet distance correlates to a different resistance state.  
 
-•	The H-Bridge microcontroller takes an analog input from the linear actuator to determine its current position.
+- The H-Bridge microcontroller takes an analog input from the linear actuator to determine its current position. 
 
-•	An external digital input (via the Bluetooth module) is received to determine the calculated set point which the actuator should try to reach based on the received resistance level.
+- An external digital input (via the Bluetooth module) is received to determine the calculated set point which the actuator should try to reach based on the received resistance level. 
 
-•	The H-bridge supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion.
+- The H-bridge supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion. 
 
-•	The actuator is to vary the array of magnets perpendicular to the simulator’s rear conductive flywheel to generate eddy currents using the primary magnetic induction formed at the conductor [1], which result in the generation of braking torque opposed onto the flywheel.
+- The actuator is to vary the array of magnets perpendicular to the simulator’s rear conductive flywheel (not the current flywheel on the bike, a new flywheel with dimensions that fit our design more effectively) to generate eddy currents using the primary magnetic induction formed at the conductor [1], which result in the generation of braking torque opposed onto the flywheel. 
 
-•	The braking torque will transfer from the flywheel to the rear bike tire, and then from the rear bike tire to the rider’s pedals in the form of resistance.
+- The braking torque will transfer from the flywheel to the rear bike tire, and then from the rear bike tire to the rider’s pedals in the form of resistance. 
 
 
 
 ### Constraints:
 
-*Minimum Flywheel Speed:*
+#### Magnet Distance Range: 
 
-•	While the user is pedaling the bike at minimum speed, the resistance system must be capable of varying the torque, which will result in the varying of resistance experienced by the rider.
+- A distance range of 2-20mm from magnet to flywheel was selected, as these distances matched up well with the torque values that we want the resistance system to apply. 
 
-•	The specified minimum speed of 116.35 rpm is based on the American Council on Exercise's recommendation for the minimum speed required for moderate exercise on a bike [2].
+ 
 
-•	At speeds less than 116.35 rpm, the performance of the system will not adhere to any non-safety constraints.
+#### Minimum Flywheel Speed: 
 
-*Maximum Flywheel Speed:*
+- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum speed required for moderate exercise on a bike [2]. At speeds less than 116.35 rpm, the performance of the system will not adhere to any non-safety constraints.  
 
-•	The maximum speed of the bike will be set to 288 rpm (bike tire) to restrict users from any personal injury while riding. 
+ 
 
-•	The maximum speed is based on the pedaling rpm of 118, which is equal to that of an elite-level cyclist [3].
+#### Maximum Flywheel Speed: 
 
-•	The maximum speed was chosen due to it being a good limit for high speeds, as the normal user will not be able to pass it.
+- The maximum speed of the bike tire shall be considered 288 rpm, a value that comes from the average pedaling rpm (118 rpm) of an elite level cyclist [3] (Wheel to pedal gear ratio = 2.444, so wheel speed = 2.444*pedal speed). If the user passes this speed, no additional torque will be applied to avoid injury to rider. 
 
-•	When the user is traveling equal to or faster than 288 rpm, the resistance system will not apply any additional braking torque to the flywheel to avoid any injury to the rider.
+ 
 
-*Maximum Produced Torque:*
+#### Maximum Torque at Minimum Speed: 
 
-•	The potential resistance generated (braking torque) will increase as the bike tire speed increases, resulting in the need to restrict the maximum amount of resistance felt by the user. 
+- Using the value for tire minimum speed (116.35 rpm), we know that the maximum torque at this speed will be produced when the magnets are closest (2mm). From here, you can find magnetic field felt at the flywheel using equation 2. These values can be plugged into equation 1 to give the torque at the flywheel, which can then be converted to torque at the bike wheel/pedals using the gearing ratios between the components (this is explained in more detail later in the document). Using this logic, we find that the max torque at the minimum speed is 49.23 Nm. 
 
-•	Based on a study conducted by R C Haut [4], the force required to fracture the patella or femur is approximately 8.5 kN. 
+#### Minimum Torque at Minimum Speed: 
 
-•	Applying the gear ratio of the bike and the radius of its wheel, a torque of 4748.94 N*m would be required to injure a rider.
+- Using the above logic while setting magnet distance to the furthest value (20mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
 
-•	The maximum amount of resistance generated at 288 rpm (max bike speed) will be 71.5 N*m.
+  
 
-•	Given the resistance maximum speed, the maximum allowable torque experienced by the rider will be less than 71.5 N*m.
+#### Maximum Torque at Maximum Speed: 
 
-*Resistance Resolution:*
+- Using the above logic while setting magnet distance to the closest value and wheel speed to the maximum value (288 rpm), we find the maximum torque at maximum speed is 121.85 Nm. Safety always being a concern, this force is much lower than what is needed to break any leg bone in the average person. [4] [6]. 
 
-•	The resistance system will have a resolution of at least 85 states.
+  
 
-•	The controller will allow for 10-bit resolution or 1024 unique states.
+#### Minimum Torque at Maximum Speed: 
 
-Note: The minimum and maximum speeds referenced within this section have been converted to bike tire rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike is referred to in the units of bike tire revolutions per minute (rpm).
+- Using the above logic while setting magnet distance to the furthest value and wheel speed to the maximum value, we find the minimum torque at maximum speed is 0.004 Nm. 
+
+#### Resistance Resolution: 
+
+- The resistance system will have a resolution of at least 85 states. 
+
+- The controller will allow for 10-bit resolution or 1024 unique states. 
+
+
+Note: The minimum and maximum speeds referenced within this section have been converted to bike tire rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike is referred to in the units of bike tire revolutions per minute (rpm). 
 
 
 
@@ -82,7 +91,7 @@ Figure 3. Close Up of Linear Actuator, Flywheel, Magnet Holder with Different Vi
 
 
 
-*Aluminum Flywheel:* 
+### Aluminum Flywheel:
 
 •	An aluminum circle with a radius of 101.6 mm (4”) will be cut from a sheet of aluminum material. 
 
@@ -123,39 +132,32 @@ Figure 3. Close Up of Linear Actuator, Flywheel, Magnet Holder with Different Vi
 
 ### Analysis:
 
-*Method of Data Analysis for Calculating Torque:*
+#### Method of Data Analysis for Calculating Torque: 
+The resistance system is centered on the electromagnetic topic of eddy currents and Lenz’s Law. An equation found in a publication for the Centre for Intelligent Machines that models the function of an eddy current braking system was utilized to determine the attributes of the resistance system components [1]. Specifically, the torque achieved depends on angular speed, as well as magnet distance from the flywheel. The function is shown below. 
 
-The resistance system is centered on the electromagnetic topic of eddy currents and Lenz’s Law. An equation found in a publication for the Centre for Intelligent Machines that models the function of an eddy current braking system was utilized to determine the attributes of the resistance system components [1]. Specifically, the torque achieved depends on angular speed, as well as magnet distance from the flywheel. Specifically, the function used is shown below.
+ ![image](https://user-images.githubusercontent.com/100988295/205823414-769b3940-8802-42f7-8f2f-d8c696565979.png)
+</br> where, 
 
-![image](https://user-images.githubusercontent.com/114370750/205557097-92ca79bb-3727-4ee3-8053-55da6d2d6c10.png)
+σ = Conductivity of flywheel material  (Ω−1m−1) </br>
+D=magnet diameter (meters) </br>
+d = disc (flywheel) thickness (meters) </br>
+B = magnet field strength (Tesla) </br>
+R = dist from flywheel center to magnet (m) </br> 
+θ = angular velocity (rads/s) </br>
 
-where,
+This equation was used to determine the torque produced in the flywheel at varying magnet distances and angular speeds. This torque can then be used to find the torque felt in the bike tire, as well as pedals, by applying the flywheel to tire gear ratio (43:2) or tire to pedal gear ratio (43:18), respectively. The following values were determined from the onset. 
 
- σ = Conductivity of flywheel material  (Ω^(-1) m^(-1) )
- 
-D=magnet diameter (meters)
+The bicycle’s wheel radius is a known constant of 0.33 m.  
 
-d = disc (flywheel) thickness (meters)
+The flywheel’s radius is a known constant of 0.1016 m. 
 
-B = magnet field strength (Tesla)
+The flywheel’s thickness is a known constant of 0.0127 m. 
 
-R = dist from flywheel center to magnet (m) 
+The magnet’s diameter is a known constant of 0.0508 m. 
 
-θ = angular velocity (rads/s)
+The material for the flywheel is aluminum because aluminum has the highest conductivity for the cost, allowing the resistance system to reach the necessary torque values. Therefore, this value is 3.77*107 (Ωm)-1. 
 
-This equation was used to determine the torque produced in the flywheel at varying magnet distances and angular speeds. The following values were determined from the onset.
-
-•	The bicycle’s wheel radius is a known constant of 0.33 m. 
-
-•	The flywheel’s radius is a known constant of 0.1016 m.
-
-•	The flywheel’s thickness is a known constant of 0.0127 m.
-
-•	The magnet’s diameter is a known constant of 0.0508 m.
-
-•	The material for the flywheel is aluminum because aluminum has the highest conductivity for the cost, allowing the resistance system to reach the necessary torque values. Therefore, this value is 3.77*107 (Ωm)-1.
-
-•	The axis-to-pole value was set to be approximately 0.305 m. This distance was determined by the flywheel’s radius minus the maximum radius of the magnet options available. Torque is maximized when the magnets are at the edge of the flywheel.
+The axis-to-pole value was set to be approximately 0.305 m. This distance was determined by the flywheel’s radius minus the maximum radius of the magnet options available. Torque is maximized when the magnets are at the edge of the flywheel. 
 
 
 *Method of Data Analysis for Calculating Distance between Magnet and Flywheel (Air Gap):*
