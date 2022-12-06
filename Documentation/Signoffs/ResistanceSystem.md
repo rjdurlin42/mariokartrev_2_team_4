@@ -39,7 +39,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Maximum Tire Speed: 
 
-- The maximum speed of the bike tire shall be considered 288 rpm, a value that comes from the average pedaling rpm (118 rpm) of an elite level cyclist [3] (Wheel to pedal gear ratio = 2.444, so wheel speed = 2.444*pedal speed). This correlates to 2501.52 rpm in the flywheel. If the user passes this speed, no additional torque will be applied to avoid injury to rider. 
+- The maximum speed of the bike tire shall be considered 288 rpm, a value that comes from the average pedaling rpm (118 rpm) of an elite level cyclist [3] (Wheel to pedal gear ratio = 2.444, so wheel speed = 2.444*pedal speed). This correlates to 6192 rpm in the flywheel. If the user passes this speed, no additional torque will be applied to avoid injury to rider. 
 
  
 
