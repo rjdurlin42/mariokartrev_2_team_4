@@ -9,11 +9,9 @@ Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage 
 
 The function of the resistance system is to control and vary the resistance felt by the user of the Mario Kart Bike, hereafter referred to as the bike.  
 
-- The H-Bridge microcontroller receives a wireless input from the RRS processing subsystem in the form of a numbered value ranging from 0 to 85 (this value being calculated using current wheel speed as well as required torque) which represents the distance the magnets are set to. Each magnet distance correlates to a different resistance state.  
+- The H-Bridge microcontroller takes an analog input from the linear actuator to determine its current position with 10-bit precision. 
 
-- The H-Bridge microcontroller takes an analog input from the linear actuator to determine its current position. 
-
-- An external digital input (via the Bluetooth module) is received to determine the calculated set point which the actuator should try to reach based on the received resistance level. 
+- An external digital input (via the Bluetooth module) is received to determine the calculated set point which the actuator should extend to. This recieved value corresponds to a resistance state, of which there are 1024, since the limiting factor is the 10-bit precision of the controller.
 
 - The H-bridge supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion. 
 
