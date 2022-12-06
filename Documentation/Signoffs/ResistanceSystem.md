@@ -43,23 +43,23 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Maximum Torque at Minimum Speed: 
 
-- Using the value for tire minimum speed (116.35 rpm), we know that the maximum torque at this speed will be produced when the magnets are closest (2mm). From here, you can find magnetic field felt at the flywheel using equation 2. These values can be plugged into equation 1 to give the torque at the flywheel, which can then be converted to torque at the bike wheel/pedals using the gearing ratios between the components (this is explained in more detail later in the document). Using this logic, we find that the max torque at the minimum speed is 49.23 Nm. 
+- Using the value for flywheel minimum speed (2501.52 rpm), we know that the maximum torque at this speed will be produced when the magnets are closest (2mm). From here, you can find magnetic field felt at the flywheel using equation 2. These values can be plugged into equation 1 to give the torque at the flywheel, which can then be converted to torque at the bike wheel/pedals using the gearing ratios between the components (this is explained in more detail later in the document). Using this logic, we find that the max torque at the pedals, at the minimum speed, is 49.23 Nm. 
 
 #### Minimum Torque at Minimum Speed: 
 
-- Using the above logic while setting magnet distance to the furthest value (25mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
+- Using the above logic while setting magnet distance to the furthest value (25mm) and flywheel speed to the minimum value, we find the minimum torque at the pedals, at minimum speed, is 0.002 Nm. 
 
   
 
 #### Maximum Torque at Maximum Speed: 
 
-- Using the above logic while setting magnet distance to the closest value and wheel speed to the maximum value (288 rpm), we find the maximum torque at maximum speed is 121.85 Nm. Safety always being a concern, this force is much lower than what is needed to break any leg bone in the average person. [4] [6]. 
+- Using the above logic while setting magnet distance to the closest value and flywheel speed to the maximum value (6192 rpm), we find the maximum torque at the pedals, at maximum speed, is 121.85 Nm. Safety always being a concern, this force is much lower than what is needed to break any leg bone in the average person. [4] [6]. 
 
   
 
 #### Minimum Torque at Maximum Speed: 
 
-- Using the above logic while setting magnet distance to the furthest value and wheel speed to the maximum value, we find the minimum torque at maximum speed is 0.004 Nm. 
+- Using the above logic while setting magnet distance to the furthest value and flywheel speed to the maximum value, we find the minimum torque at the pedals, at maximum speed, is 0.004 Nm. 
 
 #### Resistance Resolution: 
 
@@ -68,7 +68,7 @@ The function of the resistance system is to control and vary the resistance felt
 - The controller will allow for 10-bit resolution or 1024 unique states. 
 
 
-Note: The minimum and maximum speeds referenced within this section have been converted to bike tire rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike is referred to in the units of bike tire revolutions per minute (rpm). 
+Note: The minimum and maximum speeds referenced within this section have been converted to rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike tire is referred to in the units of bike tire revolutions per minute (rpm). 
 
 
 
