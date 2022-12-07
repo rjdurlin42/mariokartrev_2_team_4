@@ -47,7 +47,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Minimum Torque at Minimum Speed: 
 
-- Using the above logic while setting magnet distance to the furthest value (20mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
+- Using the above logic while setting magnet distance to the furthest value (25mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
 
   
 
