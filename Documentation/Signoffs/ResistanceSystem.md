@@ -9,11 +9,11 @@ Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage 
 
 The function of the resistance system is to control and vary the resistance felt by the user of the Mario Kart Bike, hereafter referred to as the bike.  
 
-- The monitors the linear actuator feedback voltage to determine its current position with 10-bit precision, which corresponds to the distance of the magnet array from the flywheel. 
+- The controller monitors the linear actuator feedback voltage to determine its current position with 10-bit precision, which corresponds to the distance of the magnet array from the flywheel. 
 
-- An external digital input (via the Bluetooth module) is received from the ride replay subsystem to determine the calculated set point which the actuator should extend to. This recieved value corresponds to a resistance state, of which there are 1024, since the limiting factor is the 10-bit precision of the controller.
+- An external digital input (via the Bluetooth module) is received from the ride replay subsystem to determine the calculated set point which the actuator should extend to. This recieved value corresponds to a resistance state, of which there are 511; the limiting factors being the 10-bit precision of the controller and the usable portion of the actuator's range.
 
-- The controller supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion. 
+- The controller supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion.
 
 - The actuator is to vary the array of magnets perpendicular to the simulator’s rear conductive flywheel (not the current flywheel on the bike, a new flywheel with dimensions that fit our design more effectively) to generate eddy currents using the primary magnetic induction formed at the conductor [1], which result in the generation of braking torque opposed onto the flywheel. 
 
@@ -31,7 +31,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Minimum Tire Speed: 
 
-- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum wheel speed recommended for moderate exercise on a bike [2]. This correlates to 2501.52 rpm in the flywheel (conversion is explained in later sections). At speeds less than 116.35 rpm, the torque placed on the rider will not be specified to reach any minimum value, and the resolution of the resistance changes within this operating region is not specified.
+- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum speed required for moderate exercise on a bike [2]. This correlates to 2501.52 rpm in the flywheel (conversion is explained in later sections). At speeds less than 116.35 rpm, the torque placed on the rider will not be specified to reach any minimum value, and the resulution of the resistance changes within this operating region is not specified.
 
  
 
@@ -47,7 +47,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Minimum Torque at Minimum Speed: 
 
-- Using the above logic while setting magnet distance to the furthest value (25mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
+- Using the above logic while setting magnet distance to the furthest value (20mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
 
   
 
