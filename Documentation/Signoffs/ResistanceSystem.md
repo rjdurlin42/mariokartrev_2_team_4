@@ -9,15 +9,15 @@ Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage 
 
 The function of the resistance system is to control and vary the resistance felt by the user of the Mario Kart Bike, hereafter referred to as the bike.  
 
-- The H-Bridge microcontroller takes an analog input from the linear actuator to determine its current position with 10-bit precision. 
+- The monitors the linear actuator feedback voltage to determine its current position with 10-bit precision, which corresponds to the distance of the magnet array from the flywheel. 
 
-- An external digital input (via the Bluetooth module) is received to determine the calculated set point which the actuator should extend to. This recieved value corresponds to a resistance state, of which there are 1024, since the limiting factor is the 10-bit precision of the controller.
+- An external digital input (via the Bluetooth module) is received from the ride replay subsystem to determine the calculated set point which the actuator should extend to. This recieved value corresponds to a resistance state, of which there are 1024, since the limiting factor is the 10-bit precision of the controller.
 
-- The H-bridge supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion. 
+- The controller supplies either a positive or negative voltage to the linear actuator to control the direction of the actuator's motion. 
 
 - The actuator is to vary the array of magnets perpendicular to the simulator’s rear conductive flywheel (not the current flywheel on the bike, a new flywheel with dimensions that fit our design more effectively) to generate eddy currents using the primary magnetic induction formed at the conductor [1], which result in the generation of braking torque opposed onto the flywheel. 
 
-- The braking torque will transfer from the flywheel to the rear bike tire, and then from the rear bike tire to the rider’s pedals in the form of resistance. 
+- The braking torque will transfer from the flywheel to the rear bike tire, and then from the rear bike tire to the rider’s pedals, which will act to resist the pedaling of the rider. 
 
 
 
@@ -25,7 +25,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Magnet Distance Range: 
 
-- A distance range of 2-25mm from magnet to flywheel was selected, as these distances matched up well with the torque values that we want the resistance system to apply. 
+- A distance range of 2-20mm from magnet to flywheel was selected, as these distances matched up well with the torque values that we want the resistance system to apply. 
 
  
 
@@ -37,29 +37,29 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Maximum Tire Speed: 
 
-- The maximum speed of the bike tire shall be considered 288 rpm, a value that comes from the average pedaling rpm (118 rpm) of an elite level cyclist [3] (Wheel to pedal gear ratio = 2.444, so wheel speed = 2.444*pedal speed). This correlates to 6192 rpm in the flywheel. If the user passes this speed, no additional torque will be applied to avoid injury to rider. 
+- The maximum speed of the bike tire shall be considered 288 rpm, a value that comes from the average pedaling rpm (118 rpm) of an elite level cyclist [3] (Wheel to pedal gear ratio = 2.444, so wheel speed = 2.444*pedal speed). This correlates to 6192 rpm in the flywheel due to the the rotational velocity ratio of 43:2 between the flywheel and the wheel. If the user passes this speed, no additional torque will be applied to avoid injury to rider. 
 
  
 
 #### Maximum Torque at Minimum Speed: 
 
-- Using the value for flywheel minimum speed (2501.52 rpm), we know that the maximum torque at this speed will be produced when the magnets are closest (2mm). From here, you can find magnetic field felt at the flywheel using equation 2. These values can be plugged into equation 1 to give the torque at the flywheel, which can then be converted to torque at the bike wheel/pedals using the gearing ratios between the components (this is explained in more detail later in the document). Using this logic, we find that the max torque at the pedals, at the minimum speed, is 49.23 Nm. 
+- Using the value for tire minimum speed (116.35 rpm), we know that the maximum torque at this speed will be produced when the magnets are closest (2mm). From here, you can find magnetic field felt at the flywheel using equation 2. These values can be plugged into equation 1 to give the torque at the flywheel, which can then be converted to torque at the bike wheel/pedals using the gearing ratios between the components (this is explained in more detail later in the document). Using this logic, we find that the max torque at the minimum speed is 49.23 Nm. 
 
 #### Minimum Torque at Minimum Speed: 
 
-- Using the above logic while setting magnet distance to the furthest value (25mm) and flywheel speed to the minimum value, we find the minimum torque at the pedals, at minimum speed, is 0.002 Nm. 
+- Using the above logic while setting magnet distance to the furthest value (20mm) and wheel speed to the minimum value, we find the minimum torque at minimum speed is 0.002 Nm. 
 
   
 
 #### Maximum Torque at Maximum Speed: 
 
-- Using the above logic while setting magnet distance to the closest value and flywheel speed to the maximum value (6192 rpm), we find the maximum torque at the pedals, at maximum speed, is 121.85 Nm. Safety always being a concern, this force is much lower than what is needed to break any leg bone in the average person. [4] [6]. 
+- Using the above logic while setting magnet distance to the closest value and wheel speed to the maximum value (288 rpm), we find the maximum torque at maximum speed is 121.85 Nm. Safety always being a concern, this force is much lower than what is needed to break any leg bone in the average person. [4] [6]. 
 
   
 
 #### Minimum Torque at Maximum Speed: 
 
-- Using the above logic while setting magnet distance to the furthest value and flywheel speed to the maximum value, we find the minimum torque at the pedals, at maximum speed, is 0.004 Nm. 
+- Using the above logic while setting magnet distance to the furthest value and wheel speed to the maximum value, we find the minimum torque at maximum speed is 0.004 Nm. 
 
 #### Resistance Resolution: 
 
@@ -68,7 +68,7 @@ The function of the resistance system is to control and vary the resistance felt
 - The controller will allow for 10-bit resolution or 1024 unique states. 
 
 
-Note: The minimum and maximum speeds referenced within this section have been converted to rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike tire is referred to in the units of bike tire revolutions per minute (rpm). 
+Note: The minimum and maximum speeds referenced within this section have been converted to bike tire rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike is referred to in the units of bike tire revolutions per minute (rpm). 
 
 
 
