@@ -1,3 +1,3 @@
 # Electrical
 
-This folder holds wiring and general electricity schematics.
+This folder holds wiring and general electrictrical schematics.
