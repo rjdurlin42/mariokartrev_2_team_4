@@ -31,7 +31,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 #### Minimum Tire Speed: 
 
-- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum speed required for moderate exercise on a bike [2]. This correlates to 2501.52 rpm in the flywheel (conversion is explained in later sections). At speeds less than 116.35 rpm, the torque placed on the rider will not be specified to reach any minimum value, and the resulution of the resistance changes within this operating region is not specified.
+- The minimum speed of the bike tire shall be considered 116.35 rpm. This value is based on the American Council on Exercise's recommendation for the minimum wheel speed recommended for moderate exercise on a bike [2]. This correlates to 2501.52 rpm in the flywheel (conversion is explained in later sections). At speeds less than 116.35 rpm, the torque placed on the rider will not be specified to reach any minimum value, and the resulution of the resistance changes within this operating region is not specified.
 
  
 
