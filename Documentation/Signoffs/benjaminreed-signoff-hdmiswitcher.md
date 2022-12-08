@@ -20,7 +20,8 @@ _Resistance Rating:_ Though a small component, it should also be addressed. The 
 
 _Buildable Schematic:_
 
-![](RackMultipart20221122-1-6zil3d_html_54e572438dbd2564.png)
+![HDMI-Schematic](https://user-images.githubusercontent.com/100803313/206549740-a03c092f-6ee6-4aff-a567-be6022657830.jpeg)
+
 
 _Analysis:_
 
