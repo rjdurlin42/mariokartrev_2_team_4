@@ -15,15 +15,15 @@ Please note: the scope of this signoff extends only to the control cicuit itself
 
 ### Constraints:
 
-#### Actuator Duty Cycle:
+#### Actuator Duty Cycle
 
 The duty cycle of the utilized linear actuator is 25 %. This value must not be exeeded during normal operation.
 
-#### Actuator Driving Voltage:
+#### Actuator Driving Voltage
 
 The utilized actuator is rated for operation at 12 VDC. The control circuit must be capable of providing this volatage to the actuator.
 
-#### Current Capability:
+#### Current Capability
 
 The utilized actuator draws a stall current of 7 A, and has a nominal current draw from 1.1 A to 3.4 A. The control circuit must be capable of providing this current to the linear actuator without undergoing thermal overload. In addition, the utilized power connector must be capable of handling the total current demand.
 
@@ -38,6 +38,14 @@ In the course of operation, particularly when the motor comes to a halt after ru
 #### Mountability
 
 The PCB layout must account for the need to mount the circuit within its housing. To meet this constraint, screw holes were included in the PCB layout.
+
+#### Stability
+
+The device must operate without becoming unstable. To meet this constraint, the Arduino can be programmed to provide PID compensation [1]. Pololu provides a configuration file for controlling their actuators which contains PID constants usable for controlling the device in a stable manner [2], so the work required to tune the controller will likely be minimal.
+
+#### Resolution
+
+The device must be capable of providing at least 85 unique states, or lengths of extension.
 
 ### Schematic and PCB Layout
 
@@ -60,7 +68,7 @@ Table 1: analysis of selected components and constraint-based design considerati
 |     Back-EMF Protection Diodes (D1, D2, D3, D4)                                             |     These diodes are Schottky diodes with fast switching time   and very low forward voltage. Compared to the body diodes of the utilized   transistors (Vf ~ 1 V), these diodes provide a forward voltage of   equal to or less than 0.5 V, effectively bypassing the transistors during   reverse-conduction. These diodes are specified for use in free-wheeling   applications in the datasheet and are well-suited to handle the large   momentary current spikes produced by back-EMF, given that they are rated to   handle 100 A peak current.                                                                                                         |
 |     Resistors (All)                                                                         |     All resistors in this circuit were subject to only very   small power dissipations: less than a milliwatt in all cases. As such, small,   common ¼ W resistors were selected. Gate resistors were selected to be   surface mount chip-resistors to minimize space usage. The gate driver   resistors for the P-Ch FETs are larger than those for the N-Ch FETs, as   switching speed is not a priority for the P-Ch FETs. The PWM will be done on   the N-Ch FETs, and it is vital that the voltage drop across the gate driver IC   be minimized to ensure complete biasing at steady-state.                                                              |
 |     Pre-Biased Dual NPN IC (U1)                                                             |     This component is used to bias the gates of the P-Ch FETs,   as turning these transistors off will require a voltage of 12 V – a voltage   not achievable by using the microcontroller alone. This component was   selected because it combines the utility of four resistors and two BJTs into a   single package.                                                                                                                                                                                                                                                                                                                                        |
-|     Arduino Nano (A1)                                                                       |     This microcontroller module was selected because it is   already in our stock. It provides an on-board voltage regulator capable of   regulating to 3.3 V and to 5 V. The 3.3 V supply is ideal for powering the   selected wireless module, while the 5 V supply is ideal for providing a   logic-voltage reference to the linear actuator feedback.                                                                                                                                                                                                                                                                                                      |
+|     Arduino Nano (A1)                                                                       |     This microcontroller module was selected because it is   already in our stock. It provides an on-board voltage regulator capable of   regulating to 3.3 V and to 5 V. The 3.3 V supply is ideal for powering the   selected wireless module, while the 5 V supply is ideal for providing a   logic-voltage reference to the linear actuator feedback.    In addition, it has a 10-bit ADC. Since only 49.96 % of the linear actuator's range is actually needed practically, the effective resolution is 511, which which is greater than 85, and corresponds to a distance precision of 48.9 micrometers.                                                 |
 |     Bluetooth Module                                                                        |     The HC06 module is an incredibly cheap Bluetooth module.   It should be capable of providing the required range, as it has a maximum   range of about 10 m. In addition to being inexpensive, this module also has   the benefit of being very easily connected; it requires only four pins to be   connected to the external circuit.                                                                                                                                                                                                                                                                                                                     |
 |     Power Connector                                                                         |     The component handles the power input to the circuit,   which is then fed into the linear actuator. As such, it must be rated to   handle slightly over 7 amperes of current. An XT30 connector was selected, as this   type is rated for 15 A which is well over the expected current demand. It   does not allow the user to connect the polarity incorrectly. In addition, the   mating connector is commonly available in a form that lends itself to the   easy fabrication of cables of a custom length without any special equipment.              
 
