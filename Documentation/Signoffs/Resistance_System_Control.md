@@ -37,11 +37,11 @@ In the course of operation, particularly when the motor comes to a halt after ru
 
 #### Mountability
 
-The PCB layout must account for the need to mount the circuit within its housing. To meet this constraint, screw holes were included in the PCB layout.
+The PCB layout must account for the need to mount the circuit within its housing.
 
 #### Stability
 
-The device must operate without becoming unstable. To meet this constraint, the Arduino can be programmed to provide PID compensation [1]. Pololu provides a configuration file for controlling their actuators which contains PID constants usable for controlling the device in a stable manner [2], so the work required to tune the controller will likely be minimal.
+The device must operate without becoming unstable.
 
 #### Resolution
 
@@ -71,6 +71,12 @@ Table 1: analysis of selected components and constraint-based design considerati
 |     Arduino Nano (A1)                                                                       |     This microcontroller module was selected because it is   already in our stock. It provides an on-board voltage regulator capable of   regulating to 3.3 V and to 5 V. The 3.3 V supply is ideal for powering the   selected wireless module, while the 5 V supply is ideal for providing a   logic-voltage reference to the linear actuator feedback.    In addition, it has a 10-bit ADC. Since only 49.96 % of the linear actuator's range is actually needed practically, the effective resolution is 511, which is greater than 85, and corresponds to a distance precision of 48.9 micrometers.                                                       |
 |     Bluetooth Module                                                                        |     The HC06 module is an incredibly cheap Bluetooth module.   It should be capable of providing the required range, as it has a maximum   range of about 10 m. In addition to being inexpensive, this module also has   the benefit of being very easily connected; it requires only four pins to be   connected to the external circuit.                                                                                                                                                                                                                                                                                                                     |
 |     Power Connector                                                                         |     The component handles the power input to the circuit,   which is then fed into the linear actuator. As such, it must be rated to   handle slightly over 7 amperes of current. An XT30 connector was selected, as this   type is rated for 15 A which is well over the expected current demand. It   does not allow the user to connect the polarity incorrectly. In addition, the   mating connector is commonly available in a form that lends itself to the   easy fabrication of cables of a custom length without any special equipment.              
+
+To meet the mountability constraint, screw holes have been included in the PCB layout.
+
+To meet the stability constraint, the Arduino microcontroller will be configured as a PID controller. A library exists to faciliate programming this functionality [1]. Pololu provides a configuration file for controlling their actuators which contains PID constants usable for controlling the device in a stable manner [2], so the work required to tune the controller will likely be minimal.
+
+As analyzed above, the expected positioning precision is 48.9 micrometers, resulting from a positioning resolution of 511 unique positions, and a practically-usable actuator length of 25 mm.
 
 #### Abbreviation Definitions:
 
