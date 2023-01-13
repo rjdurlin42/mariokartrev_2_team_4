@@ -67,7 +67,7 @@ The function of the resistance system is to control and vary the resistance felt
 
 - The controller will allow for 10-bit resolution or 1024 unique states. 
 
-The linear actuator used has a length of 1.97". In practical usage, we would use 49.96 % of this range, yielding an effective number of states of 511.
+The linear actuator used has a length of 1.97". In practical usage, we would use 45.97 % of this range, yielding an effective number of states of 470.
 
 Note: The minimum and maximum speeds referenced within this section have been converted to bike tire rpm, so the units of measure are consistent throughout the report. The pedaling speed sourced from the reference was multiplied by the gear ratio from the front to rear sprocket, which was 2.44. The speed of the bike is referred to in the units of bike tire revolutions per minute (rpm). 
 
