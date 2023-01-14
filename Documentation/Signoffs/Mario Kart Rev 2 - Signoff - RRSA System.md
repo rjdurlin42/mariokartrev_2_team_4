@@ -7,7 +7,7 @@ The function of the ride data acquisition system is to collect the data necessar
 
 ### Constraints
 
-**Measurement accuracy:** it is imperative that the device record the altitude of the rider with a high degree of precision. If the simulated resistance is to be within 10 % of the real-world resistance as previously constrained, the combined inaccuracy of the pressure sensor, the speed sensor, and the resistance system must be below 10 %. Let the error allowance for the determination of the energy expended during exercise be 1 %. For a bike and rider of 91 kg, an altitude gain of 4.67 m results in an energy expenditure of 1 kCal since E = mgh. Accordingly, the required precision to achieve +/- 1 % accuracy at a granularity of 1 kCal is +/- 4.67 cm. The speed must also be sampled at a rate which allows reasonably fast response time. Since the use of single-magnet speed sensing is already proven as common practice for bike computers, and all potential energy calculations can be performed with only the measured altitude over time, the main constraint for speed sensing is one of durability. The reed switch used must nominally tolerate at least 1000 miles of operation. 
+**Measurement accuracy:** it is imperative that the device record the altitude of the rider with a high degree of precision. If the simulated resistance is to be within 10 % of the real-world resistance as previously constrained, the combined inaccuracy of the pressure sensor, the speed sensor, and the resistance system must be below 10 %. Let the error allowance for the determination of the energy expended during exercise be 1 %. For a bike and rider of 91 kg, an altitude gain of 4.67 m results in an energy expenditure of 1 kCal since E = mgh. Accordingly, the required precision to achieve +/- 1 % accuracy at a granularity of 1 kCal is +/- 4.67 cm. The speed must also be sampled at a rate which allows reasonably fast response time. Since the use of single-magnet speed sensing is already proven as common practice for bike computers, and all potential energy calculations can be performed with only the measured altitude over time, the main constraint for speed sensing is one of durability. The reed switch used must nominally tolerate at least 1000 miles of operation.
 
 **Video recording:** the resolution is to be 720p, and the frame rate is to be at least 30 fps. 
 
@@ -32,15 +32,15 @@ Figure 3: a drawing illustrating the front and back panels. The first item (from
 
 ### Analysis:
 
-The Raspberry Pi Zero 2W was found to draw 580 mA (2.9 W) when stressed [1]. The power supply unit is specified to have a nominal efficiency of 90 %. The battery used has an energy storage capacity of 24.42 Wh. Accordingly, the effective energy available to the unit is 21.98 Wh. Accounting for the energy usage of the Raspberry Pi, the other modules may draw up to 4.426 W and still satisfy the given specification. Power requirements for the camera were not given; however, it is reasonable to assume that it will draw well below that, and the power requirements of the reed switch and pressure sensor are negligible in comparison. 
+The Raspberry Pi Zero 2W was found to draw 580 mA (2.9 W) when stressed [1]. The Raspberry Pi Camera draws a maximum of 250 mA [2] according to a forum post by the Principle Software Engineer of the Raspberry Pi Foundation. The internal resistance of the Raspberry Pi's internal GPIO pullup resistor ranges from 33-73 kOhms [3], and with a 3.3 V logic level, the maximum possible current draw owing to the closing of the reed switch is 0.1 mA (calculated by dividing 3.3 V by the lowest specified resistance). The DPS310 altitude sensor requires a maximum current of 0.345 mA [4]. The LEDs in the switches are specified to have a current draw of approximately 20 mA each [5]. The power supply unit is specified to have a nominal efficiency of 90 %. The battery used has an energy storage capacity of 24.42 Wh. Accordingly, the effective energy available to the unit is 21.98 Wh. The required power input to the device may be calculated by multiplying the sum of the above currents with 5 V, since the voltage regulation on the Raspberry Pi board is performed using a linear regulator (meaning the current is constant). This yields a maximum power draw of 4.352 W, corresponding to a battery life of 5.050 hours, which meets the prior specification.
 
 The utilized pressure sensor is specified to provide a measurement precision of +/- 2 cm, so it satisfies the prior specification. In addition, it provides on-board measurement averaging and low-pass filtering to reduce noise from the measurement. 
 
-Hammlin specifies that their reed switches can last over 200 million actuations under ideal conditions [2]. The rated current for these reed switches is 0.5 A, which is well above what would be required to provide a signal voltage to the computer. Assuming a 200-million-actuation life and a 26" bike tire, the device would last for 257,732 miles, satisfying the aforementioned specification. 
+Hammlin specifies that their reed switches can last over 200 million actuations under ideal conditions [6]. The rated current for these reed switches is 0.5 A, which is well above what would be required to provide a signal voltage to the computer. Assuming a 200-million-actuation life and a 26" bike tire, the device would last for 257,732 miles, satisfying the aforementioned specification. 
 
 The selected camera is capable of recording video in HD, 60 fps (or below) and thus satisfies the previously mentioned specification. 
 
-To meet the storage requirements, a suitable SD card will be selected. A 128 GB SD card is a choice intended to be a reasonable starting point, as a typical 720p video has a bitrate of around 6.5 MB/s [3]. Accordingly, such an SD card would be able to store 3 hours of video as specified with 57.8 GB left over for the OS, programs, and sensor data. This SD card is compliant with the V10 standard, meaning that it is has sufficient bandwidth to record full HD video. 
+To meet the storage requirements, a suitable SD card will be selected. A 128 GB SD card is a choice intended to be a reasonable starting point, as a typical 720p video has a bitrate of around 6.5 MB/s [7]. Accordingly, such an SD card would be able to store 3 hours of video as specified with 57.8 GB left over for the OS, programs, and sensor data. This SD card is compliant with the V10 standard, meaning that it is has sufficient bandwidth to record full HD video. 
 
 The interface is a simple, unobtrusive, two button one with a light integrated into each button. One button turns the unit on or off, and the light for this button lights up when the unit is powered. The other button acts to activate or stop the recording. When this button is pressed, recording begins, and the light lights up. When the button is pressed again, recording stops, and the light turns off when the Raspberry Pi enters low power mode. This light also flashes when data transfer is in progress. Additionally, the power supply module provides a visual indication of the charge status, lighting up green when the battery is fully charged, and a red warning light when the charge is low. 
 
@@ -79,8 +79,16 @@ By gluing the boards down inside the case, they can be solidly anchored to the i
 
 ### References
 
-[1] L. Pounder, “Raspberry Pi Zero 2 W review: The long awaited sequel,” tomshardware.com, 28-Oct-2021. [Online]. Available: https://www.tomshardware.com/reviews/raspberry-pi-zero-2-w-review. [Accessed: 20-Nov-2022]. 
+[1] L. Pounder, “Raspberry Pi Zero 2 W review: The long awaited sequel,” tomshardware.com, 28-Oct-2021. [Online]. Available: https://www.tomshardware.com/reviews/raspberry-pi-zero-2-w-review. [Accessed: 20-Nov-2022].
 
-[2] “Hamlin Reed Switch Catalog,” DigiKey. [Online]. Available: https://www.digikey.com/en/pdf/h/hamlin/hamlin-reed-switch-catalog. [Accessed: 30-Nov-2022]. 
+[2] jamesh, “Re: Raspberry Pi - camera, reducing power consumption,” Raspberry Pi Forums - Index page, 30-Jul-2011. [Online]. Available: https://forums.raspberrypi.com/viewtopic.php?t=152864. [Accessed: 13-Jan-2023].
 
-[3] “A beginner’s guide to bit rate,” adobe.com. [Online]. Available: https://www.adobe.com/creativecloud/video/discover/bit-rate.html. [Accessed: 22-Nov-2022]. 
+[3] A. Scheller, K. Rijnieks, and A. Allan, “Alternative Functions,” Raspberry Pi Documentation. [Online]. Available: https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#alternative-functions. [Accessed: 13-Jan-2023].
+
+[4] “DPS310,” infineon.com, 15-Oct-2020. [Online]. Available: https://www.infineon.com/dgdl/Infineon-DPS310-DataSheet-v01_02-EN.pdf?fileId=5546d462576f34750157750826c42242. [Accessed: 14-Oct-2023].
+
+[5] “Rugged metal on/off switch with Red Led Ring: Technical Details,” adafruit.com. [Online]. Available: https://www.adafruit.com/product/916#technical-details. [Accessed: 13-Jan-2023].
+
+[6] “Hamlin Reed Switch Catalog,” DigiKey. [Online]. Available: https://www.digikey.com/en/pdf/h/hamlin/hamlin-reed-switch-catalog. [Accessed: 30-Nov-2022].
+
+[7] “A beginner’s guide to bit rate,” adobe.com. [Online]. Available: https://www.adobe.com/creativecloud/video/discover/bit-rate.html. [Accessed: 22-Nov-2022].
