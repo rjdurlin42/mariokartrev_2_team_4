@@ -19,6 +19,8 @@ The function of the ride data acquisition system is to collect the data necessar
 
 **Durability:** the device must be shielded from outside weather conditions, and all component boards must be attached firmly enough to prevent them from being knocked around during riding.
 
+**Mountability:** The device must be readily mountable on any standard mountain bike. Additionally, the angle of the device when mounted must produce a satisfactory filming angle for aquisition of optical data. Also, it must be possible to quickly remove/remount the device from/to the bike without any tools, so that the device can be moved to a different location to be charged or to transfer data without imposing any hassle on the user.
+
 ### Schematic:
 
 ![RRSA Schematic](https://user-images.githubusercontent.com/118228609/203230366-a49b449b-943c-4f00-ad5b-cdeb976bec66.png)
@@ -45,6 +47,8 @@ To meet the storage requirements, a suitable SD card will be selected. A 128 GB 
 The interface is a simple, unobtrusive, two button one with a light integrated into each button. One button turns the unit on or off, and the light for this button lights up when the unit is powered. The other button acts to activate or stop the recording. When this button is pressed, recording begins, and the light lights up. When the button is pressed again, recording stops, and the light turns off when the Raspberry Pi enters low power mode. This light also flashes when data transfer is in progress.
 
 By gluing the boards down inside the case, they can be solidly anchored to the inside of the box. In addition, all holes, except what is necessary to allow airflow to the pressure sensor may be coated with glue to waterproof them.
+
+To meet the mountability constraint, the housing for this device is to be secured to the bike using an already-existing universal bike mounting bracket designed for mounting cell phones and similar objects using a combination of adhesive coupling to the device housing, a mechanical twist-locking mechanism, and a screw-tensioned ring with rubber adaptors to allow use on a multitude of handlebar sizes. The angle of the device is adjustable by the user, ensuring the ability to attain an ideal camera angle. The twist-lock mechanism provided by this bracket provides a means to remove the device very rapidly, and without the use of any tools.
   
 
 **Table 1:** Bill of Materials.
