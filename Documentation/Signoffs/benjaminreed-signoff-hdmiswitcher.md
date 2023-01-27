@@ -6,7 +6,7 @@ Detail Design: HDMI Switcher
 
 *Function of the Subsystem:*
 
-The HDMI Switcher is designed to allow users to connect the HDMI ports for their Nintendo Switch and their RRS kit into a single HDMI input to their television or monitor. The switcher that will be used is the BENFEI single-button HDMI switcher (BHS) retrofitted with a relay as the switching mechanism. These components cannot be determined until a proper analysis of the BHS is completed. This switcher will be installed in the touchscreen compartment and connected to the Raspberry Pi (RPi). If the control bits can be accessed, the Raspberry Pi will interface with a relay to switch between the bits. The button will be replaced by a single pole single throw relay with the switch input originating from a RPi GPIO pin.
+The HDMI Switcher is designed to allow users to connect the HDMI ports for their Nintendo Switch and their RRS kit into a single HDMI input to their television or monitor. The switcher that will be used is the BENFEI single-button HDMI switcher (BHS) retrofitted with a relay as the switching mechanism. These components cannot be determined until a proper analysis of the BHS is completed. This switcher will be installed in the touchscreen compartment and connected to the Raspberry Pi (RPi). The Raspberry Pi will interface with a relay to switch between the bits. The button will be replaced by a single pole single throw relay with the switch input originating from RPi GPIO21 from pin 40 [2].
 
 *Constraints:*
 
@@ -24,7 +24,7 @@ The BHS can display up to 4K resolutions with the caveat that the HDMI cables ar
 
 *Buildable Schematic:*
 
-![Screenshot (73)](https://user-images.githubusercontent.com/100803313/214688031-e727338e-ffd3-42a7-854c-6505491d2e8c.png)
+![Screenshot (79)](https://user-images.githubusercontent.com/100803313/215166588-85a58984-fabb-4a24-aa6c-24de54f56c09.png)
 
 *Analysis:*
 
