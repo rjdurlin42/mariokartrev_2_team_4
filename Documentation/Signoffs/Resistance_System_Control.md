@@ -80,7 +80,7 @@ The practically-usable actuator length for our design has been determined to be 
 
 As previously defined in the resistance system signoff, the maximum torque reached at minimum speed is 49.23 N•m, while the minimum torque reached at maximum speed is 0.004 N•m. The region between these two values is the range of resistance common to all within-specification speeds; therefore, let the count of the number of unique states be constrained to only those states which fall within this range. This range corresponds to a minimum spatial distance of 7.615 mm. Furthermore, this distance corresponds to (7.615 mm)/(23 mm) = 33.11 % of the actuator's usable range as previously defined; therefore, the minimal number of states across this previously agreed-upon range is floor[(33.11 %)*470 states] = 155 states > 85 states. Thus the constraint for number of states is met.
 
-Please note: the determination of the minimum spatial distance containing the agreed-upon torque range was performed using a MATLAB script [min_distance_finder.m], which is included in the project folder.
+Please note: the determination of the minimum spatial distance containing the agreed-upon torque range was performed using a MATLAB script [min_distance_finder.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/min_dist_finder.m), which is included in the Software folder.
 
 #### Abbreviation Definitions:
 
