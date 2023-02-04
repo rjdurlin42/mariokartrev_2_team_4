@@ -49,11 +49,11 @@ The device must be capable of providing at least 85 unique states, or lengths of
 
 ### Schematic and PCB Layout
 
-![Sc_Draft_3](https://user-images.githubusercontent.com/118228609/206243843-0c1c4a77-45d9-469f-8121-5443c982b23b.png)
+![Actuator Driver Schematic](https://user-images.githubusercontent.com/118228609/216786225-c57e1eca-aaaa-4acd-9b2b-d43dd4212f03.png)
 
 Figure 1: a schematic for the control circuit.
 
-![PCB_Draft_3](https://user-images.githubusercontent.com/118228609/206244811-3efdf8ed-f206-4d5d-87e2-98c0a601a7d4.png)
+![PCB_draft4](https://user-images.githubusercontent.com/118228609/216786341-876a2da2-cf4d-43fb-b254-a66bb5e4cf97.png)
 
 Figure 2: the PCB layout for the design.
 
