@@ -104,21 +104,22 @@ Please note: the determination of the minimum spatial distance containing the ag
 Table 2: a BOM for the design. Please note that the Arduino Nano is already in our inventory.
 
 
-|           Level           |      Part #     |                     Part Name                     |    Supplier   |  Supplier Part # | Qty |  Units | Unit Cost |   Cost  |
-| ------------------------- | --------------- | ------------------------------------------------- | ------------- | ---------------- | --- | ------ | --------- | ------- |
-| 1                         |    HBRIDGE100   |                      Assembly                     |      None     |       None       |  1  |  Assy  |           |         |
-|            1.1            |     SOCK100     |                 DC Connector -Male                |      TME      |     XT30PW-M     |  1  |  Piece |   $0.63   |  $0.63  |
-|            1.2            |    MOSFET100    |                       MOSFET                      |    DIGIKEY    |      G26P04K     |  2  |  Piece |   $0.78   |  $1.56  |
-|            1.3            |    MOSFET101    |                       MOSFET                      |    DIGIKEY    |      AOD424      |  2  |  Piece |   $0.98   |  $1.96  |
-|            1.4            |    WIFIREC100   |                Bluetooth Receiveer                |   ALIEXPRESS  |       HC-06      |  1  |  Piece |   $2.24   |  $2.24  |
-|            1.5            |     DIODE100    |                       Diode                       |    DIGIKEY    |     B320-13-F    |  4  |  Piece |   $0.48   |  $1.92  |
-|            1.6            |      BJT100     |                        BJT                        |    DIGIKEY    |   DDC114YU-7-F   |  1  |  Piece |   $0.43   |  $0.43  |
-|            1.7            |   CHRESIST100   |                  10k Chip Resistor                |    DIGIKEY    | CRCW120610K0JNEA |  2  |  Piece |   $0.10   |  $0.20  |
-|            1.8            |   CHRESIST101   |                  1k Chip Resistor                 |    DIGIKEY    |   ERJ-8GEYJ102V  |  2  |  Piece |   $0.14   |  $0.28  |
-|            1.9            |  CARBRESIST100  |                    1k Resistor                    |    DIGIKEY    |  CFR-25JB-52-1K  |  3  |  Piece |   $0.01   |  $0.03  |
-|            1.10           |  CARBRESIST101  |                   2.2k Resistor                   |    DIGIKEY    |  CFR-25JR-52-2K2 |  1  |  Piece |   $0.01   |  $0.01  |
-|            1.11           |    ARDNANO100   |                    Arduino Nano                   |    Arduino    |      A000005     |  1  |  Piece |   $24.90  |  $24.90 |
-|                           |                 |                                                   |               |                  |     |        |   Total   |  $34.16 |
+|           Level           |      Part #     |                     Part Name                     |    Supplier   |  Supplier Part #      | Qty |  Units | Unit Cost |   Cost  |
+| ------------------------- | --------------- | ------------------------------------------------- | ------------- | --------------------- | --- | ------ | --------- | ------- |
+| 1                         |    HBRIDGE100   |                      Assembly                     |      None     |         None          |  1  |  Assy  |           |         |
+|            1.1            |     SOCK100     |                 DC Connector -Male                |      TME      |       XT30PW-M        |  1  |  Piece |   $0.63   |  $0.63  |
+|            1.2            |    MOSFET100    |                       MOSFET                      |    DIGIKEY    |        G26P04K        |  2  |  Piece |   $0.78   |  $1.56  |
+|            1.3            |    MOSFET101    |                       MOSFET                      |    DIGIKEY    |        AOD424         |  2  |  Piece |   $0.98   |  $1.96  |
+|            1.4            |    WIFIREC100   |               Bluetooth Transceiver               |   ALIEXPRESS  |         HC-06         |  1  |  Piece |   $2.24   |  $2.24  |
+|            1.5            |     SOCK200     |               Socket for Transceiver              |    DIGIKEY    | 2057-SMC-1-04-1-GT-ND |  1  |  Piece |   $0.33   |  $0.33  |
+|            1.6            |     DIODE100    |                       Diode                       |    DIGIKEY    |       B320-13-F       |  4  |  Piece |   $0.48   |  $1.92  |
+|            1.7            |      BJT100     |                        BJT                        |    DIGIKEY    |     DDC114YU-7-F      |  1  |  Piece |   $0.43   |  $0.43  |
+|            1.8            |   CHRESIST100   |                  10k Chip Resistor                |    DIGIKEY    |   CRCW120610K0JNEA    |  2  |  Piece |   $0.10   |  $0.20  |
+|            1.9            |   CHRESIST101   |                  1k Chip Resistor                 |    DIGIKEY    |     ERJ-8GEYJ102V     |  2  |  Piece |   $0.14   |  $0.28  |
+|            1.10           |  CARBRESIST100  |                    1k Resistor                    |    DIGIKEY    |    CFR-25JB-52-1K     |  3  |  Piece |   $0.01   |  $0.03  |
+|            1.11           |  CARBRESIST101  |                   2.2k Resistor                   |    DIGIKEY    |    CFR-25JR-52-2K2    |  1  |  Piece |   $0.01   |  $0.01  |
+|            1.12           |    ARDNANO100   |                    Arduino Nano                   |    Arduino    |        A000005        |  1  |  Piece |   $24.90  |  $24.90 |
+|                           |                 |                                                   |               |                       |     |        |   Total   |  $34.16 |
 
 ### Citations
 
