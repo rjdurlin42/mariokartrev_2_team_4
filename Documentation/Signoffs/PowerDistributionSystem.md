@@ -7,7 +7,7 @@ Detail Design: Main Power Distribution System
 <br/><br/>
 
 
-Function of the Subsystem: 
+**Function of the Subsystem:** 
 
 The function of the main power distribution subsystem is to receive an incoming power supply from a 120 Vac, 60 Hz, from a wall receptacle and then 
 distribute the power through a protected circuit to multiple devices, which carry varying voltage requirements. The following devices that are to 
@@ -56,31 +56,38 @@ front panel of the enclosure is to be removable for access and house the HMI dis
 
 
 
-Constraints:
-<br/>
+**Constraints:** 
+<br/><br/>
 
-Circuit Design: The circuit design is to provide uninterrupted power to all devices contained within the power distribution and the linear actuator 
-located at the rear of the Mario Kart simulation bike. The circuit must provide reliable power to all devices while maintaining the specified 
-protection ratings set by the National Electric Code (NEC). The system will maintain overprotection of the simulator devices with a rating of %125 
-percent of continuous circuit load as specified by the National Electrical Code Article 210.20(A) [1]. The overprotection rating of the main GFCI will 
-ensure that all devices within the Mario Kart simulation are properly protected from ground faults. The unintentional opening of a circuit due to 
-inaccurate load calculations can result in decreased system reliability or system blackouts.
+*Circuit Design:* 
 
-<br/>
+• The system will maintain overprotection of the Mario Kart simulator devices with a rating of %125 percent of maximum continous circuit load as specified by the National 
+Electrical Code Article 210.20(A) [1]. 
+<br/><br/>
+• Design circuit must carry load for all devices without the unintentional opening of any circuits which may result in decreased system reliability or system blackouts.
+<br/><br/>
 
-Safety: Safety is the most important aspect of this subsystem as there is the potential for electrocution if not designed properly. To mitigate the 
-possibility of electrocution by anyone working inside the user interface. All 120 Vac terminals within the user interface are to have been covered and 
-contain a warning of electrocution on the cover. It is recommended that lock out tag out procedures to be followed when working within the user 
-interface enclosure with any covers off. All wire sizing is to be in accordance with National Electrical Code Article 240.4(B) based on continuous 
-circuit load [1]. 
+*Safety:* 
 
-<br/>
+•  All 120 Vac terminals within the user interface are to have been covered and contain a warning of electrocution on the cover. 
+<br/><br/>
+• All wire sizing is to be in accordance with National Electrical Code Article 240.4(B) based on continuous circuit load [1].
+<br/><br/>
+•  Power subsystem must include a means of de-energizing the system via circuit breaker lockout.
+<br/><br/>
+• Circuit to include GFCI to ensure that all devices within the Mario Kart simulation are properly protected from ground faults. 
+<br/><br/>
 
-Enclosure: The power distribution subsystem enclosure is to be constructed to contain all electrical devices powered by the powered within the power 
-subsystem, excluding the power cord connecting the 12 Vdc power supply to the linear motor controller. The front panel of the enclosure is to house 
-the HMI for user interfacing. The enclosure is to be fully enclosed and free of any openings. The enclosure is to be properly grounded for protection 
-to protect equipment and possible electrical shock. The enclosure is to be adequately sized such that all components are accessible with the front 
-panel removed.
+*Enclosure:* 
+
+• The power distribution subsystem enclosure is to be constructed to contain all electrical devices powered by the powered within the power 
+subsystem, excluding the power cord connecting the 12 Vdc power supply to the linear motor controller. 
+<br/><br/>
+• The front panel of the enclosure is to housing the HMI is to be removable for access.
+<br/><br/>
+• The enclosure is to be fully enclosed and free of any openings. 
+<br/><br/>
+• The enclosure is to be properly grounded for protection to protect equipment and possible electrical shock.
 
 
 <br/><br/>
@@ -88,9 +95,9 @@ panel removed.
 
 
 
-Buildable schematic:
+**Buildable schematic:**
 
-![image](https://user-images.githubusercontent.com/114370750/216113905-b18070b1-3b0b-490e-9d65-90027fd194f8.png)
+![image](https://user-images.githubusercontent.com/114370750/216790178-2c7bcd85-f7a7-4abf-8896-d0593683e20f.png)
 
 Figure 1. Power Distribution Wiring Diagram
 
@@ -108,11 +115,12 @@ Figure 3. Power Distribution Model - Left Side
 
 <br/><br/>
 
-Analysis:
+**Analysis:**
+<br/><br/>
+
+
+*Circuit Design:*
 <br/>
-
-
-Circuit Design:
 The power distribution subsystem includes many devices requiring power, which include multiple differing voltage requirements. The power distribution 
 subsystem identifies each circuit based on their respective voltage requirement. The following power requirements identified in the power distribution 
 subsystem are listed below in table 1:
@@ -124,8 +132,6 @@ Table1:
 | 1              | MET System (User interface) | 5           | DC                      | 3               | 15.00         |
 | 1              | Fan 1                       | 5           | DC                      | 0.25            | 1.25          |
 | 1              | Fan 2                       | 5           | DC                      | 0.25            | 1.25          |
-| 1              | Arduino 1                   | 5           | DC                      | 0.02            | 0.10          |
-| 1              | Arduino 2                   | 5           | DC                      | 0.02            | 0.10          |
 | 2              | Linear Motor                | 12          | DC                      | 3.4             | 40.80         |
 | 3              | Nintendo Switch             | 15          | DC                      | 2.1             | 31.50         |
 | 4              | Display Monitor             | 120         | AC                      | 3.4             | 35.00         |
@@ -135,21 +141,23 @@ Table1:
 Circuit Breaker and Wire Size Determination:	
 The power distribution subsystem analysis meets all the power distribution specifications and requirements for all devices receiving power from an 
 outside power receptacle and entering the Mario Kart simulator. Table 1 below shows all devices that were considered during the analysis. Table 1 also 
-specifies the maximum current and power based on the datasheet of each device. The wire and circuit protection sizing within the design is based upon 
-maximum circuit load in accordance with National Electrical Code Article 210.20(A) [1]. 
+specifies the maximum current and power based on the datasheet of each device. 
 <br/><br/>
+
 Prior to selecting an appropriate system circuit protection device, a simulation is completed to determine the power ratings required for each direct 
 current circuit (5 V, 12 V, and 15 V) power supply. Figure 4 represents the Simulink circuit model used to determine the size of each power supply. 
 The maximum current rating from each device’s datasheet was used to determine a constant power load model. Figures 2, 3, and 4 represent the power 
 consumption of each circuit, respectively.
 <br/><br/>
 
-![image](https://user-images.githubusercontent.com/114370750/216117260-89d104e1-e524-4a31-937a-7b7a95c8c890.png)
+![image](https://user-images.githubusercontent.com/114370750/216790023-47a8da59-759d-4c3c-a374-9e74fc54447b.png)
+
 
 Figure 4. Matlab Simulation of DC Power
 <br/><br/>
 
-![image](https://user-images.githubusercontent.com/114370750/216117699-8971220c-7ee8-48f4-9e4d-6af5f530e653.png)
+![image](https://user-images.githubusercontent.com/114370750/216790044-aec9b5b3-b37f-476b-8e6a-ca92ce0ba1bc.png)
+
 <br/>
 Figure 5. Power (W) as seen by 5 Vdc Circuit.
 
@@ -191,22 +199,27 @@ stranded wire selection shall cover both AC and DC requirements while still meet
 
 <br/>
 
-![image](https://user-images.githubusercontent.com/114370750/216119279-76c7f9e7-9f62-47e0-af45-0e464ac978b5.png)
+![image](https://user-images.githubusercontent.com/114370750/216790057-4469e05d-12df-4846-8ce1-4de7470a6548.png)
 
-Figure 9. Current curve of 120 Vac system.
+Figure 9. Current as seen by the 120 Vac system.
 <br/><br/>
 
-Safety Designed:
+*Safety Designed:*
 
 The power distribution subsystem is to be designed to have a plexiglass covering over all 120 Vac wires or terminals. The safety cover has a hazardous 
-warning label located on it due to the risk of electrocution. Wires are also to be marked with their location and voltage to ensure that individuals 
-can safely troubleshoot or add future circuits, if needed. The system is designed with an on/off switch to be de-energized when the front panel is 
-off, as the system is to only have the front panel off when the system is de-energized. A 15A GFCI ac power cord is to be connected to the main power 
-cord that will protect the whole power system against any ground shorts. 
+warning label located on it due to the risk of electrocution. The warning label is to be printed on campus and will match the danger label seen in Figure 10.
+<br/><br/>
+![image](https://user-images.githubusercontent.com/114370750/216790706-bd4ed616-d75b-4252-b260-186e9926eda7.png)
+<br/>
+Figure 10. Danger Sign for 120 AC cover.
+
+Wires are also to be marked with their location and voltage to ensure that individuals can safely troubleshoot or add future circuits, if needed. The system is designed with 
+an on/off switch to be de-energized when the front panel is off, as the system is to only have the front panel off when the system is de-energized. A 15A GFCI ac power cord 
+is to be connected to the main power cord that will protect the whole power system against any ground shorts. 
 
 <br/><br/>
 
-Enclosure Design:
+*Enclosure Design:*
 
 The component’s size within power distribution system the analyzed to determine the dimensions of the enclosure. The primary constraint regarding the 
 size of the enclosure is the HMI. The current HMI located on the front of the enclosure is approximately 7” (177.8 mm) by 4.5” (114.3 mm). The 
@@ -227,13 +240,12 @@ of the enclosure.
 <br/>
 <br/>
 
-BOM:
-<br/>
-<br/>
+**BOM:**
+<br/><br/>
 
 | Level | Part #              | Part Name                                                                     | Supplier   | Supplier Part #      | Qty | Units | Unit Cost | Cost    |
 |-------|---------------------|-------------------------------------------------------------------------------|------------|----------------------|-----|-------|-----------|---------|
-| 1     | Enclosure Assembly  |                                                                               |            |                      |     |       |           | $0.00   |
+| 1     | Enclosure Assembly  |                                                                               |            |                      |     |       |           |         |
 | 1.1   | ALUMANGL            | Aluminum Angle                                                                | Home Depot | 204273950            | 1   | ea.   | $14.47    | $14.47  |
 | 1.2   | ALUMSHT             | 6 in. x 18 in. 22-Gauge Aluminum Metal Sheet                                  | Home Depot | 204225785            | 1   | ea.   | $12.93    | $12.93  |
 | 1.3   | BOLT100             | 1/4-in x 1/2-in Zinc-Plated Coarse Thread Hex Bolt                            | Lowes      | 61820                | 32  | ea.   | $0.00     | $0.00   |
@@ -242,16 +254,18 @@ BOM:
 | 1.6   | CBLCLMP-5           | 5-Pack Cable Clamp                                                            | Home Depot | 100186543            | 1   | ea.   | $4.34     | $4.34   |
 | 1.7   | PLXGLS              | 20 in. x 32 in. x 0.093 in. Acrylic Sheet                                     | Home Depot | 202038049            | 1   | ea.   | $5.34     | $25.48  |
 | 1.8   | DINRAIL             | TS35 Din Rail 35mm x 7.5mm                                                    | DigiKey    | ADR3575-U7874-ND     | 1   | ea.   | $7.06     | $25.48  |
-| 2     | Electrical Assembly |                                                                               |            |                      |     |       |           | $0.00   |
+| 2     | Electrical Assembly |                                                                               |            |                      |     |       |           |         |
 | 2.1   | PS1                 | 120 VAC / 5 VDC Power Supply                                                  | DigiKey    | 102-PSK-45-5-DIN-ND  | 1   | ea.   | $22.65    | $22.65  |
 | 2.2   | PS2                 | 120 VAC/ 12 VDC Power Supply                                                  | DigiKey    | 102-PDRB-60-12-ND    | 1   | ea.   | $26.46    | $26.46  |
 | 2.3   | PS3                 | 120 VAC / 15 VDC Power Supply                                                 | DigiKey    | 102-PSK-45-15-DIN-ND | 1   | ea.   | $22.65    | $22.65  |
-| 2.4   | TGSWITCH            | Toggle Switch - 20A                                                           | Home Depot | 100117400            | 1   | ea.   | $4.94     | $4.94   |
+| 2.4   | SWTCH               | 2 Pos Switch                                                                  | DigiKey    | Z6183-ND             | 1   | ea.   | $4.94     | $15.89  |
 | 2.5   | 14GACONN            | 16 - 14 AWG #8 - 10 Stud Size Vinyl-Insulated Spade Terminals, Blue (15-Pack) | Home Depot | 202522889            | 1   | ea.   | $3.63     | $3.63   |
 | 2.6   | CBMAIN-1            | CIRCUIT BREAKER 4A                                                            | DigiKey    | 277-17753-ND         | 1   | ea.   | $19.00    | $19.00  |
 | 2.7   | 14WIRE              | 25 ft. 14 Black Solid CU THHN Wire                                            | Home Depot | 301210609            | 1   | ea.   | $0.00     | $0.00   |
 | 2.8   | GRDBAR              | 4 Terminal Grounding Bar                                                      | Home Depot | 100207842            | 1   | ea.   | $8.31     | $8.31   |
 | 2.9   | GFCI-15             | 15 Amp Compact Right Angle Plug-In GFCI, Black                                | Home Depot | 205189963            | 1   | ea.   | $21.99    | $21.99  |
-| 2.10  | TERMSTP             | 4 Lug Terminal Strip                                                          | DigiKey    | 387206204            | 2   | ea.   | $4.17     | $8.34   |
-|       |                     |                                                                               |            |                      |     |       | Total     | $220.67 |
+| 2.10  | CONN1               | Linear Motor Control Connector                                                | TME        | XT30U-F              | 1   | ea.   | $0.45     | $0.45   |
+| 2.11  | TERMSTP             | 4 Lug Terminal Strip                                                          | DigiKey    | 387206204            | 2   | ea.   | $4.17     | $8.34   |
+|       |                     |                                                                               |            |                      |     |       | Total     | $232.07 |
 
+<br/><br/>
