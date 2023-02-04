@@ -119,7 +119,7 @@ Table 2: a BOM for the design. Please note that the Arduino Nano is already in o
 |            1.10           |  CARBRESIST100  |                    1k Resistor                    |    DIGIKEY    |    CFR-25JB-52-1K     |  3  |  Piece |   $0.01   |  $0.03  |
 |            1.11           |  CARBRESIST101  |                   2.2k Resistor                   |    DIGIKEY    |    CFR-25JR-52-2K2    |  1  |  Piece |   $0.01   |  $0.01  |
 |            1.12           |    ARDNANO100   |                    Arduino Nano                   |    Arduino    |        A000005        |  1  |  Piece |   $24.90  |  $24.90 |
-|                           |                 |                                                   |               |                       |     |        |   Total   |  $34.16 |
+|                           |                 |                                                   |               |                       |     |        |   Total   |  $34.49 |
 
 ### Citations
 
