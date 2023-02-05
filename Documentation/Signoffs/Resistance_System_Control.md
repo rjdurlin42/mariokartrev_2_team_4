@@ -82,6 +82,14 @@ As previously defined in the resistance system signoff, the maximum torque reach
 
 Please note: the determination of the minimum spatial distance containing the agreed-upon torque range was performed using a MATLAB script [min_distance_finder.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/min_dist_finder.m), which is included in the Software folder.
 
+To prove the suitability of the designed H-bridge circuit, a SPICE simulation was constructed. Since it is impossible to simulate a motor in SPICE without knowing several mechanical characteristics (moment of inertia, coefficient of viscous friction, and torque) [3] and this information is not given, the motor was simulated using a worst-case (stalled) load resistance of 1.714 Ohms. This resulted in a worst-case power dissipation of 1.05 W in the P-channel FETs and 0.601 W in the N-channel FETs. The P-channel FETs have a maximum power dissipation rating of 78 W. The N-channel FETs have a power dissipation rating of 2.5 W. In both cases, the power dissipation is well within reasonable limits. Furthermore, the operation was tested using a 25 % duty cycle, 24 kHz PWM signal and found to be as expected. The setup and simulation results are shown in the images below.
+
+![spicesim](https://user-images.githubusercontent.com/118228609/216801981-c4e95213-1aef-4920-8c6b-d191272dd4c3.png)
+Figure 3: the setup for the SPICE simulation. Simulates running at 25 % duty cycle, 24 kHz, with the motor stalled (worst-case-scenario) with a directional change starting at 300 microseconds. The time from 208 microseconds to 300 microseconds is delay time to ensure the FETs fully turn off before switching direction. This can be implemented on an Arduino programatically.
+
+![loadcurrent](https://user-images.githubusercontent.com/118228609/216802353-ba9df2ad-8ac5-40e6-991e-00e754869501.png)
+Figure 4: the load current. Note that the polarity reverses as expected during the simulation of the directional change starting at 300 microseconds. During the high portions of the PWM cycle, the load current is close to the ideal value of 7 A, meaning the H-bridge produces minimal voltage drop.
+
 #### Abbreviation Definitions:
 
 •	FET: field effect transistor
@@ -126,3 +134,5 @@ Table 2: a BOM for the design. Please note that the Arduino Nano is already in o
 [1]B. Beauregard, “Arduino PID Library,” Arduino Playground. [Online]. Available: https://playground.arduino.cc/Code/PIDLibrary/. [Accessed: 08-Dec-2022]. 
 
 [2]“Pololu - Glideforce GF23-120502-3-65 high-speed LD linear actuator with feedback: 12kgf, 2’ stroke (1.97’ usable), 3.3’/s, 12V,” Pololu Robotics &amp; Electronics. [Online]. Available: https://www.pololu.com/product/4951. [Accessed: 08-Dec-2022]. 
+
+[3]"Using SPICE To Model DC Motors," Precision Microdrives. [Online]. Available: https://www.precisionmicrodrives.com/ab-025. [Accessed: 04-Feb-2023].
