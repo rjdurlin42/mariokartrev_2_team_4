@@ -28,9 +28,9 @@ The Raspberry Pi supplies 3.3 V [2]. A relay with coil terminals rated for these
  
 *Buildable Schematic:*
 
-![Screenshot (87)](https://user-images.githubusercontent.com/100803313/217079972-4a1b54e3-38e4-4622-be08-7dbfa13a85b0.png)
+![Screenshot (96)](https://user-images.githubusercontent.com/100803313/217089877-595ea841-163d-42f6-9cb2-f395b483eced.png)
 
-The schematic shows how the BHS button ports will interact with the relay. As there is no schematic available for the BHS online, a schematic cannot be provided. However, it is not needed to prove the relay retrofit will work. Relay switches act as a button that completes the circuit when an electrical value is applied to its coil and opens the circuit otherwise. This is identical to how a button works, except the button utilizes the physical depression of the button to complete the circuit. Since these two methods are almost identical in how they connect a circuit, it can easily be inferred that replacing the button with a relay will work.
+The schematic shows how the BHS button ports will interact with the relay. However, it is not needed to prove the relay retrofit will work. Relay switches act as a button that completes the circuit when an electrical value is applied to its coil and opens the circuit otherwise. This is identical to how a button works, except the button utilizes the physical depression of the button to complete the circuit. Since these two methods are almost identical in how they connect a circuit, it can easily be inferred that replacing the button with a relay will work.
 
 *Analysis:*
 
