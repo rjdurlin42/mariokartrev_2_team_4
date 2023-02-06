@@ -10,25 +10,27 @@ The HDMI Switcher is designed to allow users to connect the HDMI ports for their
 
 *Constraints:*
 
-*HDMI Compatibility:* As HDMI is standard in the modern era, the multiplexer needs to be compatible with such an input. The RRS Acquisition is designed to record video at a resolution of 720p. Furthermore, the Nintendo Switch is rated to display data at a resolution of 1080p while in TV mode, which is the mode that the Nintendo Switch will be in while using the bike [1]. The multiplexer must therefore be rated to manage resolutions up to 1080p. It should be commented on that the use of HDMI allows for ease of accessibility for most of the population, especially those who can purchase the MK bike and the RRS kit.
+*HDMI Compatibility:* The BHS must be rated for 1080p resolutions.
 
-The BHS can display up to 4K resolutions with the caveat that the HDMI cables are no longer than five meters [2]. This is sufficient for the Nintendo Switch and the RRS.
+*HDMI Quantity:* The switcher must have at minimum two input HDMI ports and one output HDMI port.
 
-*HDMI Quantity:* As the switcher is expected to manage three ports, the multiplexer must also be capable of doing so. The switcher must have one output port and be capable of switching between two input ports. The BHS meets this criterion [1].
+*Relay Voltage/Current Ratings:* The relay coil must be rated for 3.3 V and 11.7 mA, and the relay must operate at 3.3 V or below.
 
-*BHS Switch Ratings: *The BHS's voltage maximums for the switch cannot be determined until the BHS is purchased, as there is no datasheet for the product. An analysis will be conducted to determine the voltage of the signal sent when the button is pressed. Since the product can be purchased off Amazon with two-day shipping, analysis can begin quickly. Once analysis is completed, a follow-up design will be completed.
+*Relay Power Rating:* The power dissipation at the relay coil cannot exceed 70 mW.
 
-*Relay Voltage/Current Ratings:* The Raspberry Pi supplies 3.3 V [2]. A relay with coil terminals rated for these values are necessary. Additionally, to ensure that the relay functions properly, the "must operate voltage" must be less than 3.3 V. Finally, the RPi is limited to a maximum 16 mA output, so the coil drive current must be less than 16 mA to accommodate. The relay of choice is the TXS2-L-3V because it has a maximum voltage rating of 4.5 V (150 % of rating), a coil current of 11.7 mA, and a must operate voltage of 2.4 V (80% of rating) [4].
+*Back EMF Accommodations:* A diode must be implemented in parallel with the relay coil to protect the RPi from back EMF that results from de-energizing the coil [3].
 
-*Relay Power Rating:* The relay is rated for a power dissipation of 70 mW. Therefore, the power dissipation at the relay cannot exceed this value. Analysis to confirm this can be seen below.
+*Background*
 
-*Back EMF Accommodations:* The de-energizing of the relay results in back EMF. If the RPi is left unprotected, this back EMF can damage the RPi. The RPi can be protected by implementing a diode in parallel with the relay coil [3]. The exact EMF cannot be determined as the inductance of the coil cannot be found.
+As HDMI is standard in the modern era, the multiplexer needs to be compatible with such an input. The RRS Acquisition is designed to record video at a resolution of 720p. Furthermore, the Nintendo Switch is rated to display data at a resolution of 1080p while in TV mode, which is the mode that the Nintendo Switch will be in while using the bike [1].
 
-*Video State Reset:* Since the BHS utilizes a single button switch, an error can occur when turning off the Raspberry Pi where the state of the switcher and the expected state according to the Raspberry Pi disagree. It is imperative that the UI has a contingency to ensure that the correct display appears on the user's monitor. This is an issue that will be resolved via a UI program. Specifically, the program will read the switcher's current state so if the MK/RRS system is ever unplugged, the Raspberry Pi knows the current state of the switcher and can determine if switching outputs is necessary. Analysis of the BHS is necessary to ensure that this is possible.
-
+The Raspberry Pi supplies 3.3 V [2]. A relay with coil terminals rated for these values are necessary. Additionally, to ensure that the relay functions properly, the "must operate voltage" must be less than 3.3 V. Finally, the RPi is limited to a maximum 16 mA output, so the coil drive current must be less than 16 mA to accommodate
+ 
 *Buildable Schematic:*
 
 ![Screenshot (85)](https://user-images.githubusercontent.com/100803313/216205222-b202e7e0-173a-4004-9dcd-96414c8cbd71.png)
+
+The schematic shows how the BHS button ports will interact with the relay. As there is no schematic available for the BHS online, a schematic cannot be provided. However, it is not needed to prove the relay retrofit will work. Relay switches act as a button that completes the circuit when an electrical value is applied to its coil and opens the circuit otherwise. This is identical to how a button works, except the button utilizes the physical depression of the button to complete the circuit. Since these two methods are almost identical in how they connect a circuit, it can easily be inferred that replacing the button with a relay will work.
 
 *Analysis:*
 
