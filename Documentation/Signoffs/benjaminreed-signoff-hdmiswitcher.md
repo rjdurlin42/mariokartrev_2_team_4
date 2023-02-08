@@ -14,7 +14,7 @@ The HDMI Switcher is designed to allow users to connect the HDMI ports for their
 
 *HDMI Quantity:* The switcher must have at minimum two input HDMI ports and one output HDMI port.
 
-*Relay Voltage/Current Ratings:* The relay coil must be rated for 3.3 V and 11.7 mA, and the relay must operate at 3.3 V or below.
+*Relay Voltage/Current Ratings:* The relay coil must be rated for 3.3 V and a maximum 16 mA, and the relay must operate at 3.3 V or below.
 
 *Relay Power Rating:* The power dissipation at the relay coil cannot exceed 70 mW.
 
@@ -34,7 +34,12 @@ The schematic shows how the BHS button ports will interact with the relay. Howev
 
 *Analysis:*
 
-The equation for power is P = I^2^R. In this case, the power is calculated as
+*HDMI Compatability:* The BHS is rated for up to 4K resolutions. This is more than sufficient for the required 1080p resolutions.
+
+*HDMI Quantity:* The BHS is designed as a two-to-one HDMI switcher. This satisfies the two-port constraint.
+*Relay Voltage/Current Rating:* The TXS2-L-3V is rated with a must operate voltage of 2.4 V and a maximum voltage of 4.5 V [4]. In addition, the relay current is 11.7 mA, which is rated within the operating range of the RPi.
+
+*Relay Power Rating:* The equation for power is P = I^2^R. In this case, the power is calculated as
 
 P = 0.0117A^2 (257 Ω)
 
