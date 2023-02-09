@@ -9,7 +9,7 @@ _Constraints:_
 
 **Increased Fidelity:** The Steering L-Bracket mechanism shall be strengthened using a metal component. 
 
-**Adaptability to Steering Column:** The L-Bracket shall be positioned at least one quarter of an inch off the surface of the Mario Kart Bike’s steering column in order to bypass an existing rubber seal and to be properly secured in place.
+**Adaptability to Steering Column:** The L-Bracket must be positioned more than 0.25 inches off the steering column. 
 
 _Buildable Schematic:_
 
@@ -33,13 +33,13 @@ An analysis has been performed to determine the performance of the existing Stee
 
 Although analysis indicated that the existing clamps did not break while in use for the previous design, they were not an effective means of attaching/stabilizing the Steering L-Bracket to the steering column because the L-Bracket came in contact with the rubber seal on the Mario Kart Bike’s steering column. Therefore, the clamps must be replaced with conduit hangers to hold the L-Bracket off the surface of the steering column in order to clear the rubber seal.
 
-Specifically, modifications include strengthening the Steering L-Bracket mechanism using a new stainless-steel L-Bracket measuring 12 inches by 7 inches by 2 inches to replace the plastic 3-D printed component. The new metal Steering L-Bracket will be attached to the steering column using two 1-inch conduit hangers. A diagram of the conduit hangers is provided in **Figure 4**. Two holes will be drilled in the L-Bracket, so it can be bolted to the conduit hangers. 
+Specifically, modifications include strengthening the Steering L-Bracket mechanism using a new stainless-steel L-Bracket measuring 12 inches by 7 inches by 2 inches to replace the plastic 3-D printed component. The new metal Steering L-Bracket will be attached to the steering column using two 1-inch conduit hangers. A diagram of the conduit hangers is provided in **Figure 4** [1]. Two holes will be drilled in the L-Bracket, so it can be bolted to the conduit hangers. 
 
 Incorporating a commercially available L-Bracket is a cost-effective solution for providing the necessary strength and stability. Conduit hangers are also commercially available at a minimal cost. 
 
 ![image](https://user-images.githubusercontent.com/113309616/216881095-d3ae4577-3642-4ac3-b28c-f8185ba11799.png)
 
-**Figure 4.** Diagram of Conduit Hanger
+**Figure 4.** Diagram of Conduit Hanger [1]
 
 _BOM:_
 
@@ -51,5 +51,10 @@ The bill of materials (BOM) to accomplish the design illustrated in the 3D Model
 | Ekena Millwork       | 12-in x 2-in x 7-in Stainless Steel Support Bracket| Lowe’s   | BKTM02X12X07HSCRS        | 1   | Pieces | $15.24    | $15.24 |
 | Sigma ProConnex      | 1-in Steel Conduit Hangers                         | Lowe’s   | 49120                    | 2   | Pieces | $0.98     | $1.96  |
 | Hillman              | 1/4-in- 20 x 1-in Phillips-Drive Machine Screws    | Lowe’s   | 490435                   | 1   | Pack   | $1.38     | $1.38  |
+
+
+**References** 
+
+[1]  _Sigma Proconnex 1-in Schedule 40 schedule 80 zinc-plated steel conduit ..._ (n.d.). Retrieved February 8, 2023, from https://www.lowes.com/pd/Sigma-Electric-ProConnex-1-in-Conduit-Hangers-Schedule-40-PVC-Compatible-Schedule-80-PVC-Compatible-Intermediate-Metal-Conduit-Compatible-Galvanized-Rigid-Conduit-Compatible-Electrical-Metal-Tubing-Compatible-Rigid-Metal-Conduit-Compatible-Conduit-Fitting/1095129 
 
 
