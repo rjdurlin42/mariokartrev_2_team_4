@@ -134,7 +134,7 @@ Devices to be powered within the subsystem below in table 1:
 
 <br/>
 
-Table1:
+Table 1:
 
 | Circuit Number | Device                      | Voltage (V) | Voltage Type (AC or DC) | Max Current (A) | Max Power (W) |
 |----------------|-----------------------------|-------------|-------------------------|-----------------|---------------|
@@ -144,7 +144,7 @@ Table1:
 | 1              | Fan 2                       | 5           | DC                      | 0.25            | 1.25          |
 | 2              | Linear Motor                | 12          | DC                      | 3.4             | 40.80         |
 | 3              | Nintendo Switch             | 15          | DC                      | 2.10            | 31.50         |
-| 4              | Display Monitor             | 120         | AC                      | 2.92            | 35.00         |
+| 4              | Display Monitor             | 120         | AC                      | 0.29            | 35.00         |
 
 <br/><br/>
 
