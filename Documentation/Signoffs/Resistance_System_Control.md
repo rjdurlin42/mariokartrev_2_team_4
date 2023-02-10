@@ -148,25 +148,32 @@ The above can reasonably be assumed to produce a stable system; therefore, const
 
 #### Resolution
 
-Given [Resistance System Signoff]:
-
     Full actuator range = 50.04 mm
     Tmax(min speed) = 49.23 N•m
     Tmin(max speed) = 0.004 N•m
-
-And:
-
     Precision of controller: 10 bits
-
-Then:
-
     Unique states across full range = 2^10 = 1024
     Distance precision = (50.04 mm)/1024 = 48.87 μm
     Range of torque common to all specified speeds: Tmin(max speed) <= T <= Tmax(min speed)
 
-Let the count of unique states be constrained to T; this is the set of states common to all specified speeds.
+The count of unique states is constrained to states which satify the inequality for T, where T is the torque developed by the resistance system; this is the set of usable states common to all specified speeds.
 
 With automated numerical analysis in MATLAB (see [min_distance_finder.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/min_dist_finder.m)):
+
+    Equation used: Td = ((pi*p*(D2.^2)*t*((By/10000).^2).*(R.^2).*w)/4)*2.44*21.5
+    Td: developed torque vector
+    p:  conductivity
+    D2: diameter of magnet
+    t:  flywheel thickness
+    By: magnetic field strength vector (taken as function of actuator extension)
+          By = (u0.*m)./(4.*pi.*d.^3)
+          u0: magnetic permiability of free space
+          m:  magnetic dipole moment
+          d: distance of magnets from flywheel (corresponding to actuator extension length)
+    R:  radius of flywheel
+    w:  flywheel angular velocity
+    Evaluation method: sweep all specified speeds and distances by incrementing through w and By. Compare each result to determine the minimum usable distance of the actuator at any given speed.
+    See MATLAB script for constant values and algorithm
 
     Minimum usable spatial distance = 7.615 mm
     Count of unique states = floor[((7.615 mm)/(50.04 mm))*1024] = 155 > 85 states
