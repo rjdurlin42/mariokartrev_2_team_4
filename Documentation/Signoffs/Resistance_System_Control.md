@@ -149,6 +149,9 @@ The above can reasonably be assumed to produce a stable system; therefore, const
 #### Resolution
 
     Full actuator range = 50.04 mm
+
+Please note: the above value is **not the usable** range, but the full range of the actuator itself; it is stated to clarify the analysis which follows.
+
     Tmax(min speed) = 49.23 N•m
     Tmin(max speed) = 0.004 N•m
     Precision of controller: 10 bits
@@ -178,7 +181,7 @@ With automated numerical analysis in MATLAB (see [min_distance_finder.m](https:/
     Minimum usable spatial distance = 7.615 mm
     Count of unique states = floor[((7.615 mm)/(50.04 mm))*1024] = 155 > 85 states
 
-Therefore, constraint met.
+Constraint met.
 
 Table 1: miscellaneous component notes and design considerations.
 |     Component(s)                                                                            |     Design   Considerations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
