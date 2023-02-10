@@ -34,7 +34,8 @@ system to the control.
 
 <br/><br/>
 
-![image](https://user-images.githubusercontent.com/114370750/218153741-cea1c772-c44f-4f9f-a230-d9dc96ab3d2d.png)
+![image](https://user-images.githubusercontent.com/114370750/218155826-02013d34-8661-46f6-8727-93a0ac3d30a8.png)
+
 <br/>
 Figure 1. Right View of 3D model for the Linear Actuator Stand Subsystem
 <br/><br/>
