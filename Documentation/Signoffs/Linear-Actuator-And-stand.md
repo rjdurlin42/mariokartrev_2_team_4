@@ -17,23 +17,24 @@ system to the control.
 
 **Constraints:**
 
-*Constraints are listed in number for Analysis reference.*
+
 <br/><br/>
-C1. The linear actuator is secured in a manner that the actuator and stand are anchored.
+**Anchoring:** The linear actuator is secured in a manner that the actuator and stand are anchored.
 
-C2. The case of the linear actuator is to be properly grounded.
+**Grounding:** The case of the linear actuator is to be properly grounded.
 
-C3. The linear actuator stand is to be sized for the motor controller to be stored inside of the stand.
+**Sizing:** The linear actuator stand is to be sized for the motor controller to be stored inside of the stand.
 
-C4. The linear actuator stand has two openings for the power and control wires from the controller to the actuator. 
+**Openings:** The linear actuator stand has two openings for the power and control wires from the controller to the actuator. 
 
-C5. The linear motor stand is to be constructed of materials that will not shield wireless communications of the motor controller. 
+**Constructions:** The linear motor stand is to be constructed of materials that will not shield wireless communications of the motor controller. 
 
 <br/><br/>
 **Buildable schematic:**
+
 <br/><br/>
 
-![image](https://user-images.githubusercontent.com/114370750/217995188-5d1c0067-906f-411a-a265-f294c78b5b1d.png)
+![image](https://user-images.githubusercontent.com/114370750/218153741-cea1c772-c44f-4f9f-a230-d9dc96ab3d2d.png)
 <br/>
 Figure 1. Right View of 3D model for the Linear Actuator Stand Subsystem
 <br/><br/>
@@ -52,20 +53,20 @@ Figure 3. Full View of 3D model for the Linear Actuator Stand Subsystem
 
 **Analysis:**
 
-Analysis is listed in order of constraint reference.
 <br/><br/>
 
-A1. *Anchoring:* The linear actuator is mounted to the stand, which is anchored to the bike stand frame using clamps, and is represented in Figures 1, 2, and 3.
+**Anchoring:** The linear actuator is mounted to the stand, which is anchored to the bike stand frame using clamps, and is represented in Figures 1, 2, and 3. The bike 
+frame height has a clearance of 10mm, but is also adjustable to endure clamps fits around frame and between the floor.
 
-A2. *Grounding:*  The linear actuator case is grounded to the bike stand frame using 14 Gauge THHN stranded wire, rated for 15 Amps. Paint is to be removed from bike stand 
+**Grounding:**  The linear actuator case is grounded to the bike stand frame using 14 Gauge THHN stranded wire, rated for 15 Amps. Paint is to be removed from bike stand 
 frame and is represented in Figure 2. 
 
-A3. *Sizing:* The linear actuator stand modeled to be 5.6” x 5.8” x 6.3”, which is capable of containing the controller board that is approximately 3.5” x 2”, while 
+**Sizing:** The linear actuator stand modeled to be 5.6” x 5.8” x 6.3”, which is capable of containing the controller board that is approximately 3.5” x 2”, while 
 maintaining the height required for the resistance subsystem.
 
-A4. *Openings:* Figure 2 shows 2 holes, one circular for power input, and the other a slit opening for the actuator to controller communication/power.
+**Openings:** Figure 2 shows 2 holes, one circular for power input, and the other a slit opening for the actuator to controller communication/power.
 
-A5. *Constructions:* The linear actuator stand is constructed using 0.5” thick plexi-glass material that will not block communication from the linear actuator controller to 
+**Constructions:** The linear actuator stand is constructed using 0.5” thick plexi-glass material that will not block communication from the linear actuator controller to 
 the main controller.
 
 
