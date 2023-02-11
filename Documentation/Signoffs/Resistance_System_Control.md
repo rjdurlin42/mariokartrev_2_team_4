@@ -63,7 +63,19 @@ The design files are included within the Electrical subdirectory of the Document
 
 #### Actuator Duty Cycle
 
-Arduino microcontroller determines PWM duty cycle; operation fully programmable; therefore, constraint met.
+Arduino PID library contains a function to limit the minimum and maximum PWM duty cycle [2].
+
+Function usage:
+     SetOutputLimits(min, max)
+     min: the minimum PWM duty cycle
+     max: the maximum PWM duty cycle
+
+Where min and max are 8-bit integers, and may be directly-addressed.
+
+The Arduino Nano sets the PWM duty cycle so the maximum PWM cycle may be programatically limited to satisfy the constraint as follows:
+     SetOutputLimits(0, 63); //63 is floor[(255)*(25 %)]
+
+Therefore, the constraint is satisfied.
 
 #### Actuator Driving Voltage
 
@@ -113,7 +125,7 @@ Figure 3: the LTSPICE schematic prepared for this SPICE simulation.
 ![loadcurrent](https://user-images.githubusercontent.com/118228609/216802353-ba9df2ad-8ac5-40e6-991e-00e754869501.png)
 Figure 4: the load current. The polarity reverses as expected during the simulation of the directional change starting at 300 microseconds. During the high portions of the PWM cycle, the load current is close to the ideal value of 7 A, meaning the H-bridge produces minimal voltage drop.
 
-Note: It is impossible to fully simulate a motor in SPICE without knowing several mechanical characteristics (moment of inertia, coefficient of viscous friction, and torque) [2] and this information is not given by the actuator manufacturer, so a worst-case non-reactive approximation was used. Back-emf simulation impossible for this reason.
+Note: It is impossible to fully simulate a motor in SPICE without knowing several mechanical characteristics (moment of inertia, coefficient of viscous friction, and torque) [3] and this information is not given by the actuator manufacturer, so a worst-case non-reactive approximation was used. Back-emf simulation impossible for this reason.
 
 #### Wireless Communications
 
@@ -140,9 +152,9 @@ Four 2.5 mm diameter screw holes have been included in the PCB design (see fig. 
 
 #### Stability
 
-Arduino programmable as PID controller [3].
+Arduino programmable as PID controller [4].
 
-Manufacturer-provided PID constants [4]:
+Manufacturer-provided PID constants [5]:
 
     Kp = 1.80
     Ki = 0.0900
@@ -224,8 +236,10 @@ Table 2: a BOM for the design. Please note that the Arduino Nano is already in o
 
 [1]R. Whelan, “Effective analysis of Reaction Time Data,” The Psychological Record, vol. 58, no. 3, pp. 475–482, 2008.
 
-[2]"Using SPICE To Model DC Motors," Precision Microdrives. [Online]. Available: https://www.precisionmicrodrives.com/ab-025. [Accessed: 04-Feb-2023].
+[2]B. Beauregard, "SetOutputLimits()," Arduino Playground. [Online]. Available: https://playground.arduino.cc/Code/PIDLibrarySetOutputLimits/. [Accessed: 10-Feb-2023]
 
-[3]B. Beauregard, “Arduino PID Library,” Arduino Playground. [Online]. Available: https://playground.arduino.cc/Code/PIDLibrary/. [Accessed: 08-Dec-2022]. 
+[3]"Using SPICE To Model DC Motors," Precision Microdrives. [Online]. Available: https://www.precisionmicrodrives.com/ab-025. [Accessed: 04-Feb-2023].
 
-[4]“Pololu - Glideforce GF23-120502-3-65 high-speed LD linear actuator with feedback: 12kgf, 2’ stroke (1.97’ usable), 3.3’/s, 12V,” Pololu Robotics &amp; Electronics. [Online]. Available: https://www.pololu.com/product/4951. [Accessed: 08-Dec-2022]. 
+[4]B. Beauregard, "Arduino PID Library," Arduino Playground. [Online]. Available: https://playground.arduino.cc/Code/PIDLibrary/. [Accessed: 08-Dec-2022]. 
+
+[5]"Pololu - Glideforce GF23-120502-3-65 high-speed LD linear actuator with feedback: 12kgf, 2’ stroke (1.97’ usable), 3.3’/s, 12V," Pololu Robotics &amp; Electronics. [Online]. Available: https://www.pololu.com/product/4951. [Accessed: 08-Dec-2022]. 
