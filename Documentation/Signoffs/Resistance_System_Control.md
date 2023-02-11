@@ -136,7 +136,7 @@ Note: It is impossible to fully simulate a motor in SPICE without knowing severa
     Communication protocol: serial
     Communication frequency > 1/(0.1 s) = 10 Hz
     Required samples to update distance variable = (10 bits)/(1 bit/sample) = 10 samples
-    Required baud rate: (10 Hz)*(10 samples) = 100 Baud < 9600 = HC-06 default baud rate
+    Required baud rate > (10 Hz)*(10 samples) = 100 Baud < 9600 = HC-06 default baud rate
 
 Contstraint met.
 
