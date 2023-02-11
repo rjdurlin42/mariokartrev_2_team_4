@@ -21,7 +21,7 @@ The duty cycle of the utilized linear actuator is 25 %. This value must not be e
 
 #### Actuator Driving Voltage
 
-The utilized actuator is rated for operation at 12 VDC. The control circuit must be capable of providing this voltage to the actuator.
+The utilized actuator is rated for operation at 12 VDC. The control circuit must be capable of providing this voltage to the actuator during operation, so the absolute value of the voltage across the actuator while the system is in either of the two possible on states (foreward and reverse) shall be constrained to 12 V +/- 1 %, assuming the power subsystem provides an input voltage regulated to 12 VDC.
 
 #### Current Capability
 
@@ -67,23 +67,30 @@ Arduino microcontroller determines PWM duty cycle; operation fully programmable;
 
 #### Actuator Driving Voltage
 
-Input voltage = 12 V
+     Full load actuator current = 3.4 A @ 12 V
+     Linear approximation for motor resistance: Rmotor = 3.529 Ω
+     Rds_on(Q1,Q2) = 18 mΩ = 0.018 Ω
+     Rds_on(Q3,Q4) = 4.4 mΩ = 0.0044 Ω
+     Minimum actuator voltage satisfying constraint = 12 V - 12*0.01 V = 11.88 V
 
-The connection to this voltage is switched, but no voltage conversion is performed; therefore, constraint met.
+Circuit Analysis:
+
+     On state 1 [Q1 and Q4 on, Q2 and Q3 off]
+          |Actuator voltage| = (12 V)*(3.529 Ω)/(3.529 Ω + 0.018 Ω + 0.0044 Ω) = 11.92 V < 11.88 V
+     
+     On state 2 [Q1 and Q4 off, Q2 and Q3 on]
+          |Actuator voltage| = 11.92 V < 11.88 V [by symmetry]
+
+Constraint met.
 
 #### Current Capability
-
-Given:
 
      Linear actuator current at stall = 7 A
      Nominal linear actuator voltage = 12 V
      AMASS XT30 connector current rating = 15 A
      Imax_continuous(Q1,Q2) = 24 A
      Imax_continuous(Q3,Q4) = 45 A
-  
-Then:
-
-     Stall (worst-case) resistance = 1.714 Ω
+     Stall (worst-case) resistance = (12 V)/(7 A) = 1.714 Ω
 
 By simulation:
 
@@ -110,17 +117,14 @@ Note: It is impossible to fully simulate a motor in SPICE without knowing severa
 
 #### Wireless Communications
 
-Given:
-
     Ts < 100 ms = 0.1 s
     Distance resolution: 10 bits (limited by microcontroller ADC)
     Communication protocol: serial
-    
-Then:
-
     Communication frequency > 1/(0.1 s) = 10 Hz
     Required samples to update distance variable = (10 bits)/(1 bit/sample) = 10 samples
     Required baud rate: (10 Hz)*(10 samples) = 100 Baud < 9600 = HC-06 default baud rate
+
+Contstraint met.
 
 #### Back-EMF Protection
 
@@ -150,13 +154,12 @@ The above can reasonably be assumed to produce a stable system; therefore, const
 
     Full actuator range = 50.04 mm
 
-Please note: the above value is **not the usable** range, but the full range of the actuator itself; it is stated to clarify the analysis which follows.
+Please note: the above value is **not the usable range**, but the full range of the actuator itself; it is stated to clarify the analysis which follows.
 
     Tmax(min speed) = 49.23 N•m
     Tmin(max speed) = 0.004 N•m
     Precision of controller: 10 bits
     Unique states across full range = 2^10 = 1024
-    Distance precision = (50.04 mm)/1024 = 48.87 μm
     Range of torque common to all specified speeds: Tmin(max speed) <= T <= Tmax(min speed)
 
 The count of unique states is constrained to states which satify the inequality for T, where T is the torque developed by the resistance system; this is the set of usable states common to all specified speeds.
