@@ -229,11 +229,11 @@ Table 2: a BOM for the design. Please note that the Arduino Nano is already in o
 |            1.7            |      BJT100     |       DDC114YU-7-F Dual Pre-biased BJT (NPN)      |    DIGIKEY    |   DDC114YU-FDICT-ND    |  1  |  Piece |   $0.43   |  $0.43  |
 |            1.8            |   CHRESIST100   |         CRCW120610K0JNEA 10k Chip Resistor        |    DIGIKEY    |     541-10KECT-ND      |  2  |  Piece |   $0.10   |  $0.20  |
 |            1.9            |   CHRESIST101   |            ERJ-8GEYJ102V 1k Chip Resistor         |    DIGIKEY    |      P1.0KECT-ND       |  2  |  Piece |   $0.14   |  $0.28  |
-|            1.10           |  CARBRESIST100  |            CFR-25JB-52-1K 1k THT Resistor         |    DIGIKEY    |       1.0KQBK-ND       |  3  |  Piece |   $0.01   |  $0.03  |
-|            1.11           |  CARBRESIST101  |          CFR-25JB-52-2K2 2.2k THT Resistor        |    DIGIKEY    |    	  2.2KQBK-ND       |  1  |  Piece |   $0.01   |  $0.01  |
+|            1.10           |  CARBRESIST100  |            CFR-25JB-52-1K 1k THT Resistor         |    DIGIKEY    |       1.0KQBK-ND       |  3  |  Piece |   $0.10   |  $0.30  |
+|            1.11           |  CARBRESIST101  |          CFR-25JB-52-2K2 2.2k THT Resistor        |    DIGIKEY    |    	  2.2KQBK-ND       |  1  |  Piece |   $0.10   |  $0.10  |
 |            1.12           |    ARDNANO100   |             Arduino Nano Microcontroller          |    Arduino    |        A000005         |  1  |  Piece |   $24.90  |  $24.90 |
 |            1.13           |     SOCK300     |              Socket Header for Arduino            |    DIGIKEY    | 2553-2042-1X15G00SA-ND |  2  |  Piece |   $0.74   |  $1.48  |
-|                           |                 |                                                   |               |                        |     |        |   Total   |  $36.41 |
+|                           |                 |                                                   |               |                        |     |        |   Total   |  $36.33 |
 
 ### Citations
 
