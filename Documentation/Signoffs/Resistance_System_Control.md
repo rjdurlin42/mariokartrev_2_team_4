@@ -66,6 +66,7 @@ The design files are included within the Electrical subdirectory of the Document
 Arduino PID library contains a function to limit the minimum and maximum PWM duty cycle [2].
 
 Function usage:
+
      SetOutputLimits(min, max)
      min: the minimum PWM duty cycle
      max: the maximum PWM duty cycle
@@ -73,6 +74,7 @@ Function usage:
 Where min and max are 8-bit integers, and may be directly-addressed.
 
 The Arduino Nano sets the PWM duty cycle so the maximum PWM cycle may be programatically limited to satisfy the constraint as follows:
+
      SetOutputLimits(0, 63); //63 is floor[(255)*(25 %)]
 
 Therefore, the constraint is satisfied.
