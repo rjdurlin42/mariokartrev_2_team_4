@@ -79,7 +79,7 @@ s = packet size in bits
 
 r = data transmission rate in Kbps
 
-In the worst case, the distance equals 2.44 m (central RPi to speed sensor). The transmission speed of Bluetooth LE is 3 * 10¬¬8 m/s (radio waves through air). The maximum transfer unit (MTU) of BLE is 184 bits. Finally, the data transmission rate of the Nano 33 BLE is 270 K¬¬¬bps. This gives a max transmission latency of 0.68 ms.
+In the worst case, the distance equals 2.44 m (central RPi to speed sensor). The transmission speed of Bluetooth LE is 3 * 10^8 m/s (radio waves through air). The maximum transfer unit (MTU) of BLE is 184 bits. Finally, the data transmission rate of the Nano 33 BLE is 270 Kbps. This gives a max transmission latency of 0.68 ms.
 
 **Speed Sensor Microcontroller:** 
 
