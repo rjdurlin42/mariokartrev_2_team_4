@@ -180,9 +180,9 @@ The count of unique states is constrained to states which satify the inequality 
 
 With automated numerical analysis in MATLAB (see [distance_determination.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/distance_determination.m)):
 
-![Min](https://user-images.githubusercontent.com/118228609/218587949-47cbe9cf-34c5-4076-9018-d291da01f388.jpg)
+![Min](https://user-images.githubusercontent.com/118228609/218592986-e8ad6ea2-dada-44d6-97e4-c99f7e167c0d.jpg)
 
-![Max](https://user-images.githubusercontent.com/118228609/218587993-c29015a7-3056-42ee-9aef-81b9bb8a3dad.jpg)
+![Max](https://user-images.githubusercontent.com/118228609/218593013-fab63502-3a81-48fd-9c19-07d567d0be70.jpg)
 
 Figures 5, 6: the torque developed over distance at minimum and maximum speeds, respectively. Note that the data tips show the minimum and maximum distances for which the inequality for T is satisfied.
 
@@ -201,8 +201,8 @@ Figures 5, 6: the torque developed over distance at minimum and maximum speeds, 
     Evaluation method: determine and plot the developed torque as a function of distance for the upper and lower speed limits across the previously-defined torque range.
     See MATLAB script for constant values and algorithm
 
-    Count of unique states (minimum speed) = floor[((7.615 mm)/(50.04 mm))*1024] = 155 > 85 states
-    Count of unique states (maximum speed) = floor[((8.615 mm)/(50.04 mm))*1024] = 176 > 85 states
+    Count of unique states (minimum speed) = floor[((7.614 mm)/(50.04 mm))*1024] = 155 > 85 states
+    Count of unique states (maximum speed) = floor[((8.856 mm)/(50.04 mm))*1024] = 181 > 85 states
 
 Constraint met.
 
