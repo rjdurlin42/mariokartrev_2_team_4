@@ -178,7 +178,13 @@ Please note: the above value is **not the usable range**, but the full range of 
 
 The count of unique states is constrained to states which satify the inequality for T, where T is the torque developed by the resistance system; this is the set of usable states common to all specified speeds.
 
-With automated numerical analysis in MATLAB (see [min_distance_finder.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/min_dist_finder.m)):
+With automated numerical analysis in MATLAB (see [distance_determination.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/distance_determination.m)):
+
+![Min](https://user-images.githubusercontent.com/118228609/218587949-47cbe9cf-34c5-4076-9018-d291da01f388.jpg)
+
+![Max](https://user-images.githubusercontent.com/118228609/218587993-c29015a7-3056-42ee-9aef-81b9bb8a3dad.jpg)
+
+Figures 5, 6: the torque developed over distance at minimum and maximum speeds, respectively. Note that the data tips show the minimum and maximum distances for which the inequality for T is satisfied.
 
     Equation used: Td = ((pi*p*(D2.^2)*t*((By/10000).^2).*(R.^2).*w)/4)*2.44*21.5
     Td: developed torque vector
@@ -192,11 +198,11 @@ With automated numerical analysis in MATLAB (see [min_distance_finder.m](https:/
           d: distance of magnets from flywheel (corresponding to actuator extension length)
     R:  radius of flywheel
     w:  flywheel angular velocity
-    Evaluation method: sweep all specified speeds and distances by incrementing through w and By. Compare each result to determine the minimum usable distance of the actuator at any given speed.
+    Evaluation method: determine and plot the developed torque as a function of distance for the upper and lower speed limits across the previously-defined torque range.
     See MATLAB script for constant values and algorithm
 
-    Minimum usable spatial distance = 7.615 mm
-    Count of unique states = floor[((7.615 mm)/(50.04 mm))*1024] = 155 > 85 states
+    Count of unique states (minimum speed) = floor[((7.615 mm)/(50.04 mm))*1024] = 155 > 85 states
+    Count of unique states (maximum speed) = floor[((8.615 mm)/(50.04 mm))*1024] = 176 > 85 states
 
 Constraint met.
 
