@@ -18,7 +18,7 @@ R = 0.1016-(D2/2); %radius of flyhweel - 4" radius
 
 min_count = 23001;	%Defined as the maximum possible count; meant to hold the minimum count after execution
 
-for(RPM = 2501.6:0.01:6192.2) %This loop approximates a continuous sweep through all specified speeds
+for(RPM = [2501.6 6192.2]) %This loop has an iteration for the upper and lower speed bounds
     w = (2*pi/60)*RPM; %Conversion of flywheel speed into rad/s
     Td = ((pi*p*(D2.^2)*t*((By/10000).^2).*(R.^2).*w)/4)*2.44*21.5; %Calculation of torque vector
     i = 1; %Increment counter
@@ -26,13 +26,18 @@ for(RPM = 2501.6:0.01:6192.2) %This loop approximates a continuous sweep through
     while(Td(i) > 49.23) %Doesn't count here; above max torque at lowest speed
         i = i+1;
     end
+    first_usable = i-1;
     while(Td(i) >= 0.004) %Counts here; usable range
         i = i+1;
         count = count+1;
     end
+    last_usable = i-1;
     if(min_count > count) %If the usable length was smaller at this speed than at the last, put that value into min_count
         min_count = count;
     end
+    figure, plot(d(first_usable:last_usable), Td(first_usable:last_usable)); %Plots the usable torque range over distance
+    xlabel("Distance (m)")
+    ylabel("Developed Torque (N*m)")
 end
 
 % Calculation of the smallest distance (m) to which the usable range of the
