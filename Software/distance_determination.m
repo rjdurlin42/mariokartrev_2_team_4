@@ -23,11 +23,11 @@ for(RPM = [2501.6 6192.2]) %This loop has an iteration for the upper and lower s
     while(Td(i) > 49.23) %Counts up to the first usable torque value
         i = i+1;
     end
-    first_usable = i-1; %Index counter for array element corresponding to first usable torque value
+    first_usable = i; %Index counter for array element corresponding to first usable torque value
     while(Td(i) >= 0.004) %Counts the the last usable torque value
         i = i+1;
     end
-    last_usable = i-1; %Index counter for array element corresponding to first usable torque value
+    last_usable = i-1; %Index counter for array element corresponding to last usable torque value
     figure, plot(d(first_usable:last_usable), Td(first_usable:last_usable)); %Plots the usable torque range over distance
     xlabel("Distance (m)")
     ylabel("Developed Torque (N*m)")
