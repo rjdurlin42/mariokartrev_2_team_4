@@ -58,7 +58,7 @@ To meet the mountability constraint, the housing for this device is to be secure
 | --------------- | ---------------------------- | ----------------------------------------------------------------------- | -------------------- | --------------- | --- | ------ | --------- | ------- |
 | Requested by:   | Tyler C.                     |                                                                         |                      |                 |     |        |           |         |
 | Approve by:     |                              |                                                                         |                      |                 |     |        |           |         |
-| Total Cost:     | $160.18                      |                                                                         |                      |                 |     |        |           |         |
+| Total Cost:     | $167.39                      |                                                                         |                      |                 |     |        |           |         |
 |                 |                              |                                                                         |                      |                 |     |        |           |         |
 |                 |                              |                                                                         |                      |                 |     |        |           |         |
 | Level           | Part #                       | Part Name                                                               | Supplier             | Supplier Part # | Qty | Units  | Unit Cost | Cost    |
@@ -67,21 +67,23 @@ To meet the mountability constraint, the housing for this device is to be secure
 | 2               | PSU1                         | Power Supply                                                            | NONE                 | NONE            | 1   | Assy   |           | $0.00   |
 | 2.1             | MD1                          | Adafruit Powerboost 1000                                                | Adafruit             | 2465            | 1   | Module | $19.95    | $19.95  |
 | 2.2             | CABLE1                       | AK67421-0.3-VM                                                          | Digikey              | AE11229-ND      | 1   | Piece  | $2.58     | $2.58   |
-| 2.3             | CABLE2                       | Panel Mount Cable USB C to Micro B Male                                 | Adafruit             | 4056            | 1   | Piece  | $4.95     | $4.95   |  
-| 2.4             | SW1                          | Rugged Metal On/Off Switch with Red LED Ring - 16mm Red On/Off          | Adafruit             | 916             | 1   | Piece  | $4.95     | $4.95   |
-| 2.5             | BT1                          | Lithium Ion Battery Pack - 3.7V 6600mAh                                 | Adafruit             | 353             | 1   | Piece  | $24.50    | $24.50  |
+| 2.3             | JACK1                        | USB C Jack to USB A Jack Round Panel Mount Adapter                      | Adafruit             | 4259            | 1   | Piece  | $5.95     | $5.95   |  
+| 2.4             | CABLE2                       | USB cable - 6" A/MicroB                                                 | Adafruit             | 898             | 1   | Piece  | $2.95     | $2.95   |
+| 2.5             | SW1                          | Rugged Metal On/Off Switch with Green LED Ring - 16mm Green On/Off      | Adafruit             | 482             | 1   | Piece  | $4.95     | $4.95   |
+| 2.6             | SW3                          | Rugged Metal Pushbutton with Red LED Ring - 16mm Red Momentary          | Adafruit             | 559             | 1   | Piece  | $4.95     | $4.95   |
+| 2.7             | BT1                          | Lithium Ion Battery Pack - 3.7V 6600mAh                                 | Adafruit             | 353             | 1   | Piece  | $24.50    | $24.50  |
 | 3               | SENSE1                       | Speed Sensor                                                            | NONE                 | NONE            | 1   | Assy   |           | $0.00   |
 | 3.1             | SW2                          | Hamlin SPST - N.O. High Quality Reed Switch                             | Electronics Goldmine | G26522          | 1   | Piece  | $2.49     | $2.49   |
-| 3.2             | SW3                          | Rugged Metal Pushbutton with Red LED Ring - 16mm Red Momentary          | Adafruit             | 559             | 1   | Piece  | $4.95     | $4.95   |
 | 3.3             | ZT1                          | Amazon Basics Multi-Purpose Cable Ties - 4-Inch/100mm, 200-Piece, White | Amazon               | DS-SZS-002      | 1   | Piece  | $4.62     | $4.62   |
 | 3.4             | MAG1                         | Bike Wheel Spoke Computer Magnet                                        | AliExpress           | NONE            | 1   | Piece  | $1.68     | $1.68   |
 | 4               | SENSE2                       | Adafruit DPS310 Precision Barometric Pressure / Altitude Sensor         | Adafruit             | 4494            | 1   | Module | $6.95     | $6.95   |
 | 5               | MECH1                        | Mechanical Parts                                                        | NONE                 | NONE            | 1   | Assy   |           | $0.00   |
-| 5.1             | BOX1                         | Large Plastic Project Enclosure - Weatherproof with Clear Top           | Adafruit             | 905             | 1   | Piece  | $19.95    | $19.95  |
-| 5.2             | MNT1                         | Bike Phone Mount,Bicycle CellPhone Holder with Universal Adapter        | Amazon               | B08R5K29BC      | 1   | Kit    | $19.98    | $19.98  |
-| 5.3             | GLU1                         | Industrial Strength Velcro Tape 4' X 2"                                 | Amazon               | B00006IC2U      | 1   | Roll   | $7.59     | $7.59   |
+| 5.1             | BOX1                         | QILIPSU Clear Hinged Cover 220x170x110mm Junction Box                   | Amazon               | B087F9TS25      | 1   | Piece  | $19.99    | $19.99  |
+| 5.2             | MNT1                         | QILIPSU Pole Mounting Kits, 304 Stainless 250x48mm Brackets             | Amazon               | B0B4RB63RK      | 1   | Kit    | $19.99    | $19.99  |
+| 5.3             | FASTENER1                    | M2.5-0.45 x 10 mm Zinc Plated Steel Machine Screws (25-Pack)            | Home Depot           | 311229794       | 1   | 25-Pk  | $6.04     | $6.04   |
+| 5.4             | FASTENER2                    | M2.5-0.45 Zinc-Plated Metric Hex Nut (5-Piece per Bag)                  | Home Depot           | 204836094       | 3   | 5-Pk   | $1.25     | $3.75   |
 | 6               | CAM1                         | Camera Module for Raspberry Pi Zero                                     | Pimoroni             | CAM003          | 1   | Assy   | $10.56    | $10.56  |
-|                 |                              |                                                                         |                      |                 |     |        | Total     | $161.19 |
+|                 |                              |                                                                         |                      |                 |     |        | Total     | $167.39 |
 
 ### References
 
