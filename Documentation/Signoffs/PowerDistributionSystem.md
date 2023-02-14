@@ -101,8 +101,7 @@ C10.  The enclosure is to be properly grounded for protection to protect equipme
 
 **Buildable schematic:**
 
-![image](https://user-images.githubusercontent.com/114370750/218291106-caf94c16-b1d0-49d4-b206-76efe6466d5d.png)
-
+![image](https://user-images.githubusercontent.com/114370750/218634388-b2bf8ce3-50ae-4c38-81de-c19cca6d6cd8.png)
 
 Figure 1. Power Distribution Wiring Diagram
 
@@ -169,15 +168,16 @@ Figure 4. DC Power Model.
 A2. **Wire sizing:** The highest rated current devices powered within this subsystem are the linear motor actuator, which has a rating of 3.4 Amps. The design is to use 14 
 Gauge THHN stranded rated at 15 Amps, which is at least %125 of the continuous load rating specified in National Electrical Code Article 210.19(A).
 
-A3. **Overprotection rating:** The overprotection device within this design is a 3.15 Amp slow blow fuse upstream of each power supply as recommended by the manufacturer. 
-Based on the three 3.15 Amp slow blow fuses and the maximum current rating of the display monitor, a 15 Amp circuit breaker is to be used to protect the whole system. The 
-overprotection device also meets the %125 NEC requirements specified in the National Electrical Code Article 210.20 (A).  
+A3. **Overprotection rating:** A single 3 Amp circuit breaker is to be upstream of each power supply (manufacturer recommends 3.15 slow blow fuse). Based on the power supply 
+circuit protection of 3 Amps each and the maximum current rating of the display monitor, a 15 Amp circuit breaker is to be used to protect the whole system. The 
+overprotection device also meets the %125 NEC requirements specified in the National Electrical Code Article 210.20 (A).
 
 Calculation:
 
-(3.15 A * 3) +0.29 = 9.74 A
+(3 A * 3) + 0.29 = 9.29 A
 
-9.74 A * %125 = 12.75 A 
+9.74 A * %125 = 11.61 A
+
 
 <br/><br/>
 
@@ -194,7 +194,8 @@ to be similar in design to the label represented below in Figure 5.
 Figure 5. Danger Sign for 120 AC cover.
 <br/><br/>
 
-A5. **Means of De-Energizing:** The 5 Amp overprotection device made by Phoenix Contact provides a means of locking out all the devices using a standard circuit breaker lockout. 
+A5. **Means of De-Energizing:** The means of de-energizing the power distrubution subsystem is by removing the power plug from the wall receptable. The power plug is to be 
+removed from a wall receptable any time that a power distribution panel is removed.
 
 A6. **Ground Fault Protection:** Additional protection was designed regarding safety using a Ground Fault Circuit Interrupter (GFCI), which is built into the incoming power 
 cord of the Mario Kart Simulator. 
@@ -204,8 +205,8 @@ cord of the Mario Kart Simulator.
 
 *Enclosure Design:*
 
-A7. **Enclosure Sizing:** The enclosure is increased from previous design to 12” x 12” x 6” for which to provide a minimum of 2” clearance between all devices and the front panel 
-for accessibility. 
+A7. **Enclosure Sizing:** The enclosure is increased from previous design to 12” x 12” x 6” for which to provide a minimum of 2” clearance between all devices and the front 
+panel for accessibility. 
 
 A8. **Front Panel Access:** The enclosure includes 4 removeable fasteners to remove the front panel for access. 
 
@@ -228,33 +229,35 @@ A10. **Grounding:** Enclosure to be grounded using grounding bar representing in
 
 **BOM:**
 <br/><br/>
-
 | Level | Part #              | Part Name                                                                     | Supplier   | Supplier Part #      | Qty | Units | Unit Cost | Cost    |
-| ----- | ------------------- | ----------------------------------------------------------------------------- | ---------- | -------------------- | --- | ----- | --------- | ------- |
-| 1     | Enclosure Assembly  |
+|-------|---------------------|-------------------------------------------------------------------------------|------------|----------------------|-----|-------|-----------|---------|
+| 1     | Enclosure Assembly  |                                                                               |            |                      |     |       |           |         |
 | 1.1   | ENCL1               | BOX STEEL GRAY 12"L X 12"W                                                    | Digikey    | CS12126              | 1   | ea.   | $39.65    | $39.65  |
 | 1.2   | CBLCLMP-5           | 5-Pack Cable Clamp                                                            | Home Depot | 100186543            | 1   | ea.   | $4.34     | $4.34   |
-| 1.3   | PLXGLS              | 20 in. x 32 in. x 0.093 in. Acrylic Sheet                                     | Home Depot | 202038049            | 1   | ea.   | $25.48    | $25.48  |
+| 1.3   | PLXGLS2             | 11 in. x 14 in. x .093 in. Acrylic Sheet                                      | Home Depot | 202090111            | 1   | ea.   | $8.28     | $8.28   |
 | 1.4   | DINRAIL             | TS35 Din Rail 35mm x 7.5mm                                                    | DigiKey    | ADR3575-U7874-ND     | 1   | ea.   | $7.06     | $7.06   |
 | 1.5   | EPDM                | EPDM 1/8 in. x 36 in. x 96 in. Commercial Grade 60A Rubber Sheet              | Home Depot | 303371976            | 1   | ea.   | $0.00     | $0.00   |
-| 2     | Electrical Assembly |
+| 2     | Electrical Assembly |                                                                               |            |                      |     |       |           |         |
 | 2.1   | PS1                 | 120 VAC / 5 VDC Power Supply                                                  | DigiKey    | 102-PSK-45-5-DIN-ND  | 1   | ea.   | $22.65    | $22.65  |
 | 2.2   | PS2                 | 120 VAC/ 12 VDC Power Supply                                                  | Mouser     | 490-PSK-60-12-DIN    | 1   | ea.   | $24.93    | $24.93  |
 | 2.3   | PS3                 | 120 VAC / 15 VDC Power Supply                                                 | DigiKey    | 102-PSK-45-15-DIN-ND | 1   | ea.   | $22.65    | $22.65  |
-| 2.4   | SWTCH               | 2 Pos Switch                                                                  | DigiKey    | Z6183-ND             | 1   | ea.   | $4.94     | $15.89  |
+| 2.4   | SWTCH               | 2 Pos Switch                                                                  | DigiKey    | Z6183-ND             | 1   | ea.   | $15.89    | $15.89  |
 | 2.5   | 14GACONN            | 16 - 14 AWG #8 - 10 Stud Size Vinyl-Insulated Spade Terminals, Blue (15-Pack) | Home Depot | 202522889            | 1   | ea.   | $3.63     | $3.63   |
-| 2.6   | FUSE3.15            | 3.15 Amp Slow Blow Fuse                                                       | DigiKey    | 02173.15VXP-ND       | 3   | ea.   | $2.18     | $6.54   |
+| 2.6   | CB-3A               | CIRCUIT BREAKER 3A                                                            | DigiKey    | 277-17752-ND         | 3   | ea.   | $19.00    | $57.00  |
 | 2.7   | 14WIRE              | 25 ft. 14 Black Solid CU THHN Wire                                            | Home Depot | 301210609            | 1   | ea.   | $0.00     | $0.00   |
 | 2.8   | GRDBAR              | 4 Terminal Grounding Bar                                                      | Home Depot | 100207842            | 1   | ea.   | $8.31     | $8.31   |
 | 2.9   | GFCI-15             | 15 Amp Compact Right Angle Plug-In GFCI, Black                                | Home Depot | 205189963            | 1   | ea.   | $21.99    | $21.99  |
 | 2.10  | WARNLAB             | 120 VAC Warning Label                                                         | None       | None                 | 1   | ea.   | $0.00     | $0.00   |
-| 2.11  | TRMBLK              | Terminal Block                                                                | DigiKey    | 277-2026-ND          | 8   | ea.   | $1.53     | $12.24  |
+| 2.11  | TRMBLK              | Terminal Block                                                                | DigiKey    | 277-2026-ND          | 10  | ea.   | $1.53     | $15.30  |
 | 2.12  | TRMJMP              | 3 Pos - Terminal Block Jumper                                                 | DigiKey    | 277-3230-ND          | 3   | ea.   | $1.80     | $5.40   |
 | 2.13  | CONN1               | Linear Motor Control Connector                                                | TME        | XT30U-F              | 1   | ea.   | $0.45     | $0.45   |
-| 2.14  | FUSHOLD             | 10 A Fuse Block                                                               | Digikey    | F1502-ND             | 3   | ea.   | $1.83     | $5.49   |
-| 2.15  | CBMAIN-1            | CIRCUIT BREAKER 15A                                                           | Digikey    | 277-17761-ND         | 1   | ea.   | $19.00    | $19.00  |
+| 2.14  | CBMAIN-1            | CIRCUIT BREAKER 15A                                                           | Digikey    | 277-17761-ND         | 1   | ea.   | $19.00    | $19.00  |
 | 2.15  | TERMSTP4            | 4 Lug Terminal Strip                                                          | DigiKey    | A98505-ND            | 4   | ea.   | $2.94     | $11.76  |
-|       |                     |                                                                               |            |                      |     |       | Total     | $257.46 |
+|       |                     |                                                                               |            |                      |     |       | Total     | $288.29 |
+
+
+
+
 <br/><br/>
 
 
