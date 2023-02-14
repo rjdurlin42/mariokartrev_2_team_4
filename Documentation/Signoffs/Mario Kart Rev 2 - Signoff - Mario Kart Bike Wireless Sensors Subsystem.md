@@ -3,7 +3,7 @@
 
 _Function of the Subsystem:_
 
-The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four D batteries and a holder. The four D batteries will provide 6 V and 6.25 A to the microcontrollers, which will power the sensors for six hours of constant use. 
+The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four D batteries and a holder. The four D batteries will provide 6 V and 2.5 A to the microcontrollers, which will power the sensors for six hours of constant use. 
 
 _Constraints:_ 
 
@@ -11,7 +11,9 @@ _Constraints:_
 
 The long wires are a trip hazard. The long wires must be replaced with batteries. 
 
-Multiple batteries must supply the DC voltage and current needed to power the equipment for six hours of constant use. 
+**Run Time:**
+
+Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. 
 
 **Speed Sensor:** 
 
@@ -51,11 +53,49 @@ _Analysis:_
 
 **Power Supply for Wireless Connectivity:** 
 
-D batteries each provide 1.5 V and 6.25 A; four D batteries will provide 6 V and 6.25 A, which is sufficient voltage within the required range and the required current. 
+![image](https://user-images.githubusercontent.com/113309616/218646430-f175fa4a-9542-4cb2-b9a1-f2d0cc75ad1e.png)
 
-Maximum current used by the microcontroller, which powers the sensors, is 1 Ah. Four D batteries will provide sufficient current to power each microcontroller using 1 Ah for six hours of constant use. 
+**Figure 3.** Arduino Nano 33 BLE Power Tree [1]
 
-Dimensions of the battery holders are 5.5 inches (L) by 2.8 inches (w) by 1.2 inches (h). The holders are small/compact to avoid the trip hazard posed by the long wires. Zip ties will securely mount the battery holder to the bike frame.
+_Speed Sensor:_
+
+Tachometer = 20 mA
+
+Arduino Nano 33 BLE = 15 + 2 = 17 mA
+
+AA Battery Current = 2.5 A
+
+AA Battery Voltage = 1.5 V
+
+Total current needed = 20 + 17 = 37 mA
+
+Total Voltage = 1.5 * 4 = 6 volts 
+
+Number of Hours = 2.5 / (37*10^-3) = 67.57
+
+AA batteries each provide 1.5 V and 2.5 A; 4 AA batteries will provide 6 V and 2.5 A, which is sufficient to run the speed sensor equipment for 67 hours of constant use. 
+
+_Steering Sensor:_
+
+Max Pot  = 7 mA
+
+ADS1015 = 0.09091 mA 
+
+Arduino Nano 33 BLE = 15 + 2 = 17 mA
+
+AA Battery Current = 2.5 A
+
+AA Battery Voltage = 1.5 V
+
+Total current needed = 7+ 0.09091 + 17 = 24.09091 mA
+
+Total Voltage = 1.5 * 4 = 6 volts 
+
+Number of Hours = 2.5 / (24.09091*10^-3) = 103.77 
+
+AA batteries each provide 1.5 V and 2.5 A; 4 D batteries will provide 6 V and 2.5 A, which is sufficient to run the steering sensor equipment for 103 hours of constant use. 
+
+Dimensions of the battery holders are 2.248 inches (L) by 2.457 inches (w) by 0.622 inches (h). The holders are small/compact to avoid the trip hazard posed by the long wires. Zip ties will securely mount the battery holder to the bike frame.
 
 **Bluetooth Connectivity:** 
 
@@ -65,7 +105,7 @@ Arduino microcontrollers surpass the 5 V limit while others are at 5 V exactly. 
 
 **Latency:**
 
-Latency of communication shall be 40 ms. Network latency can be calculated with the following formula [1]:
+Latency of communication shall be 40 ms. Network latency can be calculated with the following formula [2]:
 
 Latency=(d/v)+(s/r)
 
@@ -85,11 +125,11 @@ In the worst case, the distance equals 2.44 m (central RPi to speed sensor). The
 
 A Nano 33 BLE will be appropriate for the speed sensor’s microcontroller, which will be used in conjunction with the KY-032 infrared sensor to accurately measure the speed of the rear wheel. 
 
-The KY-032 sensor will use the enable pin, which should not be active for more than 2 ms at a time due to the receiver quickly saturating when active [2].
+The KY-032 sensor will use the enable pin, which should not be active for more than 2 ms at a time due to the receiver quickly saturating when active [3].
 
 **Strobing of Receiver:** 
 
-IR light is emitted at a frequency of 38 kHz [2], so the receiver (HS0038B) must be cycling at 76 kHz (as a minimum) to satisfy the Nyquist sampling rate. This strobe rate can be programmed manually. 
+IR light is emitted at a frequency of 38 kHz [3], so the receiver (HS0038B) must be cycling at 76 kHz (as a minimum) to satisfy the Nyquist sampling rate. This strobe rate can be programmed manually. 
 
 By determining the time between any two high readings (two markings) and multiplying this time by the number of individual markings, the time required to perform each revolution of the flywheel can be calculated (this calculation will update between every 2 high readings). 
 
@@ -114,16 +154,18 @@ _BOM:_
 The bill of materials (BOM) to accomplish the design illustrated in the schematics is provided in **Table 1**. 
 
 **Table 1.** Bill of Materials
-| Brand / Manufacturer       | Part Name              | Supplier | Part / Model # or ASIN # | Qty | Units  | Unit Cost | Cost   |
-| -------------------------- | ---------------------- | -------- | ------------------------ | --- | ------ | --------- | ------ |
-| SDTC Tech                  | 4 D Battery Holders    | Amazon   | B08594HCR5               | 2   | Pieces | $4.45     | $8.90  |
-| Duracell                   | 8 Pack D Battery       | Amazon   | B00164H4AI               | 3   | Pack   | $15.87    | $47.61 |
-| HMROPE                     | 8 Inch Zip Ties        | Amazon   | TXLAC                    | 1   | Pack   | $9.18     | $9.18  |
-| Duck                       | Electrical Tape        | Amazon   | 282289                   | 1   | Roll   | $1.48     | $1.48  |
-| Arduino                    | Nano 33 BLE            | Arduino  | ABX00030                 | 2   | Pieces | $26.30    | $52.60 |
+| Brand / Manufacturer       | Part Name                    | Supplier | Part / Model # or ASIN # | Qty | Units  | Unit Cost | Cost   |
+| -------------------------- | ---------------------------- | -------- | ------------------------ | --- | ------ | --------- | ------ |
+| LAMPVPATH                  | 4 AA Battery Holders         | Amazon   | B07T7MTRZX               | 1   | Pack   | $6.48     | $6.48  |
+| Energizer                  | 24 Pack AA Lithium Batteries | Amazon   | B07BMH7RDP               | 1   | Pack   | $65.35    | $65.35 |
+| HMROPE                     | 8 Inch Zip Ties              | Amazon   | TXLAC                    | 1   | Pack   | $9.18     | $9.18  |
+| Duck                       | Electrical Tape              | Amazon   | 282289                   | 1   | Roll   | $1.48     | $1.48  |
+| Arduino                    | Nano 33 BLE                  | Arduino  | ABX00030                 | 2   | Pieces | $26.30    | $52.60 |
 
 **References** 
 
-[1] _“RF Wireless World,” Network Latency Calculator | Network Latency Formula._ [Online].   Available: https://www.rfwireless-world.com/calculators/Network-Latency-Calculator.html. [Accessed: 08-Feb-2023]. 
+[1] Team, T. A. (n.d.). _Arduino docs: Arduino Documentation._ Arduino Docs | Arduino Documentation. Retrieved February 13, 2023, from https://docs.arduino.cc/ 
 
-[2]	_IR sensor for obstacle avoidance KY-032 (AD-032)_. IR Senor Obstacle Avoidance Keyes KY 032. (n.d.). Retrieved February 5, 2023, from http://irsensor.wizecode.com/
+[2] _RF Wireless World._ Network Latency Calculator | Network Latency Formula. (n.d.). Retrieved February 13, 2023, from https://www.rfwireless-world.com/calculators/Network-Latency-Calculator.html  
+
+[3]	_IR sensor for obstacle avoidance KY-032 (AD-032)_. IR Senor Obstacle Avoidance Keyes KY 032. (n.d.). Retrieved February 5, 2023, from http://irsensor.wizecode.com/
