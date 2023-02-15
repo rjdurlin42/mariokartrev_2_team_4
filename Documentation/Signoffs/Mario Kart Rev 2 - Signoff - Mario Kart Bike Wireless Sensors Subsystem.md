@@ -68,6 +68,8 @@ _Speed Sensor:_
 	Total Voltage = 1.5 * 4 = 6 volts 
 
 	Number of Hours = 2.5 / (37*10^-3) = 67.57
+	
+_Speed Sensor Run Time:_
 
 Four AA batteries will provide 6 V and 2.5 A, which is sufficient to run the speed sensor equipment for 67 hours of constant use. Power can be preserved by powering off the Nano 33 BLE while not in use (done in software) [2].
 
@@ -88,6 +90,8 @@ _Steering Sensor:_
 	Total Voltage = 1.5 * 4 = 6 volts 
 
 	Number of Hours = 2.5 / (24.09091*10^-3) = 103.77 
+
+_Steering Sensor Run Time:_
 
 Four AA batteries will provide 6 V and 2.5 A, which is sufficient to run the steering sensor equipment for 103 hours of constant use. Like with the speed sensor, the Nano can be powered off when not in use.
 
