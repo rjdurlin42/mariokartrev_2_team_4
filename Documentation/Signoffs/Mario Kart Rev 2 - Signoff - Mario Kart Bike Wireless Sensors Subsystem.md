@@ -4,7 +4,6 @@
 _Function of the Subsystem:_
 
 The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE (achieved with usage of Arduino Nano 33 BLEs for each sensor) to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four AA batteries and a holder. The four AA batteries will provide 6 V and 2.5 A to the microcontrollers, which will power the sensors for more than 56 hours of constant use. 
-
 <br/><br/>
 
 
@@ -36,6 +35,7 @@ Communication between the sensors and main RPi must be wireless. Each sensor mus
 
 Communication latency from data sensors to central microcontroller must be at maximum 40 ms.
 
+<br/><br/>
 _Buildable Schematic:_     
 
 The wiring schematics for the speed and steering sensors are provided in **Figures 1** and **2**. The schematics are also uploaded to the Capstone Design documentation folder. 
@@ -48,6 +48,7 @@ The wiring schematics for the speed and steering sensors are provided in **Figur
 
 **Figure 2.** Wiring Schematic for the Steering Sensor
 
+<br/><br/>
 _Analysis:_ 
 
 ![image](https://user-images.githubusercontent.com/113309616/218646430-f175fa4a-9542-4cb2-b9a1-f2d0cc75ad1e.png)
@@ -147,6 +148,7 @@ The RPi housed in the main component box will be the central microcontroller, or
 
 Bluetooth LE uses a concept of profiles as specification for Bluetooth communication by creating rules that allow certain tasks to be accomplished. The sensors will send bit data to a central RPi, so the Serial Port Profile (SPP) will be used. This profile will define how to set up virtual serial ports and connect two Bluetooth LE enabled devices. 
 
+<br/><br/>
 _BOM:_ 
 
 The bill of materials (BOM) to accomplish the design illustrated in the schematics is provided in **Table 1**. 
