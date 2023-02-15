@@ -5,6 +5,9 @@ _Function of the Subsystem:_
 
 The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE (achieved with usage of Arduino Nano 33 BLEs for each sensor) to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four AA batteries and a holder. The four AA batteries will provide 6 V and 2.5 A to the microcontrollers, which will power the sensors for more than 56 hours of constant use. 
 
+<br/><br/>
+
+
 _Constraints:_ 
 
 **Run Time:**
@@ -50,6 +53,7 @@ _Analysis:_
 ![image](https://user-images.githubusercontent.com/113309616/218646430-f175fa4a-9542-4cb2-b9a1-f2d0cc75ad1e.png)
 
 **Figure 3.** Arduino Nano 33 BLE Power Tree [1]
+
 
 **Power Supply for Wireless Connectivity:** 
 
