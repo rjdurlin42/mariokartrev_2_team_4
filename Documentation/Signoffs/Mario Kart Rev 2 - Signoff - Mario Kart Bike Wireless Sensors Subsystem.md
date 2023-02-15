@@ -51,6 +51,7 @@ The wiring schematics for the speed and steering sensors are provided in **Figur
 <br/><br/>
 _Analysis:_ 
 
+<br/><br/>
 ![image](https://user-images.githubusercontent.com/113309616/218646430-f175fa4a-9542-4cb2-b9a1-f2d0cc75ad1e.png)
 
 **Figure 3.** Arduino Nano 33 BLE Power Tree [1]
