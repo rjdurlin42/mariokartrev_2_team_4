@@ -9,7 +9,7 @@ _Constraints:_
 
 **Run Time:**
 
-Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. 
+Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. The equipment shall turn off when not in use. 
 
 **Speed Sensor:** 
 
