@@ -49,11 +49,11 @@ The device must be capable of providing at least 85 unique states, or lengths of
 
 ### Schematic and PCB Layout
 
-![Actuator Driver Schematic](https://user-images.githubusercontent.com/118228609/216786225-c57e1eca-aaaa-4acd-9b2b-d43dd4212f03.png)
+![Schematic](https://user-images.githubusercontent.com/118228609/219084845-ba84c1c1-090a-4c99-8ec1-f31622ce9223.png)
 
 Figure 1: a schematic for the control circuit.
 
-![PCB_draft4](https://user-images.githubusercontent.com/118228609/216786341-876a2da2-cf4d-43fb-b254-a66bb5e4cf97.png)
+![pcb](https://user-images.githubusercontent.com/118228609/219084784-bf4d30a6-fd0f-44c5-91ad-07a0ac71d8b5.png)
 
 Figure 2: the PCB layout for the design.
 
@@ -170,41 +170,40 @@ The above can reasonably be assumed to produce a stable system; therefore, const
 
 Please note: the above value is **not the usable range**, but the full range of the actuator itself; it is stated to clarify the analysis which follows.
 
-    Tmax(min speed) = 49.23 N•m
-    Tmin(max speed) = 0.004 N•m
-    Precision of controller: 10 bits
-    Unique states across full range = 2^10 = 1024
-    Range of torque common to all specified speeds: Tmin(max speed) <= T <= Tmax(min speed)
+    Tmax(max speed) = 121.8499 N•m
+    Tmin(max speed) = 0.2712 N•m
+    Tmax(min speed) = 28.901 N•m
+    Tmin(max speed) = 0.0643 N•m
+    See tables 1 and 2 in the resistance system signoff for full specified torque ranges
+    Precision of controller: 16 bits
+    Unique ADC states across full range = 2^16 = 65536
+    ADC full scale range: 0 to 6.144 V
+    Feedback voltage range: 0 to 5 V
+    ADC States across feedback voltage range: floor[65536*(5 V)/(6.144 V) = 53333]
+    Distance precision = (50.04 mm)/(65536) = 0.9382 μm
 
-The count of unique states is constrained to states which satify the inequality for T, where T is the torque developed by the resistance system; this is the set of usable states common to all specified speeds.
+Using a spreadsheet: (see [Controller_Analysis.xlsx](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/Controller_Analysis.xlsx)):
 
-With automated numerical analysis in MATLAB (see [distance_determination.m](https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Software/distance_determination.m)):
+Equation used:
 
-![Min](https://user-images.githubusercontent.com/118228609/218592986-e8ad6ea2-dada-44d6-97e4-c99f7e167c0d.jpg)
+![d_equation](https://user-images.githubusercontent.com/118228609/218931135-f2f4879b-5c32-45da-8440-7ea841859d02.png)
 
-![Max](https://user-images.githubusercontent.com/118228609/218593013-fab63502-3a81-48fd-9c19-07d567d0be70.jpg)
-
-Figures 5, 6: the torque developed over distance at minimum and maximum speeds, respectively. Note that the data tips show the minimum and maximum distances for which the inequality for T is satisfied.
-
-    Equation used: Td = ((pi*p*(D2.^2)*t*((By/10000).^2).*(R.^2).*w)/4)*2.44*21.5
-    Td: developed torque vector
-    p:  conductivity
-    D2: diameter of magnet
+    d:  distance of magnet from flywheel (corresponding to actuator extension lengths)
+    Td: developed torque
+    ρ:  conductivity
+    D:  diameter of magnet
     t:  flywheel thickness
-    By: magnetic field strength vector (taken as function of actuator extension)
-          By = (u0.*m)./(4.*pi.*d.^3)
-          u0: magnetic permiability of free space
-          m:  magnetic dipole moment
-          d: distance of magnets from flywheel (corresponding to actuator extension length)
+    u0: magnetic permiability of free space
+    m:  magnetic dipole moment
     R:  radius of flywheel
     w:  flywheel angular velocity
-    Evaluation method: determine and plot the developed torque as a function of distance for the upper and lower speed limits across the previously-defined torque range.
-    See MATLAB script for constant values and algorithm
-
-    Count of unique states (minimum speed) = floor[((7.614 mm)/(50.04 mm))*1024] = 155 > 85 states
-    Count of unique states (maximum speed) = floor[((8.856 mm)/(50.04 mm))*1024] = 181 > 85 states
+    Evaluation method: compare the actuation distance required to increment a state at the extrema of the specified 85-state sequences for minimum and maximum speed; compare to determine the smallest distance required to increment a state.
+    Result: 10.9 μm
+    See EXEL workbook for constant values and formulae
+    0.9382 μm < 10.9 μm
 
 Constraint met.
+
 
 Table 1: miscellaneous component notes and design considerations.
 |     Component(s)                                                                            |     Design   Considerations                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -239,7 +238,9 @@ Table 2: a BOM for the design. Please note that the Arduino Nano is already in o
 |            1.11           |  CARBRESIST101  |          CFR-25JB-52-2K2 2.2k THT Resistor        |    DIGIKEY    |    	  2.2KQBK-ND       |  1  |  Piece |   $0.10   |  $0.10  |
 |            1.12           |    ARDNANO100   |             Arduino Nano Microcontroller          |    Arduino    |        A000005         |  1  |  Piece |   $24.90  |  $24.90 |
 |            1.13           |     SOCK300     |              Socket Header for Arduino            |    DIGIKEY    | 2553-2042-1X15G00SA-ND |  2  |  Piece |   $0.74   |  $1.48  |
-|                           |                 |                                                   |               |                        |     |        |   Total   |  $36.33 |
+|            1.14           |     ADC100      |         ADS1115 4-Channel 16-Bit ADC Module       | Protosupplies | MOD-83                 |  1  |  Board |   $5.95   |  $5.95  |
+|            1.15           |     SOCK400     |           Socket Header for ADC Modele            |    DIGIKEY    | 	ED5864-10-ND       |  1  |  Piece |   $2.52   |  $2.52  |
+|                           |                 |                                                   |               |                        |     |        |   Total   |  $44.80 |
 
 ### Citations
 
