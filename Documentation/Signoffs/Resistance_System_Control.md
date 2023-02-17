@@ -4,7 +4,7 @@ Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage 
 
 ## Detail Design: Resistance System Control Circuit ##
 
-Please note: the scope of this signoff extends only to the control cicuit itself, not to housing components or connectors. Also, the signoff document for the resistance system contains BOM listings and information redundant to this document.
+Please note: the scope of this signoff extends only to the control cicuit itself, not to housing components, to the linear actuator, nor to connectors. Also, the signoff document for the resistance system contains BOM listings and information redundant to this document.
 
 ### Function of the Subsystem:
 
@@ -45,7 +45,7 @@ The device must operate without becoming unstable.
 
 #### Resolution
 
-The device must be capable of providing at least 85 unique states, or lengths of extension when operating within the specified wheel speed range (from 116 RPM to 288 RPM).
+The resistance system has been specified to provide at least 85 unique resistance states, or lengths of linear actuator extension when operating within the specified wheel speed range (from 116 RPM to 288 RPM). To this end, the controller must be capable of monitoring and responding to even the smallest changes in actuator extension correpsponding to a change in resistance state. Please note: from manufacterer correspondance, it is known that it is impossible to guarantee the repeatability of the linear actuator for any controller; furthermore, the actuator to be controlled has already been approved for use. As such, it is impossible to assess the ability of this subsystem to acheive the desired precision from this linear actuator or to select a different linear actuator.
 
 ### Schematic and PCB Layout
 
