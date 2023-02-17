@@ -3,14 +3,14 @@
 
 _Function of the Subsystem:_
 
-The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE (achieved with usage of Arduino Nano 33 BLEs for each sensor) to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four AA batteries and a holder. The four AA batteries will provide 6 V and 2.5 A to the microcontrollers, which will power the sensors for more than 56 hours of constant use. 
+The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE (achieved with usage of Arduino Nano 33 BLEs for each sensor) to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four AA batteries and a holder. The four AA batteries will provide 6 V and 3500 mAh to the microcontrollers, which will power the sensors for more than 56 hours of constant use. 
 <br/><br/>
 
 _Constraints:_ 
 
 **Run Time:**
 
-Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. The equipment shall turn off when not in use. 
+Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. The equipment shall turn off when not in use.  
 
 **Speed Sensor:** 
 
@@ -62,48 +62,52 @@ _Analysis:_
 
 _Speed Sensor:_
 
-•	Tachometer = 20 mA
+   * Tachometer = 20 mA
 
-•	Arduino Nano 33 BLE = 15 + 2 = 17 mA
+   * Arduino Nano 33 BLE = 17 mA
 
-•	AA Battery Current = 2.5 A
+   * Arduino Nano 33 BLE (standby) = 0.9 mA
 
-•	AA Battery Voltage = 1.5 V
+   * AA Battery Current = 3500 mAh
 
-	Total current needed = 20 + 17 = 37 mA
-
-	Total Voltage = 1.5 * 4 = 6 volts 
-
-	Number of Hours = 2.5 / (37*10^-3) = 67.57
-
+   * AA Battery Voltage = 1.5 V
 <br/><br/>
+        - Current needed (running) = 20 + 17 = 37 mA
+
+        - Total Voltage = 1.5 * 4 = 6 volts 
+
+        - Total Amp-Hours Needed = (37 * 56) + (0.9 * 280) = 2324 mAh 
+<br/><br/>
+
 _Speed Sensor Run Time:_
 
-Four AA batteries will provide 6 V and 2.5 A, which is sufficient to run the speed sensor equipment for 67 hours of constant use. Power can be preserved by powering off the Nano 33 BLE while not in use (done in software) [2].
+The speed sensor will use 2324 mAh in 2 weeks of 4 hours of constant use a day. Four AA batteries will provide 6 V and 3500 mAh, which is sufficient to run the speed sensor equipment for 4 hours of constant use a day for 2 weeks. Power can be preserved further by powering off (and back on if/when needed) the Nano 33 BLE sensors, power LED, and I2C pull-up resistors while not in use (done in software) [2].
 
 <br/><br/>
 _Steering Sensor:_
 
-•	Max Potentiometer = 7 mA
+   *	Max Potentiometer = 7 mA
 
-•	ADS1015 = 0.09091 mA 
+   *	ADS1015 = 0.09091 mA 
 
-•	Arduino Nano 33 BLE = 15 + 2 = 17 mA
+   *	Arduino Nano 33 BLE = 17 mA
 
-•	AA Battery Current = 2.5 A
+   *	Arduino Nano 33 BLE (standby) = 0.9 mA
 
-•	AA Battery Voltage = 1.5 V
+   *	AA Battery Current = 3500 mAh
 
-	Total current needed = 7+ 0.09091 + 17 = 24.09091 mA
-
-	Total Voltage = 1.5 * 4 = 6 volts 
-
-	Number of Hours = 2.5 / (24.09091*10^-3) = 103.77 
-
+   *	AA Battery Voltage = 1.5 V
 <br/><br/>
+         - Current needed (running) = 7+ 0.09091 + 17 = 24.09091 mA
+
+         - Total Voltage = 1.5 * 4 = 6 volts 
+
+         - Total Amp-Hours Needed = (24.09091 * 56) + (0.9 * 280) = 1601 mAh           
+<br/><br/>
+
 _Steering Sensor Run Time:_
 
-Four AA batteries will provide 6 V and 2.5 A, which is sufficient to run the steering sensor equipment for 103 hours of constant use. Like with the speed sensor, the Nano can be powered off when not in use.
+The steering sensor will use 1601 mAh in 2 weeks of 4 hours of constant use a day. Four AA batteries will provide 6 V and 3500 mAh, which is sufficient to run the steering sensor equipment for 4 hours of constant use a day for 2 weeks. Like with the speed sensor, the Nano can be powered off when not in use.
 
 Dimensions of the battery holders are 2.248 inches (L) by 2.457 inches (w) by 0.622 inches (h). The holders are small/compact to avoid the trip hazard posed by the long wires. Zip ties will securely mount the battery holder to the bike frame.
 
@@ -114,7 +118,7 @@ IR light is emitted from the KY-032 at a frequency of 38 kHz [3], so the receive
 
 By determining the time between any two high readings (two markings) and multiplying this time by the number of individual markings, the time required to perform each revolution of the flywheel can be calculated (this calculation will update between every 2 high readings). 
 
-	(Time between two highs)*(Number of markings)=Time for 1 revolution
+   - (Time between two highs)*(Number of markings)=Time for 1 revolution
 
 By using the gearing ratio between the flywheel and the bike tire, the current revolutions per second (or minute) at the bike tire can be calculated. 
 
@@ -130,7 +134,7 @@ Arduino microcontrollers surpass the 5 V limit while others are at 5 V exactly. 
 
 Latency of communication shall be 40 ms. Network latency can be calculated with the following formula [4]:
 
-	Latency=(d/v)+(s/r)
+   - Latency=(d/v)+(s/r)
 
 where:
 
@@ -166,7 +170,7 @@ The bill of materials (BOM) to accomplish the design illustrated in the schemati
 **Table 1.** Bill of Materials
 | Brand / Manufacturer       | Part Name                    | Supplier | Part / Model # or ASIN # | Qty | Units  | Unit Cost | Cost   |
 | -------------------------- | ---------------------------- | -------- | ------------------------ | --- | ------ | --------- | ------ |
-| LAMPVPATH                  | 4 AA Battery Holders         | Amazon   | B07T7MTRZX               | 1   | Pack   | $6.48     | $6.48  |
+| LAMPVPATH                  | 4 AA Battery Holders         | Amazon   | B07L9M6VZK               | 1   | Pack   | $7.49     | $7.49  |
 | Energizer                  | 24 Pack AA Lithium Batteries | Amazon   | B07BMH7RDP               | 1   | Pack   | $65.35    | $65.35 |
 | HMROPE                     | 8 Inch Zip Ties              | Amazon   | TXLAC                    | 1   | Pack   | $9.18     | $9.18  |
 | Duck                       | Electrical Tape              | Amazon   | 282289                   | 1   | Roll   | $1.48     | $1.48  |
