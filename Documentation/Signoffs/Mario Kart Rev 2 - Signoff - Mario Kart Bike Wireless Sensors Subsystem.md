@@ -3,14 +3,14 @@
 
 _Function of the Subsystem:_
 
-The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE (achieved with usage of Arduino Nano 33 BLEs for each sensor) to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four AA batteries and a holder. The four AA batteries will provide 6 V and 3500 mAh to the microcontrollers, which will power the sensors for more than 56 hours of constant use. 
+The function of the newly designed feature is to enable Bluetooth LE (BLE) connectivity between sensors and central Raspberry Pi (RPi). These sensors will gather, convert, and send data via BLE (achieved with usage of Arduino Nano 33 BLEs for each sensor) to the master RPi. The wires that rectify and step down the power for the sensors on the current version of the Mario Kart Bike will be replaced with four AA batteries and a holder. The four AA batteries will provide 6 V and 3500 mAh to the microcontrollers, which will power the sensors for more than 56 hours of constant use.  
 <br/><br/>
 
 _Constraints:_ 
 
 **Run Time:**
 
-Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. The equipment shall turn off when not in use.  
+Multiple batteries must supply the DC voltage and current needed to power the equipment for 4 hours of constant use a day for 2 weeks, which is 56 hours of constant use. When the equipment is not in use, it shall be turned off by the Arduino Nano 33 BLE. Then, the Arduino Nano 33 BLE shall go into standby mood.   
 
 **Speed Sensor:** 
 
@@ -81,7 +81,10 @@ _Speed Sensor:_
 
 _Speed Sensor Run Time:_
 
-The speed sensor will use 2324 mAh in 2 weeks of 4 hours of constant use a day. Four AA batteries will provide 6 V and 3500 mAh, which is sufficient to run the speed sensor equipment for 4 hours of constant use a day for 2 weeks. Power can be preserved further by powering off (and back on if/when needed) the Nano 33 BLE sensors, power LED, and I2C pull-up resistors while not in use (done in software) [2].
+Power can be preserved by turning on and off the tachometer, power LED, and I2C pull-up resistors when not in use (done in software) [2]. The Arduino Nano 33 BLE will go into standby mood after tachometer, power LED, and I2C pull-up resistors are turned off.
+
+The speed sensor will use 2324 mAh in 2 weeks of 4 hours of constant use a day. Four AA batteries will provide 6 V and 3500 mAh, which is sufficient to run the speed sensor equipment for 4 hours of constant use a day for 2 weeks. 
+
 
 <br/><br/>
 _Steering Sensor:_
@@ -107,7 +110,9 @@ _Steering Sensor:_
 
 _Steering Sensor Run Time:_
 
-The steering sensor will use 1601 mAh in 2 weeks of 4 hours of constant use a day. Four AA batteries will provide 6 V and 3500 mAh, which is sufficient to run the steering sensor equipment for 4 hours of constant use a day for 2 weeks. Like with the speed sensor, the Nano can be powered off when not in use.
+Power can be preserved by turning on and off the potentiometer, ADS1015, power LED, and I2C pull-up resistors when not in use (done in software) [2]. The Arduino Nano 33 BLE will go into standby mood after the potentiometer, ADS1015, power LED, and I2C pull-up resistors are turned off.
+
+The steering sensor will use 1601 mAh in 2 weeks of 4 hours of constant use a day. Four AA batteries will provide 6 V and 3500 mAh, which is sufficient to run the steering sensor equipment for 4 hours of constant use a day for 2 weeks. 
 
 Dimensions of the battery holders are 2.248 inches (L) by 2.457 inches (w) by 0.622 inches (h). The holders are small/compact to avoid the trip hazard posed by the long wires. Zip ties will securely mount the battery holder to the bike frame.
 
