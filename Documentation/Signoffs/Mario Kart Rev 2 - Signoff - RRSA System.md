@@ -125,7 +125,7 @@ A7. Device Fitment: The housing attaches to the handlebars using a mechanical tw
 | --------------- | ---------------------------- | ----------------------------------------------------------------------- | -------------------- | --------------- | --- | ------ | --------- | ------- |
 | Requested by:   | Tyler C.                     |                                                                         |                      |                 |     |        |           |         |
 | Approve by:     |                              |                                                                         |                      |                 |     |        |           |         |
-| Total Cost:     | $159.85                      |                                                                         |                      |                 |     |        |           |         |
+| Total Cost:     | $174.78                      |                                                                         |                      |                 |     |        |           |         |
 |                 |                              |                                                                         |                      |                 |     |        |           |         |
 |                 |                              |                                                                         |                      |                 |     |        |           |         |
 | Level           | Part #                       | Part Name                                                               | Supplier             | Supplier Part # | Qty | Units  | Unit Cost | Cost    |
@@ -151,7 +151,7 @@ A7. Device Fitment: The housing attaches to the handlebars using a mechanical tw
 | 5.4             | FASTENER2                    | M2.5-0.45 Zinc-Plated Metric Hex Nut (5-Piece per Bag)                  | Home Depot           | 204836094       | 3   | 5-Pk   | $1.25     | $3.75   |
 | 5.5             | FASTENER3                    | Gorilla Max Strength Clear Construction Adhesive                        | Amazon               | B0916KZ598      | 1   | Piece  | $7.96     | $7.96   |
 | 6               | CAM1                         | Camera Module for Raspberry Pi Zero                                     | Pimoroni             | CAM003          | 1   | Assy   | $10.56    | $10.56  |
-|                 |                              |                                                                         |                      |                 |     |        | Total     | $159.85 |
+|                 |                              |                                                                         |                      |                 |     |        | Total     | $174.78 |
 
 ### References
 
