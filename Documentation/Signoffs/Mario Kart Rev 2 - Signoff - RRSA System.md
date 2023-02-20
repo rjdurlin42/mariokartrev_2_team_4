@@ -7,19 +7,30 @@ The function of the ride data acquisition system is to collect the data necessar
 
 ### Constraints
 
-**Measurement accuracy:** it is imperative that the device record the altitude of the rider with a high degree of precision. If the simulated resistance is to be within 10 % of the real-world resistance as previously constrained, the combined inaccuracy of the pressure sensor, the speed sensor, and the resistance system must be below 10 %. Let the error allowance for the determination of the energy expended during exercise be 1 %. For a bike and rider of 91 kg, an altitude gain of 4.67 m results in an energy expenditure of 1 kCal since E = mgh. Accordingly, the required precision to achieve +/- 1 % accuracy at a granularity of 1 kCal is +/- 4.67 cm. As specified in the proposal, the ride data is to be digitally filted to attenuate out any ride noise, which has been defined as data having a frequency component greater than 1 Hz. As such, by the Nyquist theorem, the altitude data must be sampled at at least 2 Hz. The maximum specified bike wheel rotational frequency is 288 RPM, or 4.8 Hz; by the Nyquist theorem, the rotation of the bike wheel must be sampled at a frequency of at least 9.6 Hz, as the magnet activates the speed sensor once per revolution. Since the use of single-magnet speed sensing is already proven as common practice for bike computers, and all potential energy calculations can be performed with the measured altitude over time, the main constraints for speed sensing are of durability and sampling frequency. The reed switch used for speed sensing must nominally tolerate at least 1000 miles of operation.
+**C1. Sensor Constraints:** 
 
-**Video recording:** the resolution is to be 720p, and the frame rate is to be at least 30 fps. The utilized camera must be compatible with the Raspberry Pi Zero 2W's camera serial interface. In addition, the measurements collected must be synced with the video recording.
+The combined inaccuracy of the pressure sensor, the speed sensor, and the resistance system is to be below 10 %.
 
-**Battery life:** the device must be able to continuously operate for at least 3 hours, and must provide the user with a visual indication of battery charge status. 
+**C1.1. Pressure Sensor:** The required precision to achieve +/- 1 % accuracy at a granularity of 1 kCal is +/- 4.67 cm. The ride data is to be digitally filtered to attenuate out any ride noise above 1 Hz, so altitude data must be sampled at at least 2 Hz [Nyquist theorem].
 
-**Recording capacity:** the device must be able to capture 3 hours of continuous footage and measurements. Additionally, the storage media must possess the bandwidth to record the video as it is being taken. 
+**C1.2 Speed Sensor:** The bike wheel speed must be sampled at a frequency of at least 9.6 Hz as the maximum specified bike wheel rotational frequency is 288 RPM, or 4.8 Hz [Nyquist theorem].
 
-**Usability:** the device must provide an easily used interface, which is also unobtrusive and does not distract the rider. 
+**C2. Video Recording:** 
 
-**Durability:** the device must be shielded from outside weather conditions, and all component boards must be attached firmly enough to prevent them from being knocked around during riding.
+**C2.1. Video Quality:** The resolution is to be 720p with a frame rate of at least 30 fps, and the camera is to be compatible with the Raspberry Pi Zero 2W's camera serial interface. 
 
-**Mountability:** The device must be readily mountable on any standard mountain bike. Additionally, the angle of the device when mounted must produce a satisfactory filming angle for aquisition of optical data. Also, it must be possible to quickly remove/remount the device from/to the bike without any tools, so that the device can be moved to a different location to be charged or to transfer data without imposing any hassle on the user.
+**C2.2. Video Data Syncing:** The video footage recorded is to be in sync with the data being measured by sensors.
+
+**C3. Battery life:** The device must be able to continuously operate for at least 3 hours and must provide the user with a visual indication of battery charge status.
+
+**C4. Recording capacity:** The device must be able to capture 3 hours of continuous footage and measurements. 
+
+**C5. Usability:** The device must provide an easily used interface, which is also unobtrusive and does not distract the rider.
+
+**C6. Durability:** The device is to be protected from the outside environment with all electrical components secured to prevent damage while the user is riding.
+
+**C.7 Device Fitment:** The device is to be capable of mounting on any standard mountain bike with no obstructions to the video recording.
+
 
 ### Schematic:
 
@@ -43,23 +54,70 @@ Figure 6: detail on the speed-sensing portion of the assembly. The reed switch w
 
 ### Analysis:
 
-The Raspberry Pi Zero 2W was found to draw 580 mA (2.9 W) when stressed [1]. The Raspberry Pi Camera draws a maximum of 250 mA according to a forum post by the Principle Software Engineer of the Raspberry Pi Foundation [2]. The internal resistance of the Raspberry Pi's internal GPIO pullup resistor ranges from 33-73 kOhms [3], and with a 3.3 V logic level, the maximum possible current draw owing to the closing of the reed switch is 0.1 mA (calculated by dividing 3.3 V by the lowest specified resistance). The DPS310 altitude sensor requires a maximum current of 0.345 mA [4]. The LEDs in the switches are specified to have a current draw of approximately 20 mA each [5]. The power supply unit is specified to have a nominal efficiency of 90 %. The battery used has an energy storage capacity of 24.42 Wh. Accordingly, the effective energy available to the unit is 21.98 Wh. The required power input to the device may be calculated by multiplying the sum of the above currents with 5 V, since the voltage regulation on the Raspberry Pi board is performed using a linear regulator (meaning the current is constant). This yields a maximum power draw of 4.352 W, corresponding to a battery life of 5.050 hours, which meets the prior specification. The specified battery contains built in circuitry which ensures that it can never be over-discharged nor over-charged. Additionally, the power supply module provides a visual indication of the charge status, lighting up green when the battery is fully charged, and a red warning light when the charge is low. It was for this reason that a clear-topped box was selected. No detailed cycling data was given, making it impossible to make a cycling life estimation; however, the discharge rate is reccomneded to be kept at or below 0.25 C, corresponding to a current of 1.32 A. This device is expected to draw ((4.352 W)/0.9)/(3.7 V) A = 1.31 A nominally, which satisfies the battery's specification. Additionally, the battery is rated for a peak current of 3.3 A. The charge current is limited to 1 A by the selected power supply module, which satisfies the battery's charge current specification of 1.5 A or less.
+**A1.1. Pressure Sensor:** 
 
-The Raspberry Pi is capable of GPIO sampling speeds of up to 10 MHz [6], which satisfies the sampling rate requirements.
+    Imprecision = 2 cm < 4.67 cm
+    Operating range: 300 hPa to 1200 hPa
+    Measurement time [high precision] = 105 ms [4]
+    Maximum sample rate = 1 ÷ 105 ms = 9.524 Hz > 2 Hz
 
-The utilized pressure sensor is specified to provide a measurement precision of +/- 2 cm, so it satisfies the prior specification. It is rated for pressure from 300 hPa to 1200 hPa. In addition, it provides on-board measurement averaging and low-pass filtering to reduce noise from the measurement. It requires 105 ms to perform a high-precision presssure measurement [4], which corresponds to a maximum sampling rate of 9.524 Hz; well above the minimum required for this design.
+**A1.2. Speed Sensor:**
 
-Hammlin specifies that their reed switches can last over 200 million actuations under ideal conditions [7]. The rated current for these reed switches is 0.5 A, which is well above what would be required to provide a signal voltage to the computer. Assuming a 200-million-actuation life and a 26" bike tire, the device would last for 257,732 miles, satisfying the aforementioned specification. 
+    Raspberry Pi GPIO sampling speed = 10 MHz [6] > 9.6 Hz
 
-The selected camera is capable of recording video in 720p, 60 fps (or below) and thus satisfies the recording quality specification. The camera includes a ribbon cable designed for compatibility with the Raspberry Pi Zero 2W's camera serial interface, allowing plug-and-play connection; by which the camera can transmit raw data directly to the Pi over serial connection. The video footage can be formatted by the Raspberry Pi to MPEG-4 h.264 before storage. Although the Raspberry Pi lacks a real-time clock, the video and data recordings may still be synced by recording a time vector with the sensor data; recording the start and stop times of the video, and aligning the sensor data with the video. Any region of time not included in the union of video recording time and the sensor recording time can be skipped over during playback. The lack of a real-time clock does not mean that it will be impossible to associate each measurement with a time, only that these times will be completely arbitarary relative to the real-world time. In this case, that is not a problem, as the real-world time has no bearing on the sync between sensor data and video recording. The Raspberry Pi's clock increments at 1 MHz, allowing 1 microsecond precision. A 60 fps video has frames which last 16.67 ms, meaning that for a 60 fps recording, the precision of the sync would be to +/- 0.006 % of the duration of a single frame.
+**A2.1. Video Data Syncing:**
 
-To meet the storage requirements, a suitable SD card will be selected. A 128 GB SD card is a choice intended to be a reasonable starting point, as a typical 720p video has a bitrate of around 6.5 MB/s [8]. Accordingly, such an SD card would be able to store 3 hours of video as specified with 57.8 GB left over for the OS, programs, and sensor data. This SD card is compliant with the V10 standard, meaning that it is has sufficient bandwidth to record full HD video. 
+    Raspberry pi time clock rate = 1 MHz
+    Time precision = 1 μs
+    Max frame desync = 1 μs ÷ (1 ÷ 60 Hz) × 100 % = 0.006 %
 
-The interface is a simple, unobtrusive, two button one with a light integrated into each button. One button turns the unit on or off, and the light for this button lights up when the unit is powered. The other button acts to activate or stop the recording. When this button is pressed, recording begins, and the light lights up. When the button is pressed again, recording stops, and the light turns off when the Raspberry Pi enters low power mode. This light also flashes when data transfer is in progress.
+**A2.2. Video Quality and Format:**
 
-By applying industrial-strength vecro tape to the underside of the boards and to the inside the case, the boards can be attached to the inside of the box in such a way as to hold them firmly and allow easy dissasembly. Note that the selected vecro is specified to hold an object of up to 4.5 kg stationary. The battery used has a mass of 0.155 kg. The Raspberry Pi Zero 2W has a mass of 0.01 kg. The selected power supply has a mass of 0.006 kg. Since all items intended to be mounted are well below 4.5 kg, the mass specification to be held in place by the selected velcro tape is met. In addition, the selected case is waterproof, providing protection from external weather conditions.
+    Camera recording quality: 720p, 60 fps (or below) [as specified]
+    Connection protocol: Rasberry Pi CSI (camera serial interface)
+    Formatting capability: MPEG-4 h.264 via ffmpeg
 
-To meet the mountability constraint, the housing for this device is to be secured to the bike using an already-existing universal bike mounting bracket designed for mounting cell phones and similar objects using a combination of adhesive coupling to the device housing, a mechanical twist-locking mechanism, and a screw-tensioned ring with rubber adaptors to allow use on a multitude of handlebar sizes. The angle of the device is adjustable by the user, ensuring the ability to attain an ideal camera angle. The twist-lock mechanism provided by this bracket provides a means to remove the device very rapidly, and without the use of any tools.
+**A4. Recording Capacity:**
+
+    Storage capacity: 128 Gb
+    Typical bitrate for as-specified video: 6.5 MB/s [7]
+    Video-specific storage = 6.5 MB/s × 60 s/min × 60 min/h × 3 h = 70.2 GB
+    Remaining storage = 128 Gb - 70.2 Gb = 57.8 Gb
+
+The remaining storage is the be put to use for sensor data and the operating system.
+The SD card used for storage is V10 compliant; rated to record full HD video.
+
+**A3: Battery Life:**
+
+    Raspberry Pi Zero 2W current requirement [stressed] = 580 mA [1]
+    Raspberry Pi Camera current requirement [max] = 250 mA [2]
+    Raspberry Pi GPIO internal pullup resistor = 33-73 kΩ [3]
+    Raspberry Pi logic level = 3.3 V
+    Reed switch current draw = 3.3 V / 33 kΩ = 0.1 mA
+    DPS310 altitude sensor current draw [max] = 0.345 mA [4]
+    Indicator light current draw = 20 mA each [5] = 20 mA × 2 = 40 mA
+    Power supply nominal efficiency = 90 %
+    Battery energy storage capacity = 24.42 Wh
+    Effective battery energy = 24.42 Wh × 90 % = 21.98 Wh
+    RRSA power requirement [max] = 5 V × (580 mA + 250 mA + 0.1 mA + 0.345 mA + 40 mA) = 4.352 W
+    Projected battery life = 21.98 Wh ÷ 4.352 W = 5.050 hours > 3 hours
+
+Also:
+
+    Recommended constant battery discharge rate = 0.25 C = 1.32 A
+    Projected current draw [max] = (4.352 W ÷ 90 %) ÷ 3.7 V = 1.31 A < 1.32 A
+    Battery charge rate specification = 1.5 A
+    Charge rate limit = 1 A < 1.5 A
+
+**A5. Useability:**
+
+Two button interface; one to turn off and on, the other to start or stop the video recording. The power button has an LED that signifies power on, and the other LED lights when video is being recorded and blinks during data transfer.
+
+**A6. Durability:**
+
+Waterproof box provides protection from weather conditions. Aside from the fasteners shown in figures 2,4,6 [nuts and bolts], glue will be used to seal the entry hole for the speed sensor wires as well as the hole for the camera; zip ties will be used to attach the speed sensing reed switch and the battery.
+
+A7. Device Fitment: The housing attaches to the handlebars using a mechanical twist-locking mechanism and a screw-tensioned ring with rubber adaptors. The bracket requires no tools for removal or installation of the box, and the rubber adapters allow for universal fitment.
   
 
 **Table 1:** Bill of Materials.
@@ -67,7 +125,7 @@ To meet the mountability constraint, the housing for this device is to be secure
 | --------------- | ---------------------------- | ----------------------------------------------------------------------- | -------------------- | --------------- | --- | ------ | --------- | ------- |
 | Requested by:   | Tyler C.                     |                                                                         |                      |                 |     |        |           |         |
 | Approve by:     |                              |                                                                         |                      |                 |     |        |           |         |
-| Total Cost:     | $167.39                      |                                                                         |                      |                 |     |        |           |         |
+| Total Cost:     | $159.85                      |                                                                         |                      |                 |     |        |           |         |
 |                 |                              |                                                                         |                      |                 |     |        |           |         |
 |                 |                              |                                                                         |                      |                 |     |        |           |         |
 | Level           | Part #                       | Part Name                                                               | Supplier             | Supplier Part # | Qty | Units  | Unit Cost | Cost    |
@@ -87,12 +145,13 @@ To meet the mountability constraint, the housing for this device is to be secure
 | 3.4             | MAG1                         | Bike Wheel Spoke Computer Magnet                                        | AliExpress           | NONE            | 1   | Piece  | $1.68     | $1.68   |
 | 4               | SENSE2                       | Adafruit DPS310 Precision Barometric Pressure / Altitude Sensor         | Adafruit             | 4494            | 1   | Module | $6.95     | $6.95   |
 | 5               | MECH1                        | Mechanical Parts                                                        | NONE                 | NONE            | 1   | Assy   |           | $0.00   |
-| 5.1             | BOX1                         | QILIPSU Clear Hinged Cover 220x170x110mm Junction Box                   | Amazon               | B087F9TS25      | 1   | Piece  | $19.99    | $19.99  |
-| 5.2             | MNT1                         | QILIPSU Pole Mounting Kits, 304 Stainless 250x48mm Brackets             | Amazon               | B0B4RB63RK      | 1   | Kit    | $19.99    | $19.99  |
+| 5.1             | BOX1                         | QILIPSU Clear Hinged Cover 220x170x110mm Junction Box                   | Amazon               | B087F9TS25      | 1   | Piece  | $29.99    | $29.99  |
+| 5.2             | MNT1                         | Bike Phone Mount, Bicycle Cell Phone Holder with Universal Adapter      | Amazon               | B08R5K29BC      | 1   | Kit    | $19.98    | $19.98  |
 | 5.3             | FASTENER1                    | M2.5-0.45 x 10 mm Zinc Plated Steel Machine Screws (25-Pack)            | Home Depot           | 311229794       | 1   | 25-Pk  | $6.04     | $6.04   |
 | 5.4             | FASTENER2                    | M2.5-0.45 Zinc-Plated Metric Hex Nut (5-Piece per Bag)                  | Home Depot           | 204836094       | 3   | 5-Pk   | $1.25     | $3.75   |
+| 5.5             | FASTENER3                    | Gorilla Max Strength Clear Construction Adhesive                        | Amazon               | B0916KZ598      | 1   | Piece  | $7.96     | $7.96   |
 | 6               | CAM1                         | Camera Module for Raspberry Pi Zero                                     | Pimoroni             | CAM003          | 1   | Assy   | $10.56    | $10.56  |
-|                 |                              |                                                                         |                      |                 |     |        | Total     | $167.39 |
+|                 |                              |                                                                         |                      |                 |     |        | Total     | $159.85 |
 
 ### References
 
@@ -108,8 +167,6 @@ To meet the mountability constraint, the housing for this device is to be secure
 
 [6] M4H, "Maximum theoretical GPIO sample speed," Raspberry Pi Forums. [Online]. Available: https://forums.raspberrypi.com/viewtopic.php?t=128387. [Accessed: 5-Feb-2023]
 
-[7] “Hamlin Reed Switch Catalog,” DigiKey. [Online]. Available: https://www.digikey.com/en/pdf/h/hamlin/hamlin-reed-switch-catalog. [Accessed: 30-Nov-2022].
-
-[8] “A beginner’s guide to bit rate,” adobe.com. [Online]. Available: https://www.adobe.com/creativecloud/video/discover/bit-rate.html. [Accessed: 22-Nov-2022].
+[7] “A beginner’s guide to bit rate,” adobe.com. [Online]. Available: https://www.adobe.com/creativecloud/video/discover/bit-rate.html. [Accessed: 22-Nov-2022].
 
 
