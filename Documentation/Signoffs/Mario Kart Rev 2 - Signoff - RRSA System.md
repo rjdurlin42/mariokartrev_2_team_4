@@ -27,7 +27,7 @@ The function of the ride data acquisition system is to collect the data necessar
 Figure 1: a schematic for the assembly. Not pictured: the camera, which is to be attached to the camera port on the Raspberry Pi Zero 2W.
 
 ![Overhead View](https://user-images.githubusercontent.com/118228609/220002131-ab6d1f27-5fda-4ba9-a132-e8f04153594e.png)
-Figure 2: a drawing illustrating the placement of modules within the project box.
+Figure 2: a drawing illustrating the placement of modules within the project box. The mounting plate is covered in 2.54 mm width square holes. The battery is to be affixed using zip ties. The camera is to be affixed using glue.
 
 ![Front Panel](https://user-images.githubusercontent.com/118228609/220002416-1288c96b-3247-4ce5-85d7-2f7800a0e43c.png)
 Figure 3: the front panel. The mounted components (from left to right): USB-C socket, power switch, start/stop switch.
