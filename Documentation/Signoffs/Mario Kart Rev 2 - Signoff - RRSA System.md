@@ -26,11 +26,20 @@ The function of the ride data acquisition system is to collect the data necessar
 ![RRSA Schematic](https://user-images.githubusercontent.com/118228609/203230366-a49b449b-943c-4f00-ad5b-cdeb976bec66.png)
 Figure 1: a schematic for the assembly. Not pictured: the camera, which is to be attached to the camera port on the Raspberry Pi Zero 2W.
 
-![PIC03042](https://user-images.githubusercontent.com/118228609/203231527-3cd93c0c-69ab-4919-86b1-4a5de69bc6ae.JPG)
+![Overhead View](https://user-images.githubusercontent.com/118228609/220002131-ab6d1f27-5fda-4ba9-a132-e8f04153594e.png)
 Figure 2: a drawing illustrating the placement of modules within the project box.
 
-![PIC03041](https://user-images.githubusercontent.com/118228609/203231351-a6e881cc-bc34-441a-97ff-cbec0ddabef7.JPG)
-Figure 3: a drawing illustrating the front and back panels. The first item (from left to right) on the front panel is a panel-mount USB-C socket. The second is the power switch, followed by the start/stop switch. The hole in the back panel is for the camera.
+![Front Panel](https://user-images.githubusercontent.com/118228609/220002416-1288c96b-3247-4ce5-85d7-2f7800a0e43c.png)
+Figure 3: the front panel. The mounted components (from left to right): USB-C socket, power switch, start/stop switch.
+
+![Camera Hole](https://user-images.githubusercontent.com/118228609/220002534-c0886375-129e-439e-89e0-702ba8e7b94f.png)
+Figure 4: the camera hole, which is located on the panel facing away from the rider during use.
+
+![Full RRSA](https://user-images.githubusercontent.com/118228609/220002635-eecbd6a5-5cfe-484a-801a-4ce01f01fc76.png)
+Figure 5: the full assembly with annotations.
+
+![Speed Sensor](https://user-images.githubusercontent.com/118228609/220002797-e5f8a9a3-fd77-405e-ae3a-d4b655e1e5df.png)
+Figure 6: detail on the speed-sensing portion of the assembly. The reed switch will be secured using two zip ties.
 
 ### Analysis:
 
