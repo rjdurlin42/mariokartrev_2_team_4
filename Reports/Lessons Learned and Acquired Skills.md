@@ -13,6 +13,7 @@
 10. In terms of management, we found having no leader to work fine, but I feel that teamwork was much more effective when decisions regarding who would do what were made at meetings rather than left up to whoever decided to take action.
 11. Communication was most effective when going through only one channel.
 12. If you feel stuck, it is a good idea to ask others for help, and you should always be willing to help as well.
+13. The pin socket header used to connect the wireless module on the RRS controller subsystem is too short, and does not do a good job of holding the wireless module or normal wire pins, particularly when the enclosure vibrates. The lesson here is that deeper pin sockets are better.
 ### Acquired Skills
 1. 3D modeling for signoffs.
 2. Teamwork, particularly getting a feel for when it is or isn't beneficial to try to help.
