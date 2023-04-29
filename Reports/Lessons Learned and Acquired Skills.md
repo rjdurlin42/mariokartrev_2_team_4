@@ -5,7 +5,7 @@
 1. Limitations of mechanical durability: the mounting bracket for the RRSA subsystem unexpectedly broke rather easily during testing by riding off a curb. This occured because the mounting bracket was too weak, the mounting location was not at the center of gravity, and the bike used lacked any form of damping on the suspension. In addition, the glue used to attempt to repair it did not hold, and in fact failed to harden normally. The five-minute epoxy we used seems to have been a bad batch. A sturdier mounting bracket or more centered mounting location may have averted this issue.
 2. Limitations of Raspberry Pi video recording: the Raspberry Pi used in the RRSA subsystem unexpectedly drops frames during recordings. This results in desync with the data which cannot be resolved by simply shifting or clipping the data.
 3. Pressure sensing requires airflow to the sensor.
-4. It is important to use ESD protection to avoid damaging components. A failure to adequitely protected against ESD unexpectedly resulted in the failure of two key components (ADC and Arduino Nano).
+4. It is important to use ESD protection to avoid damaging components. A failure to adequitely protect against ESD unexpectedly resulted in the failure of two key components (ADC and Arduino Nano).
 6. Limitations of Raspberry Pi video playback: the Raspberry Pi has some rather shoddy video playback, and the one in use as the main controller in this project is all the less capable given that it is running a desktop operating system.
 7. Always get permission before touching other people's work.
 8. The manufacturer-provided PID coefficients for the utilized actuator did not provide stable operation using our controller, which meant that we had to manually tune the device.
