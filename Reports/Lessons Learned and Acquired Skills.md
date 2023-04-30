@@ -76,6 +76,7 @@
 3.	RPi’s are quite finnicky
 4.	It’s important to constantly have backups (plans, files, etc.)
 5.	When picking up another teams work, it’s beneficial to have contact with the previous team
+6.	Reading data sheets is important
 
 ### Skills Acquired
 1.	Bluetooth programming
@@ -86,6 +87,9 @@
 6.	Arduino Nano programming
 7.	Incorporating someone else’s work in your own
 8.	Serial communication
+9.	Time management
+10.	Presenting
+11.	Working in a team
 
 ## Benjamin Reed
 ### Lessons
