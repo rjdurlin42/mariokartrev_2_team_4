@@ -169,6 +169,86 @@ Data Collected at 277 RPM
 
 <br /><br />
 
+**Wireless Sensors Subsystem**
+<br />
+
+
+| Item                                                | Testing Criteria                                                                         | Testing Method                                                                                                                                                    | Measure of Success (MOS)                                                                                                                                                                                                                                                                                                                                                                                             | MOS Met? | What is needed for Improvement?                                                                                                                                                                                                                                                                                                                              |
+|-----------------------------------------------------|------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Run Time                                            | Two weeks runtime with 4 hours continuous use each day                                   | Verify that battery run time is efficient for two weeks with 4 hours a day of continous use by sampling power consumed while the system is in use and is inactive | Calculations confirm that the battery pack provides sufficient power. The steering sensor subsystem uses 3902.44 mW for 2 weeks of runtime while in constant use for 4 hours a day. The speed sensor subsystem uses 15292.71 mW for 2 weeks of runtime while in constant use for 4 hours a day. Each four AA battery pack provides 21000 mW, which is sufficient to meet the power requiremnets for each subsystem.  | Yes      | The Arduino Nano 33 BLE for the speed sensor subsystem broke during testing. Replace the broken Arduino Nano 33 BLE in the speed sensor subsystem with the new one to make the subsystem bluetooth.                                                                                                                                                          |
+| Speed Sensor (Missing MOSFET-Specific Requirements) | Obstacle sensor module provided with 20 mA @ 3.3 V - 5 V during operation                | Complete game test: Measure the current at the Obstacle sensor to verfiy that the Obstacle sensor receives 20 mA @ 3.3 V- 5 V during operation                    | While the obstacle sensor is in operation, the current is 24 mA when the obstacle sensor is given 3.391 V.                                                                                                                                                                                                                                                                                                           | Yes      | Replace the tape on the tire with paint or design a new way to measure the speed.                                                                                                                                                                                                                                                                            |
+| Speed Sensor (Missing MOSFET-Specific Requirements) | Arduino Nano 33 BLE provided with DC voltage between 5 V and 21 V                        | Complete game test: Measure voltage at the Arduino Nano 33 BLE to verify that the Arduino Nano 33 BLE receives a voltage between 5 VDC and 21 VDC                 | With new batteries, the battery pack supplies more than 7 V to the Arduino Nano 33 BLE.                                                                                                                                                                                                                                                                                                                              | Yes      |                                                                                                                                                                                                                                                                                                                                                              |
+| Speed Sensor (Missing MOSFET-Specific Requirements) | Current through the 3.3 V output pin on the Arduino Nano 33 BLE must be less than 100 mA | Complete game test: Measure and verify that the current through the 3.3 V GPIO pin is less than 100 mA while in use                                               | The current on the 3.3 V GPIO pin is 24 mA which is less than 100 mA.                                                                                                                                                                                                                                                                                                                                                | Yes      |                                                                                                                                                                                                                                                                                                                                                              |
+| Steering Sensor                                     | Potentiometer voltage same as ADC                                                        | Measure and verify that the voltage at the potentiometer is equal to the voltage at the ADC                                                                       | The voltage on the potentiometer is 3.285 V which is the same as the voltage ADC which is 3.285 V.                                                                                                                                                                                                                                                                                                                   | Yes      | Design a means to prevent the handlebar from turning 360 degrees. The potentiometer is not designed to turn 360 degrees. After the handle bar is turned past the potentiometer's limit, the potentiometer will break. Select a more durable potentiometer. The potentiometer on the bike broke during testing, and the spare broke during our presentation.  |
+| Steering Sensor                                     | ADC must be provided with a DC voltage between 0 - 5.5 V                                 | Measure and verify that the voltage as seen by the ADC is within 0 VDC and 5.5 VDC                                                                                | The voltage at the ADC is 3.285 V which is in between 0 VDC and 5.5 VDC.                                                                                                                                                                                                                                                                                                                                             | Yes      |                                                                                                                                                                                                                                                                                                                                                              |
+| Steering Sensor                                     | Current through every individual GPIO pin below 15 mA                                    | Complete game test: Measure and verify that the current through each GPIO pin used in the system is below 15 mA                                                   | The current going through the GPIO pin is 4 mA which is less than 15 mA.                                                                                                                                                                                                                                                                                                                                             | Yes      |                                                                                                                                                                                                                                                                                                                                                              |
+| Data Transfer                                       | Wireless communication between sensors and main RPi for all sensors                      | Complete game test: Verify that there is communication between the main controller (RPI) and both speed sensor and steering sensor                                | Multiple races were played with wireless communication between the steering sensor (speed sensor radio chip was damaged before testing)                                                                                                                                                                                                                                                                              | No       | Wireless communication of the speed sensor still needs to be implemented.                                                                                                                                                                                                                                                                                    |
+| Data Transfer                                       | Maximum latency: 40 ms                                                                   | Complete game test: Verify that the latency is less than 40 ms while the system is in normal operation                                                            | Using a stopwatch, the average latency was found to be much greater than 40 ms                                                                                                                                                                                                                                                                                                                                       | No       | The latency needs to be lowered significantly, perhaps with faster/more powerful hardware (RPi/Nano) or stronger Bluetooth signal.                                                                                                                                                                                                                           |
+
+
+<br /><br />
+**Wireless Subsystem Data Analysis**
+<br /><br />
+*Data Gathered During Experiment*
+<br /><br />
+*Latency Analsysis*
+| Steering Latency (cs) | Handlebars Latency(cs) |
+|-----------------------|------------------------|
+| 82                    | 44                     |
+| 63                    | 60                     |
+| 59                    | 69                     |
+| 58                    | 65                     |
+| 64                    | 59                     |
+| 48                    | 75                     |
+| 46                    | 68                     |
+| 67                    | 66                     |
+| 66                    | 51                     |
+| 78                    | 60                     |
+| 64                    | 45                     |
+| 85                    | 53                     |
+| 78                    | 50                     |
+| 69                    | 56                     |
+| 89                    | 63                     |
+| 85                    | 69                     |
+| 87                    | 69                     |
+| 87                    | 46                     |
+| 65                    | 60                     |
+| 64                    | 46                     |
+| 70                    | 40                     |
+| 75                    | 60                     |
+| 73                    | 39                     |
+| 78                    | 46                     |
+| 62                    | 57                     |
+| 60                    | 51                     |
+| 67                    | 50                     |
+| 80                    | 50                     |
+| 89                    | 65                     |
+| 75                    | 48                     |
+| 79                    | 50                     |
+| 66                    | 43                     |
+| 65                    | 48                     |
+| 74                    | 45                     |
+| 69                    | 52                     |
+| 74                    | 42                     |
+| 66                    | 51                     |
+| 61                    | 55                     |
+| 74                    | 64                     |
+| 55                    | 45                     |
+| 55                    | 64                     |
+| 75                    | 46                     |
+| 55                    | 54                     |
+| 45                    | 42                     |
+| 59                    | 54                     |
+| 59                    | 52                     |
+| 77                    | 60                     |
+| 60                    | 46                     |
+| 64                    | 51                     |
+| 56                    | 69                     |
+| Average(ms): 680.42   | Average(ms): 540.26    |
+
+<br /><br />
+*Power Consumption Analysis*
+
 
 
 
