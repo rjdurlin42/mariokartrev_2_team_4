@@ -45,3 +45,45 @@
 8. MATLAB – Simulink
 9. Electrical troubleshooting
 
+## Blake Pickett
+### Lessons
+1. Impact of Logistics on project success
+2. Effective collaboration and communication are critical
+3. Clear, concise, and up-to-date documentation is critical
+4. Better understanding of Eddy Currents and Magnetic Fields
+5. Better understanding of Bluetooth Communication and how Arduinos work
+6. Better understanding of how a Potentiometer works
+7. Better understanding of Battery Power Supply
+8. Better understanding of the impacts of Procurement process
+9. Backup plan is necessary for Risk Mitigation (e.g., technical performance, parts/supplies delivery, etc.)
+
+### Skills Acquired
+1. Power estimation and supply for Electronics
+2. Arduino installation
+3. AutoCAD
+4. Design implementation and fabrication (e.g., L-Bracket, Flywheel, Magnet Bracket, Actuator Bracket)
+5. Testing, analysis and experimentation
+6. Troubleshooting
+7. Improved Soldering skills for Electronics application
+8. Improved Technical Writing skills (e.g., proposal, reports)
+
+## Sage Mooneyham
+### Lessons
+1.	Some hardware can be unexpectedly fragile
+2.	Software libraries are very helpful
+3.	RPi’s are quite finnicky
+4.	It’s important to constantly have backups (plans, files, etc.)
+5.	When picking up another teams work, it’s beneficial to have contact with the previous team
+
+### Skills Acquired
+1.	Bluetooth programming
+2.	Python programming
+3.	Design Implementation
+4.	Debugging
+5.	Command terminal navigation
+6.	Arduino Nano programming
+7.	Incorporating someone else’s work in your own
+8.	Serial communication
+
+## Benjamin Reed
+### Lessons
