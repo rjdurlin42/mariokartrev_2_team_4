@@ -189,9 +189,8 @@ Data Collected at 277 RPM
 <br /><br />
 **Wireless Subsystem Data Analysis**
 <br /><br />
-*Data Gathered During Experiment*
-<br /><br />
 *Latency Analysis*
+<br /><br />
 Latency values were gathered using a stopwatch, starting time at a handlebar press/steering change, and stopping time when that action occured in game. From the below numbers, we can see that the steering sensor Bluetooth latency has greatly surpassed the expected value of 40 ms. I believe that the reason for this is the amount of software overhead that is involved in sending and receiving this data, as well as the interactions that must be performed with the Nintendo Switch through the joycontrol library. When performing the calculation for the expected latency, I did not incorporate this overhead. We can also see that the handlebar data has a lower latency than the ADS convertor data. I believe this is due to the fact that the handlebar data gathering process is simpler (GPIO Pin), has less software overhead in sending and converting this value, and also is a much smaller packet than the steering data due to its data type (Boolean value vs float value).
 | Steering Latency (cs) | Handlebars Latency(cs) |
 |-----------------------|------------------------|
