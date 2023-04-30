@@ -146,16 +146,28 @@ Data Collected at 277 RPM
 <br /><br />
 
 
-**HDMI Switcher**
+**HDMI Switcher Subsystem**
 <br />
-| Item                          | Testing Criteria                                                                                                                       | Testing Method                                                           | Measure of Success (MOS)                      | MOS Met? | What is needed for Improvement? |
-|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|-----------------------------------------------|----------|---------------------------------|
-| HDMI Compatibility            | The BHS must be rated for 1080p resolutions.                                                                                           | Can assert this is met without testing (requires rating, is rated)       | Has 1080p capacity                            | Yes      | None                            |
-| HDMI Quantity                 | The switcher must have at minimum two input HDMI ports and one output HDMI port.                                                       | Can assert this is met without testing (self-evident)                    | Possesses two HDMI inputs and one HDMI output | Yes      | None                            |
-| Relay Voltage/Current Ratings | The relay coil must be rated for 3.3 V and a maximum 16 mA, and the relay must operate at 3.3 V or below.                              | No longer valid as specification                                         |                                               | No       | None                            |
-| Transistor current            | The transistor may not draw more than 16 mA, and the transistor must operate with a logic signal of 3.3 V                              | Can assert first by Ohm's Law; second is proven by minimal functionality |                                               | No       | None                            |
-| Relay Power Rating            | The power dissipation at the relay coil cannot exceed 70 mW.                                                                           | No longer valid as specification                                         |                                               | No       | None                            |
-| Back EMF Accommodations       | A diode must be implemented in parallel with the relay coil to protect the RPi from back EMF that results from de-energizing the coil  | No longer valid as specification                                         |                                               | No       | None                            |
+| Item                          | Testing Criteria                                                                                                                       | Testing Method                                                     | Measure of Success (MOS)                                                 | MOS Met? | What is needed for Improvement? |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------|----------|---------------------------------|
+| HDMI Compatibility            | The BHS must be rated for 1080p resolutions.                                                                                           | Can assert this is met without testing (requires rating, is rated) | Has 1080p capacity                                                       | Yes      | None                            |
+| HDMI Quantity                 | The switcher must have at minimum two input HDMI ports and one output HDMI port.                                                       | Can assert this is met without testing (self-evident)              | Possesses two HDMI inputs and one HDMI output                            | Yes      | None                            |
+| Relay Voltage/Current Ratings | The relay coil must be rated for 3.3 V and a maximum 16 mA, and the relay must operate at 3.3 V or below.                              | No longer valid as specification                                   | No longer valid as specification                                         | No       | None                            |
+| Transistor current            | The transistor may not draw more than 16 mA, and the transistor must operate with a logic signal of 3.3 V                              | Review of datasheet                                                | Can assert first by Ohm's Law; second is proven by minimal functionality | No       | None                            |
+| Relay Power Rating            | The power dissipation at the relay coil cannot exceed 70 mW.                                                                           | No longer valid as specification                                   | No longer valid as specification                                         | No       | None                            |
+| Back EMF Accommodations       | A diode must be implemented in parallel with the relay coil to protect the RPi from back EMF that results from de-energizing the coil  | No longer valid as specification                                   | No longer valid as specification                                         | No       | None                            |
+
+<br /><br />
+
+**Steering L Bracket Subsystem**
+<br />
+| System                       | Item                            | Testing Criteria                                                                | Testing Method                                                                                                              | Measure of Success (MOS)                                                                       | MOS Met? | What is needed for Improvement? |
+|------------------------------|---------------------------------|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|----------|---------------------------------|
+| Steering L-Bracket Subsystem | Increased Fidelity              | The Steering L-Bracket mechanism shall be strengthened using a metal component. | Visually inspect the steering sensor L-Bracket to ensure that it is composed of metal and secure                            | The L-Bracket is made of aluminum. The L-Bracket does not move when pressure is apllied to it. | Yes      | No Improvement Required         |
+| Steering L-Bracket Subsystem | Adaptability to Steering Column | The L-Bracket must be positioned more than 0.25 inches off the steering column  | Measure the distance of the steering L-Bracket to the steering column and verify that the distance is more than 0.25 inches | The distance from the steering column to the L-bracket is 0.75 inches.                         | Yes      | No Improvement Required         |
+
+
+<br /><br />
 
 
 
