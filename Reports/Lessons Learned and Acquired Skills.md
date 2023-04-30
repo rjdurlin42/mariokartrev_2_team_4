@@ -66,6 +66,8 @@
 6. Troubleshooting
 7. Improved Soldering skills for Electronics application
 8. Improved Technical Writing skills (e.g., proposal, reports)
+9. Electronic subsystem removal and documentation 
+10. Integration of new Subsystem components with existing components 
 
 ## Sage Mooneyham
 ### Lessons
