@@ -1,1 +1,1 @@
-This folder holds completed reports on project progress, and will be updated over time.
+This folder holds completed reports on project progress, as well as individual technical presentations.
