@@ -280,7 +280,7 @@ Data Collected at 277 RPM
 
 <br />
 
-| Steering Sensor Subsystem (Time while not in constant use (280 hours)) |              |            |                     |                |                         | |                        |
+| Steering Sensor Subsystem (Time while not in constant use (280 hours)) |              |            |                     |                |                         |                        |
 |------------------------------------------------------------------------|--------------|------------|---------------------|----------------|-------------------------|-------------------------|
 | Voltage (V)                                                            | Current (mA) | Power (mW) | Power use in 1 Test | Time (minutes) | Power used in 1 minute  | Power used in 280 Hours |
 | 6.62                                                                   | 24           | 158.88     | 0                   | 0              | 0                       | 0                       |
