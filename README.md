@@ -18,8 +18,39 @@ The Dynamic Resistance System works as designed, providing resistance in the for
 
 ## Salient Outcomes
 
-Outcomes of the project will be posted here when production is completed.
+Dynamic Resistance System
+- Resistance felt by the user is applied comparable an exercising spin bike
+- Eddy currents are created by moving two magnets closer to a rotating aluminum disk
+- Mode of operation: Mario Kart Gaming Simulation 
+- Resistance system control
+  - PID controller (Arduino Nano, PID_v1 library, maintains 25% duty cycle)
+  - MOSFET H-Bridge with discrete components
 
+Ride Replay Module (RRSA)
+- Data collection (video, elevation, and speed)
+- Data storage (removeable 128 GB SD card)
+- Data processing (Raspberry Pi Zero W2 specified; Raspberry Pi B2 used due to supply shortage)
+- Sensors 
+  - Speed (utilizes a magnetic switch (reed switch) and a magnet mounted on bike wheel spoke)
+  - Elevation (utilizes a pressure sensor)
+- Automatic shutdown on low battery
+- Battery life indicator LEDs on power supply
+
+Steering and Speed Sensor Subsystems 
+- Replaced Speed controller with an Arduino Nano 33 BLE to transfer data by Bluetooth communication
+- Added Arduino Nano 33 BLE to the Steering Subsystem to enable the transfer of data by Bluetooth communication
+- Designed system to power the Sensor Subsystems using battery packs with 4 lithium AA batteries
+- MOSFET was added in the Speed Sensor circuit to save power
+
+Steering Sensor Mount Enhancement
+- Strengthened and stabilized steering sensor mount 
+- Replaced existing plastic 3D printed L-Bracket with metal L-Bracket for enhanced strength
+- Attached L-Bracket to bike with conduit hanger for stability 
+
+Power Distribution
+- Provides device and system protection
+- Installation of over protection and Ground Fault Interruption (GFI) protection
+- Complete replacement of 120 VAC power supply
 
 ## Project Demonstration & Images
 
