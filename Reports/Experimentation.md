@@ -3,7 +3,7 @@ Team 4 – Mario Kart & Ride Replay Simulator
 Team Members: Ray Durlin, Blake Pickett, Tyler Chittum, Benjamin Reed, and Sage Mooneyham
 <br /><br />
 
-**Experimentation**
+### Experimentation
 <br /><br />
 **Resistance Subsystem**
 <br />
