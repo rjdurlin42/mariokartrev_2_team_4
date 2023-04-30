@@ -191,7 +191,7 @@ Data Collected at 277 RPM
 <br /><br />
 *Data Gathered During Experiment*
 <br /><br />
-*Latency Analsysis*
+*Latency Analysis*
 | Steering Latency (cs) | Handlebars Latency(cs) |
 |-----------------------|------------------------|
 | 82                    | 44                     |
