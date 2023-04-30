@@ -19,3 +19,29 @@
 2. Teamwork, particularly getting a feel for when it is or isn't beneficial to try to help.
 3. Presenting, which was required several times throughout the process.
 4. Time management; particularly knowing when to give up/ignore things when not doing so would result in worse overall consequences due to eating into time needed for more important tasks.
+
+## Ray Durlin
+### Lessons learned
+1. It is important to be as detailed as possible in the design phase of a project to ensure that the implementation is better efficient
+2. Project outcome identification and analyzing measure of success
+3. Better understanding of how to meet deadlines and expectations 
+4. Importance of teamwork in a group setting
+5. Presenting work to different types of audiences
+6. Effectively communicating with others
+7. How to be a better problem solver
+8. Value of overcoming obstacles
+9. Do not be afraid to ask for help
+10. Allows look for better ways to improve, countinous improvement will lead to a desireable outcome
+11. When in doubt, look at the manufacturers datasheet, or call the manufacture to ask questions - Use all the resources available
+
+### Skills Acquired
+1. AutoCAD 
+2. Project Design
+3. Detailed knowledge of GFCI and Overprotection
+4. Fabricating components
+5. Hands on system implementation
+6. Analysis and Experimentation
+7. Theoretical Modeling
+8. MATLAB – Simulink
+9. Electrical troubleshooting
+
