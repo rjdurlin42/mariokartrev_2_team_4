@@ -93,3 +93,25 @@
 
 ## Benjamin Reed
 ### Lessons
+1. When inheriting a project from another team, it is imperative that determination of how the hardware and software works occur very early in the development process. 
+2. Adequate documentation is necessary to allow future teams to be able to improve the design properly. 
+3. If utilizing any video, ensure that the hardware you are using, specifically the graphics card, is capable of handling the video you intend to use. 
+4. Software development needs to begin very early. Even as early as the conceptual design. 
+5. Go ahead and have a basic idea of how you could run experiments on hardware during the design phase to have a head start. 
+6. If a software component is imperative for the function of your design, then checking if that component can be used should be considered part of that design. 
+7. It is important to understand the schedules of your teammates and to plan the project accordingly to those schedules. 
+8. In addition to the importance of documentation, it is as important to document while designing, researching, and building for the project. 
+9. If you have a plan, there is a very good chance that plan does not come to fruition. It is, however, better than having no plan and, therefore, no direction. 
+10. I cannot stress enough the importance of documentation. Nobody is going to think the way you do, so every detail needs to be discussed and conveyed in a digestible manner. 
+11. It is important to state everything explicitly. Even if information can be assumed, such as hardware having the appropriate specifications according to their datasheets, the fact that it has room to be assumed introduces an unnecessary possibility of error. 
+
+### Skills Acquired
+1. Reverse-engineering the work of a previous design. 
+2. Hardware design and datasheet analysis. 
+3. Python GUI development via the TKinter package. 
+4. Python video manipulation via the VLC package. 
+5. Skills associated with presenting to an audience. 
+6. Skills associated with working with a team. 
+7. Programming for a Raspberry Pi. 
+8. Hardware testing and analysis. 
+9. Conveying complex ideas to individuals that lack the knowledge you possess. 
