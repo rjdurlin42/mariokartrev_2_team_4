@@ -13,7 +13,7 @@ Team 4 hopes the Mario Kart Bike has a significant impact on the general health 
 
 ## Capabilities
 
-As of right now, we have not begun physical construction of any planned subsystems. However, we have submitted signoffs for the Resistance System, HDMI Switching System, Bluetooth System, Power Distribution System, Ride Replay Simulation Acquisition (RRSA) System, and the Sensor System.
+As of right now, the product can be used to play Mario Kart levels, as well as dynamically applying resistance in the Mushroom Cup, via serial commands to the linear actuator. An HDMI switcher button, as well as a popup when playing for an hour was also implemented. However, the steering component of the bike was damaged at the end of testing, and the speed sensor has issues stopping the character when the user is not pedaling. Ride replay data gathering was a success, however, implementation in the design was not completed.
 
 
 ## Salient Outcomes
