@@ -1,3 +1,3 @@
 # Images
 
-This folder holds images of the project and will be updated over time.
+This folder holds images of the project and its subsystems.
