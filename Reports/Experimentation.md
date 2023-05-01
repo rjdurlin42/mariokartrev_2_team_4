@@ -347,3 +347,4 @@ Latency values were gathered using a stopwatch, starting time at a handlebar pre
 
 <br /><br />
 
+For the resistance system nominal value, steering mechanism sturdiness, wiring enclosure, and playtime warning pop-up, refer to the video found at https://youtu.be/U-ZlnsXUXpw.
