@@ -1,0 +1,1 @@
+This folder holds the script used to ride recording functionality in the RRSA subsystem, and the Testing folder contains scripts used to test the functionality of individual aspects of the RRSA. These scripts are designed to be run on the Raspberry Pi platform. In practical implementation, the /etc/rc.local file is configured to run the rrsa.py script on startup.
