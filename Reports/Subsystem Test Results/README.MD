@@ -1,0 +1,1 @@
+This folder contains test data for the RRS Control and RRSA subsystems. It also contains some of our collected rumble data, which may prove useful to anyone attempting to make sense of the runble data outputs from the Nintendo Switch.
