@@ -54,7 +54,7 @@ The Dynamic Resistance System works as designed, providing resistance in the for
 
 ## Project Demonstration & Images
 
-Here is the link for the video showcasing the Mario Kart Bike https://youtu.be/U-ZlnsXUXpw.
+Here is the link for the video showcasing the Mario Kart Bike being tested https://youtu.be/U-ZlnsXUXpw.
 
 ![image](https://user-images.githubusercontent.com/113309616/235377385-6ae249b7-1edf-4abb-92f8-025bbfd8474e.png)
 
