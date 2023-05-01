@@ -1,4 +1,4 @@
-# Mario Kart Bike V2
+# Mario Kart Bike Version 2
 
 ## Executive Summary
 
