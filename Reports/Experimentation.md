@@ -311,6 +311,8 @@ Latency values were gathered using a stopwatch, starting time at a handlebar pre
 
 <br /><br />
 
+For testing detail, see: https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Reports/Subsystem%20Test%20Results/RRSA.md
+
 **Resistance Controller Subsystem**
 <br />
 
@@ -326,6 +328,8 @@ Latency values were gathered using a stopwatch, starting time at a handlebar pre
 | Resolution               | The controller must be capable of monitoring and responding to even the smallest changes in actuator extension correpsponding to a change in resistance state | Redundant to main 85 states MOS                                                                                                                                                         | Actuator reaches 85 unique states              | No       |
 
 <br /><br />
+
+For testing detail, see: https://github.com/rjdurlin42/mariokartrev_2_team_4/blob/main/Reports/Subsystem%20Test%20Results/RRS%20Control.md
 
 **Addition System Wide Measures of Success**
 <br />
